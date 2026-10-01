@@ -31,11 +31,11 @@ endobj
 endobj
 
 8 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/MK<<>>/P 164 0 R/Rect[501.9 500.003 653.8 513.173]/T(Date_Period)/V(Wk 6 \(11-15 Oct 2026\) - Period 2)/BS<</S/S/W 1>>/Ff 0/AP<</N 581 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/MK<<>>/P 164 0 R/Rect[501.9 500.003 653.8 513.173]/T(Date_Period)/V(Wk 14 \(22-26 Nov 2026\) - Period 1)/BS<</S/S/W 1>>/Ff 0/AP<</N 581 0 R>>>>
 endobj
 
 9 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 8 Tf)/F 4/FT/Tx/MK<<>>/P 164 0 R/Rect[658.8 500.003 811.1 513.173]/T(Unit_Topic)/V(Unit 2 - 2.2 Advance Photo Editing \(1/2\))/BS<</S/S/W 1>>/Ff 0/AP<</N 582 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/MK<<>>/P 164 0 R/Rect[658.8 500.003 811.1 513.173]/T(Unit_Topic)/V(Unit 4 - 4.3 Game Enhancements)/BS<</S/S/W 1>>/Ff 0/AP<</N 582 0 R>>>>
 endobj
 
 10 0 obj
@@ -43,35 +43,35 @@ endobj
 endobj
 
 11 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/MK<<>>/P 164 0 R/Rect[223.2985 462.973 339.25 477.473]/T(Week_lesson)/V(Week 6 / Lesson 2 of 2)/BS<</S/S/W 1>>/Ff 0/AP<</N 584 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/MK<<>>/P 164 0 R/Rect[223.2985 462.973 339.25 477.473]/T(Week_lesson)/V(Week 14 / Lesson 1 of 2)/BS<</S/S/W 1>>/Ff 0/AP<</N 584 0 R>>>>
 endobj
 
 12 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 8 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 164 0 R/Rect[344.8 456.753 811.05 469.223]/T(Starting_point)/V(Postcards: rubric average level 3/4; export settings weak \(wrong file type\). Today: explicit export routine and file-type comparison.)/BS<</S/S/W 1>>/AP<</N 585 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 7 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 164 0 R/Rect[344.8 456.753 811.05 469.223]/T(Starting_point)/V(Bug-fix homework: 75% fixed one bug; playtest logs good. Today: improve player experience with a custom cursor, custom popup and sound.)/BS<</S/S/W 1>>/AP<</N 585 0 R>>>>
 endobj
 
 13 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 8 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 164 0 R/Rect[30.9 386.653 418.35 412.173]/T(Desired_outcomes)/V(Students improve colour \(Colors > Auto > Color Enhance; Colors > Color Balance\) and straighten a tilted image \(Measure tool + Straighten\), then export as .png. Sprint 2.2 obj. 1-2; Challenge 1; CSTA 3A-DA-09.)/BS<</S/S/W 1>>/AP<</N 586 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 8.5 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 164 0 R/Rect[30.9 386.653 418.35 412.173]/T(Desired_outcomes)/V(Students customise the cursor \(glove\), replace alert\(\) with a styled popup box, and add audio \(background music, catch/game-over sounds, mute\). Sprint 4.3 obj. 1-4; CSTA 3A-AP-19, 3A-AP-21.)/BS<</S/S/W 1>>/AP<</N 586 0 R>>>>
 endobj
 
 14 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 164 0 R/Rect[423.4 386.653 811.05 412.173]/T(Success_criteria)/V(I can adjust shadows/midtones/highlights with Color Balance and explain the slider pairs; I can straighten a tilted horizon; I export a .png.)/BS<</S/S/W 1>>/AP<</N 587 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 164 0 R/Rect[423.4 386.653 811.05 412.173]/T(Success_criteria)/V(I set a custom cursor with a fallback; my results popup shows and closes with a button; a sound plays when a worm is caught; players can mute.)/BS<</S/S/W 1>>/AP<</N 587 0 R>>>>
 endobj
 
 15 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 6 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 164 0 R/Rect[30.9 354.753 418.35 367.173]/T(Key_knowledge)/V(Colour = red, green, blue values; Color Balance shifts cyan-red, magenta-green, yellow-blue; straightening rotates by a measured angle.)/BS<</S/S/W 1>>/AP<</N 588 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 8 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 164 0 R/Rect[30.9 354.753 418.35 367.173]/T(Key_knowledge)/V(cursor: url\(\) with fallback; classList show/hide; new Audio\(\), play\(\), volume; autoplay blocked until a click.)/BS<</S/S/W 1>>/AP<</N 588 0 R>>>>
 endobj
 
 16 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 8.5 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 164 0 R/Rect[423.4 354.753 811.05 367.173]/T(Misconception_need)/V(Brightness = colour balance; rotating by eye rather than measuring the angle.)/BS<</S/S/W 1>>/AP<</N 589 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 8.5 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 164 0 R/Rect[423.4 354.753 811.05 367.173]/T(Misconception_need)/V(Any image size works as a cursor; alert\(\) can be styled; music can autoplay on load.)/BS<</S/S/W 1>>/AP<</N 589 0 R>>>>
 endobj
 
 17 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 8 Tf)/F 4/FT/Ch/Ff 393216/MK<<>>/Opt[(Discussion / dialogue)(Brainstorming)(Inquiry / investigation)(Cooperative learning)(Gamification)(Role play)(Modelling / worked example)(Problem solving)(Storytelling)(Project-based task)(Think-pair-share)(Jigsaw)(Stations / carousel)(Debate)(Experiment / lab)]/P 164 0 R/Rect[72.32 292.223 159.7 306.723]/T(A1_Strategy)/TU(Choose from the list or type your own)/V(Inquiry / investigation)/BS<</S/S/W 1>>/AP<</N 590 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 8 Tf)/F 4/FT/Ch/Ff 393216/MK<<>>/Opt[(Discussion / dialogue)(Brainstorming)(Inquiry / investigation)(Cooperative learning)(Gamification)(Role play)(Modelling / worked example)(Problem solving)(Storytelling)(Project-based task)(Think-pair-share)(Jigsaw)(Stations / carousel)(Debate)(Experiment / lab)]/P 164 0 R/Rect[72.32 292.223 159.7 306.723]/T(A1_Strategy)/TU(Choose from the list or type your own)/V(Discussion / dialogue)/BS<</S/S/W 1>>/AP<</N 590 0 R>>>>
 endobj
 
 18 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 8 Tf)/F 4/FT/Tx/MK<<>>/P 164 0 R/Rect[188.01 292.223 201.06 306.723]/T(A1_Time)/V(10)/BS<</S/S/W 1>>/Ff 0/AP<</N 591 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/MK<<>>/P 164 0 R/Rect[188.01 292.223 201.06 306.723]/T(A1_Time)/V(5)/BS<</S/S/W 1>>/Ff 0/AP<</N 591 0 R>>>>
 endobj
 
 19 0 obj
@@ -79,31 +79,31 @@ endobj
 endobj
 
 20 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 8 Tf)/F 4/FT/Tx/MK<<>>/P 164 0 R/Rect[449.71 292.223 462.76 306.723]/T(A2_Time)/V(18)/BS<</S/S/W 1>>/Ff 0/AP<</N 593 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 8 Tf)/F 4/FT/Tx/MK<<>>/P 164 0 R/Rect[449.71 292.223 462.76 306.723]/T(A2_Time)/V(25)/BS<</S/S/W 1>>/Ff 0/AP<</N 593 0 R>>>>
 endobj
 
 21 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 8 Tf)/F 4/FT/Ch/Ff 393216/MK<<>>/Opt[(Discussion / dialogue)(Brainstorming)(Inquiry / investigation)(Cooperative learning)(Gamification)(Role play)(Modelling / worked example)(Problem solving)(Storytelling)(Project-based task)(Think-pair-share)(Jigsaw)(Stations / carousel)(Debate)(Experiment / lab)]/P 164 0 R/Rect[595.72 292.223 683.1 306.723]/T(A3_Strategy)/TU(Choose from the list or type your own)/V(Think-pair-share)/BS<</S/S/W 1>>/AP<</N 594 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 8 Tf)/F 4/FT/Ch/Ff 393216/MK<<>>/Opt[(Discussion / dialogue)(Brainstorming)(Inquiry / investigation)(Cooperative learning)(Gamification)(Role play)(Modelling / worked example)(Problem solving)(Storytelling)(Project-based task)(Think-pair-share)(Jigsaw)(Stations / carousel)(Debate)(Experiment / lab)]/P 164 0 R/Rect[595.72 292.223 683.1 306.723]/T(A3_Strategy)/TU(Choose from the list or type your own)/V(Role play)/BS<</S/S/W 1>>/AP<</N 594 0 R>>>>
 endobj
 
 22 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/MK<<>>/P 164 0 R/Rect[711.41 292.223 724.46 306.723]/T(A3_Time)/V(8)/BS<</S/S/W 1>>/Ff 0/AP<</N 595 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/MK<<>>/P 164 0 R/Rect[711.41 292.223 724.46 306.723]/T(A3_Time)/V(6)/BS<</S/S/W 1>>/Ff 0/AP<</N 595 0 R>>>>
 endobj
 
 23 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 164 0 R/Rect[30.9 221.15302 287.55 274.173]/T(A1_Students_do)/V(Investigate: move each Color Balance slider on a test photo for Shadows, Midtones, Highlights; record in a table what happens to the image and to RGB values \(Pointer dialog\).)/BS<</S/S/W 1>>/AP<</N 596 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 164 0 R/Rect[30.9 221.15302 287.55 274.173]/T(A1_Students_do)/V(Compare alert\(\) vs a custom popup and silent vs sound versions of the game; agree 3 UX rules \(clear, not annoying, player in control\).)/BS<</S/S/W 1>>/AP<</N 596 0 R>>>>
 endobj
 
 24 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 164 0 R/Rect[292.6 221.15302 549.25 274.173]/T(A2_Students_do)/V(Follow the worked example then Challenge 1: apply Color Enhance and Color Balance to a dull photo; then use the Measure tool to straighten a tilted horizon photo. Export both as .png with a clear file name.)/BS<</S/S/W 1>>/AP<</N 597 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 164 0 R/Rect[292.6 221.15302 549.25 274.173]/T(A2_Students_do)/V(Code along in 3 steps: 1\) glove cursor \(32x32 png\); 2\) results popup \(overlay div, message, Restart button, classList toggle\); 3\) catch and game-over sounds + mute button.)/BS<</S/S/W 1>>/AP<</N 597 0 R>>>>
 endobj
 
 25 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 164 0 R/Rect[554.3 221.15302 811.05 274.173]/T(A3_Students_do)/V(Show 3 versions of the same photo exported as .png, .jpg and .gif. Predict the file sizes, then check real sizes and discuss which format suits which use.)/BS<</S/S/W 1>>/AP<</N 598 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 164 0 R/Rect[554.3 221.15302 811.05 274.173]/T(A3_Students_do)/V(Player and developer: player tests the enhancements and gives feedback \(too loud, popup unclear\); developer makes one change and notes it in the change log.)/BS<</S/S/W 1>>/AP<</N 598 0 R>>>>
 endobj
 
 26 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 8 Tf)/F 4/FT/Ch/Ff 393216/MK<<>>/Opt[(Oral questioning)(Mini-whiteboards)(Exit ticket)(Short quiz)(Digital quiz \(Forms / Kahoot / Quizizz\))(Observation checklist)(Rubric)(Open-ended task)(Practical / performance task)(Presentation)(Self-assessment checklist)(Peer-assessment checklist)(Portfolio / notebook work)]/P 164 0 R/Rect[93.62 201.87299 287.1 216.37299]/T(A1_Evidence_tool)/TU(Choose from the list or type your own)/V(Portfolio / notebook work)/BS<</S/S/W 1>>/AP<</N 599 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 8 Tf)/F 4/FT/Ch/Ff 393216/MK<<>>/Opt[(Oral questioning)(Mini-whiteboards)(Exit ticket)(Short quiz)(Digital quiz \(Forms / Kahoot / Quizizz\))(Observation checklist)(Rubric)(Open-ended task)(Practical / performance task)(Presentation)(Self-assessment checklist)(Peer-assessment checklist)(Portfolio / notebook work)]/P 164 0 R/Rect[93.62 201.87299 287.1 216.37299]/T(A1_Evidence_tool)/TU(Choose from the list or type your own)/V(Oral questioning)/BS<</S/S/W 1>>/AP<</N 599 0 R>>>>
 endobj
 
 27 0 obj
@@ -111,43 +111,43 @@ endobj
 endobj
 
 28 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 8 Tf)/F 4/FT/Ch/Ff 393216/MK<<>>/Opt[(Oral questioning)(Mini-whiteboards)(Exit ticket)(Short quiz)(Digital quiz \(Forms / Kahoot / Quizizz\))(Observation checklist)(Rubric)(Open-ended task)(Practical / performance task)(Presentation)(Self-assessment checklist)(Peer-assessment checklist)(Portfolio / notebook work)]/P 164 0 R/Rect[617.02 201.87299 810.6 216.37299]/T(A3_Evidence_tool)/TU(Choose from the list or type your own)/V(Mini-whiteboards)/BS<</S/S/W 1>>/AP<</N 601 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 8 Tf)/F 4/FT/Ch/Ff 393216/MK<<>>/Opt[(Oral questioning)(Mini-whiteboards)(Exit ticket)(Short quiz)(Digital quiz \(Forms / Kahoot / Quizizz\))(Observation checklist)(Rubric)(Open-ended task)(Practical / performance task)(Presentation)(Self-assessment checklist)(Peer-assessment checklist)(Portfolio / notebook work)]/P 164 0 R/Rect[617.02 201.87299 810.6 216.37299]/T(A3_Evidence_tool)/TU(Choose from the list or type your own)/V(Peer-assessment checklist)/BS<</S/S/W 1>>/AP<</N 601 0 R>>>>
 endobj
 
 29 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 164 0 R/Rect[30.9 127.75299 287.55 152.37299]/T(A1_Resources)/V(Test image; table template in notebook; Windows > Dockable Dialogs > Pointer.)/BS<</S/S/W 1>>/AP<</N 602 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 164 0 R/Rect[30.9 127.75299 287.55 152.37299]/T(A1_Resources)/V(Two demo builds of the game.)/BS<</S/S/W 1>>/AP<</N 602 0 R>>>>
 endobj
 
 30 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 164 0 R/Rect[292.6 127.75299 549.25 152.37299]/T(A2_Resources)/V(GIMP; dull & tilted images from pack; QR videos aCT4, hCYG.)/BS<</S/S/W 1>>/AP<</N 603 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 164 0 R/Rect[292.6 127.75299 549.25 152.37299]/T(A2_Resources)/V(VS Code; QR 'Customize the cursor', 'Create a customized popup', 'Audio elements'; project sources.)/BS<</S/S/W 1>>/AP<</N 603 0 R>>>>
 endobj
 
 31 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 164 0 R/Rect[554.3 127.75299 811.05 152.37299]/T(A3_Resources)/V(3 exported files with sizes; mini-whiteboards.)/BS<</S/S/W 1>>/AP<</N 604 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 164 0 R/Rect[554.3 127.75299 811.05 152.37299]/T(A3_Resources)/V(Feedback checklist; headphones.)/BS<</S/S/W 1>>/AP<</N 604 0 R>>>>
 endobj
 
 32 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 164 0 R/Rect[30.9 83.653018 287.55 108.27301]/T(A1_Support)/V(Partially completed table with one example row.)/BS<</S/S/W 1>>/AP<</N 605 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 164 0 R/Rect[30.9 83.653018 287.55 108.27301]/T(A1_Support)/V(Picture comparison with key words.)/BS<</S/S/W 1>>/AP<</N 605 0 R>>>>
 endobj
 
 33 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 164 0 R/Rect[292.6 83.653018 549.25 108.27301]/T(A2_Support)/V(Printed screenshots for Measure tool steps; images already open.)/BS<</S/S/W 1>>/AP<</N 606 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 164 0 R/Rect[292.6 83.653018 549.25 108.27301]/T(A2_Support)/V(Popup HTML/CSS and audio files ready; students write the JS lines only.)/BS<</S/S/W 1>>/AP<</N 606 0 R>>>>
 endobj
 
 34 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 164 0 R/Rect[554.3 83.653018 811.05 108.27301]/T(A3_Support)/V(Size values written as KB with a number line.)/BS<</S/S/W 1>>/AP<</N 607 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 164 0 R/Rect[554.3 83.653018 811.05 108.27301]/T(A3_Support)/V(Feedback phrases card.)/BS<</S/S/W 1>>/AP<</N 607 0 R>>>>
 endobj
 
 35 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 164 0 R/Rect[30.9 39.55298 287.55 64.17297]/T(A1_Stretch)/V(Explain why yellow-blue slider changes the blue channel value.)/BS<</S/S/W 1>>/AP<</N 608 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 164 0 R/Rect[30.9 39.55298 287.55 64.17297]/T(A1_Stretch)/V(Name an accessibility risk of sound-only feedback.)/BS<</S/S/W 1>>/AP<</N 608 0 R>>>>
 endobj
 
 36 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 164 0 R/Rect[292.6 39.55298 549.25 64.17297]/T(A2_Stretch)/V(Straighten using two different methods and compare quality \(crop vs. clip\).)/BS<</S/S/W 1>>/AP<</N 609 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 164 0 R/Rect[292.6 39.55298 549.25 64.17297]/T(A2_Stretch)/V(Challenge 1 audio player \(play/pause/volume\) or Challenge 3 image carousel.)/BS<</S/S/W 1>>/AP<</N 609 0 R>>>>
 endobj
 
 37 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 164 0 R/Rect[554.3 39.55298 811.05 64.17297]/T(A3_Stretch)/V(Calculate the % difference between the largest and smallest file.)/BS<</S/S/W 1>>/AP<</N 610 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 164 0 R/Rect[554.3 39.55298 811.05 64.17297]/T(A3_Stretch)/V(Developer writes a change log entry with reason.)/BS<</S/S/W 1>>/AP<</N 610 0 R>>>>
 endobj
 
 38 0 obj
@@ -179,11 +179,11 @@ endobj
 endobj
 
 45 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 626 0 R/Yes 627 0 R>>>>/AS/Yes/DA(0.06 0.2 0.4 rg /ZaDb 0 Tf)/F 4/FT/Btn/MK<</CA(4)>>/P 164 0 R/Rect[132.55 175.40552 139.9 182.913]/T(P1_cb008_Pair)/V/Yes/BS<</S/S/W 1>>/Ff 0>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 177 0 R/Yes 178 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 164 0 R/Rect[132.55 175.4055 139.9 182.913]/T(P1_cb008_Pair)/V/Off>>
 endobj
 
 46 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 177 0 R/Yes 178 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 164 0 R/Rect[165.5 175.4055 172.85 182.913]/T(P1_cb009_Group)/V/Off>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 626 0 R/Yes 627 0 R>>>>/AS/Yes/DA(0.06 0.2 0.4 rg /ZaDb 0 Tf)/F 4/FT/Btn/MK<</CA(4)>>/P 164 0 R/Rect[165.5 175.40552 172.85 182.913]/T(P1_cb009_Group)/V/Yes/BS<</S/S/W 1>>/Ff 0>>
 endobj
 
 47 0 obj
@@ -235,43 +235,43 @@ endobj
 endobj
 
 59 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/MK<<>>/P 195 0 R/Rect[163.18 468.973 176.21 483.473]/T(Setup_time)/V(6)/BS<</S/S/W 1>>/Ff 0/AP<</N 611 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/MK<<>>/P 195 0 R/Rect[163.18 468.973 176.21 483.473]/T(Setup_time)/V(7)/BS<</S/S/W 1>>/Ff 0/AP<</N 611 0 R>>>>
 endobj
 
 60 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 195 0 R/Rect[30.9 403.253 418.35 468.773]/T(Setup_modelling)/V(Hook: a dull, tilted holiday photo - 'What is wrong and how can we fix it?'. Model Color Enhance \(one click\) vs Color Balance \(controlled\). Think aloud about the three slider pairs. Model the Measure tool: drag along the horizon, click Straighten. Model the export routine: File > Export As > choose type > Export.)/BS<</S/S/W 1>>/AP<</N 612 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 195 0 R/Rect[30.9 403.253 418.35 468.773]/T(Setup_modelling)/V(Hook: play the game - the alert box interrupts and it is silent. Model CSS cursor with fallback; popup structure and classList.add/remove\('show'\) with z-index; new Audio\('catch.mp3'\).play\(\) inside the click handler; mute toggle. Remind headphones and respectful volume.)/BS<</S/S/W 1>>/AP<</N 612 0 R>>>>
 endobj
 
 61 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 195 0 R/Rect[423.4 403.253 811.05 468.773]/T(Watch_for)/V(Using Brightness-Contrast instead of Color Balance; forgetting to choose a range \(shadows/midtones/highlights\); measuring a vertical line; 'Save' vs 'Export' confusion. Likely: students over-saturate colour - ask 'Does it still look natural?')/BS<</S/S/W 1>>/AP<</N 613 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 195 0 R/Rect[423.4 403.253 811.05 468.773]/T(Watch_for)/V(Cursor image too large \(ignored\); popup hidden behind elements \(z-index\); autoplay error in Console; wrong audio path; overlapping sounds \(reset currentTime\). Likely: 'my cursor/sound doesn't work' - check size/path.)/BS<</S/S/W 1>>/AP<</N 613 0 R>>>>
 endobj
 
 62 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/MK<<>>/P 195 0 R/Rect[676.83 383.973 689.86 398.473]/T(Close_time)/V(8)/BS<</S/S/W 1>>/Ff 0/AP<</N 614 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/MK<<>>/P 195 0 R/Rect[676.83 383.973 689.86 398.473]/T(Close_time)/V(7)/BS<</S/S/W 1>>/Ff 0/AP<</N 614 0 R>>>>
 endobj
 
 63 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 195 0 R/Rect[30.9 353.253 418.35 383.773]/T(New_innovative)/V(Students collect evidence \(RGB readings, file sizes\) like scientists; numeracy built in through % file-size comparison.)/BS<</S/S/W 1>>/AP<</N 615 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 195 0 R/Rect[30.9 353.253 418.35 383.773]/T(New_innovative)/V(User-centred testing through player/developer role play; inclusive design with a mute control and visual feedback alongside sound.)/BS<</S/S/W 1>>/AP<</N 615 0 R>>>>
 endobj
 
 64 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 195 0 R/Rect[423.4 353.253 811.05 383.773]/T(Close_exit_check)/V(Exit ticket \(3 Qs on Forms\): which menu holds Color Enhance; what the three ranges are; which file type was largest and why. Time for learners' questions.)/BS<</S/S/W 1>>/AP<</N 616 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 195 0 R/Rect[423.4 353.253 811.05 383.773]/T(Close_exit_check)/V(Exit ticket: write the CSS for a custom cursor with fallback; why must audio start after a click? Learners' questions.)/BS<</S/S/W 1>>/AP<</N 616 0 R>>>>
 endobj
 
 65 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 195 0 R/Rect[423.4 309.153 811.05 333.773]/T(Homework_platform)/V(Madrasati: upload before/after colour-corrected photo \(.png\) and a 2-line explanation of the slider pairs used. Watch QR video 'Remove red eye' \(WCUC\).)/BS<</S/S/W 1>>/AP<</N 617 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 195 0 R/Rect[423.4 309.153 811.05 333.773]/T(Homework_platform)/V(Madrasati: upload your game \(zip\) with cursor, popup and sound. Bring one animation idea for the gloves or worms.)/BS<</S/S/W 1>>/AP<</N 617 0 R>>>>
 endobj
 
 66 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 195 0 R/Rect[30.9 228.953 287.55 264.523]/T(Reflect_what_worked)/V(Investigation table made students notice the RGB link; most could explain one slider pair. Measure tool worked well once modelled twice.)/BS<</S/S/W 1>>/AP<</N 618 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 195 0 R/Rect[30.9 228.953 287.55 264.523]/T(Reflect_what_worked)/V(Three enhancements in one period worked because popup and audio starters were ready; 75% finished all three. Students chose music thoughtfully for peers from different backgrounds.)/BS<</S/S/W 1>>/AP<</N 618 0 R>>>>
 endobj
 
 67 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 195 0 R/Rect[292.6 228.953 549.25 264.523]/T(Reflect_change)/V(Start the file-size task with a visual bar chart - several students struggled converting KB/MB. Check export routine on the board as a poster.)/BS<</S/S/W 1>>/AP<</N 619 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 195 0 R/Rect[292.6 228.953 549.25 264.523]/T(Reflect_change)/V(Headphones for every PC; testing sound in a full room was noisy. Pre-check audio paths in each project folder.)/BS<</S/S/W 1>>/AP<</N 619 0 R>>>>
 endobj
 
 68 0 obj
-<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 195 0 R/Rect[554.3 228.953 811.05 264.523]/T(Reflect_follow_up)/V(Students in 10/2 and 10/6 who missed Week 5 need a catch-up sheet for selection tools; 2 EAL students need the slider vocabulary card.)/BS<</S/S/W 1>>/AP<</N 620 0 R>>>>
+<</Type/Annot/Subtype/Widget/DA(0 0 0 rg /Helv 9 Tf)/F 4/FT/Tx/Ff 4096/MK<<>>/P 195 0 R/Rect[554.3 228.953 811.05 264.523]/T(Reflect_follow_up)/V(10/2: students absent last week need the fixed core-logic source; 2 SEN students need the popup template on paper.)/BS<</S/S/W 1>>/AP<</N 620 0 R>>>>
 endobj
 
 69 0 obj
@@ -355,51 +355,51 @@ endobj
 endobj
 
 89 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 668 0 R/Yes 669 0 R>>>>/AS/Yes/DA(0.06 0.2 0.4 rg /ZaDb 0 Tf)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[137.8 163.55799 145.5 171.423]/T(P2_cb021_2)/V/Yes/BS<</S/S/W 1>>/Ff 0>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 204 0 R/Yes 205 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[137.8 163.558 145.5 171.423]/T(P2_cb021_2)/V/Off>>
 endobj
 
 90 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 204 0 R/Yes 205 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[153.5 163.558 161.2 171.423]/T(P2_cb022_3)/V/Off>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 206 0 R/Yes 207 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[153.5 163.558 161.2 171.423]/T(P2_cb022_3)/V/Off>>
 endobj
 
 91 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 670 0 R/Yes 671 0 R>>>>/AS/Yes/DA(0.06 0.2 0.4 rg /ZaDb 0 Tf)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[169.2 163.55799 176.9 171.423]/T(P2_cb023_C)/V/Yes/BS<</S/S/W 1>>/Ff 0>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 208 0 R/Yes 209 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[169.2 163.558 176.9 171.423]/T(P2_cb023_C)/V/Off>>
 endobj
 
 92 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 206 0 R/Yes 207 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[184.9 163.558 192.6 171.423]/T(P2_cb024_H)/V/Off>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 210 0 R/Yes 211 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[184.9 163.558 192.6 171.423]/T(P2_cb024_H)/V/Off>>
 endobj
 
 93 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 208 0 R/Yes 209 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[200.8 163.558 208.5 171.423]/T(P2_cb025_1)/V/Off>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 668 0 R/Yes 669 0 R>>>>/AS/Yes/DA(0.06 0.2 0.4 rg /ZaDb 0 Tf)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[200.8 163.55799 208.5 171.423]/T(P2_cb025_1)/V/Yes/BS<</S/S/W 1>>/Ff 0>>
 endobj
 
 94 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 672 0 R/Yes 673 0 R>>>>/AS/Yes/DA(0.06 0.2 0.4 rg /ZaDb 0 Tf)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[235.95 163.55799 243.65 171.423]/T(P2_cb026_2)/V/Yes/BS<</S/S/W 1>>/Ff 0>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 212 0 R/Yes 213 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[235.95 163.558 243.65 171.423]/T(P2_cb026_2)/V/Off>>
 endobj
 
 95 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 674 0 R/Yes 675 0 R>>>>/AS/Yes/DA(0.06 0.2 0.4 rg /ZaDb 0 Tf)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[251.65 163.55799 259.35 171.423]/T(P2_cb027_3)/V/Yes/BS<</S/S/W 1>>/Ff 0>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 670 0 R/Yes 671 0 R>>>>/AS/Yes/DA(0.06 0.2 0.4 rg /ZaDb 0 Tf)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[251.65 163.55799 259.35 171.423]/T(P2_cb027_3)/V/Yes/BS<</S/S/W 1>>/Ff 0>>
 endobj
 
 96 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 210 0 R/Yes 211 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[267.35 163.558 275.05 171.423]/T(P2_cb028_C)/V/Off>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 672 0 R/Yes 673 0 R>>>>/AS/Yes/DA(0.06 0.2 0.4 rg /ZaDb 0 Tf)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[267.35 163.55799 275.05 171.423]/T(P2_cb028_C)/V/Yes/BS<</S/S/W 1>>/Ff 0>>
 endobj
 
 97 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 212 0 R/Yes 213 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[283.05 163.558 290.75 171.423]/T(P2_cb029_H)/V/Off>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 214 0 R/Yes 215 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[283.05 163.558 290.75 171.423]/T(P2_cb029_H)/V/Off>>
 endobj
 
 98 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 676 0 R/Yes 677 0 R>>>>/AS/Yes/DA(0.06 0.2 0.4 rg /ZaDb 0 Tf)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[298.95 163.55799 306.65 171.423]/T(P2_cb030_1)/V/Yes/BS<</S/S/W 1>>/Ff 0>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 674 0 R/Yes 675 0 R>>>>/AS/Yes/DA(0.06 0.2 0.4 rg /ZaDb 0 Tf)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[298.95 163.55799 306.65 171.423]/T(P2_cb030_1)/V/Yes/BS<</S/S/W 1>>/Ff 0>>
 endobj
 
 99 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 214 0 R/Yes 215 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[334 163.558 341.7 171.423]/T(P2_cb031_2)/V/Off>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 216 0 R/Yes 217 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[334 163.558 341.7 171.423]/T(P2_cb031_2)/V/Off>>
 endobj
 
 100 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 216 0 R/Yes 217 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[349.7 163.558 357.4 171.423]/T(P2_cb032_3)/V/Off>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 676 0 R/Yes 677 0 R>>>>/AS/Yes/DA(0.06 0.2 0.4 rg /ZaDb 0 Tf)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[349.7 163.55799 357.4 171.423]/T(P2_cb032_3)/V/Yes/BS<</S/S/W 1>>/Ff 0>>
 endobj
 
 101 0 obj
@@ -411,111 +411,111 @@ endobj
 endobj
 
 103 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 678 0 R/Yes 679 0 R>>>>/AS/Yes/DA(0.06 0.2 0.4 rg /ZaDb 0 Tf)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[397 163.55799 404.7 171.423]/T(P2_cb035_1)/V/Yes/BS<</S/S/W 1>>/Ff 0>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 222 0 R/Yes 223 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[397 163.558 404.7 171.423]/T(P2_cb035_1)/V/Off>>
 endobj
 
 104 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 222 0 R/Yes 223 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[432.05 163.558 439.75 171.423]/T(P2_cb036_2)/V/Off>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 678 0 R/Yes 679 0 R>>>>/AS/Yes/DA(0.06 0.2 0.4 rg /ZaDb 0 Tf)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[432.05 163.55799 439.75 171.423]/T(P2_cb036_2)/V/Yes/BS<</S/S/W 1>>/Ff 0>>
 endobj
 
 105 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 680 0 R/Yes 681 0 R>>>>/AS/Yes/DA(0.06 0.2 0.4 rg /ZaDb 0 Tf)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[447.75 163.55799 455.45 171.423]/T(P2_cb037_3)/V/Yes/BS<</S/S/W 1>>/Ff 0>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 224 0 R/Yes 225 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[447.75 163.558 455.45 171.423]/T(P2_cb037_3)/V/Off>>
 endobj
 
 106 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 224 0 R/Yes 225 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[463.45 163.558 471.15 171.423]/T(P2_cb038_C)/V/Off>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 226 0 R/Yes 227 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[463.45 163.558 471.15 171.423]/T(P2_cb038_C)/V/Off>>
 endobj
 
 107 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 226 0 R/Yes 227 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[479.15 163.558 486.85 171.423]/T(P2_cb039_H)/V/Off>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 228 0 R/Yes 229 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[479.15 163.558 486.85 171.423]/T(P2_cb039_H)/V/Off>>
 endobj
 
 108 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 228 0 R/Yes 229 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[495.05 163.558 502.75 171.423]/T(P2_cb040_1)/V/Off>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 230 0 R/Yes 231 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[495.05 163.558 502.75 171.423]/T(P2_cb040_1)/V/Off>>
 endobj
 
 109 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 230 0 R/Yes 231 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[530.15 163.558 537.85 171.423]/T(P2_cb041_2)/V/Off>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 232 0 R/Yes 233 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[530.15 163.558 537.85 171.423]/T(P2_cb041_2)/V/Off>>
 endobj
 
 110 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 232 0 R/Yes 233 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[545.85 163.558 553.55 171.423]/T(P2_cb042_3)/V/Off>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 234 0 R/Yes 235 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[545.85 163.558 553.55 171.423]/T(P2_cb042_3)/V/Off>>
 endobj
 
 111 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 682 0 R/Yes 683 0 R>>>>/AS/Yes/DA(0.06 0.2 0.4 rg /ZaDb 0 Tf)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[561.55 163.55799 569.25 171.423]/T(P2_cb043_C)/V/Yes/BS<</S/S/W 1>>/Ff 0>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 680 0 R/Yes 681 0 R>>>>/AS/Yes/DA(0.06 0.2 0.4 rg /ZaDb 0 Tf)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[561.55 163.55799 569.25 171.423]/T(P2_cb043_C)/V/Yes/BS<</S/S/W 1>>/Ff 0>>
 endobj
 
 112 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 234 0 R/Yes 235 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[577.25 163.558 584.95 171.423]/T(P2_cb044_H)/V/Off>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 236 0 R/Yes 237 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[577.25 163.558 584.95 171.423]/T(P2_cb044_H)/V/Off>>
 endobj
 
 113 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 236 0 R/Yes 237 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[593.15 163.558 600.85 171.423]/T(P2_cb045_1)/V/Off>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 238 0 R/Yes 239 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[593.15 163.558 600.85 171.423]/T(P2_cb045_1)/V/Off>>
 endobj
 
 114 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 684 0 R/Yes 685 0 R>>>>/AS/Yes/DA(0.06 0.2 0.4 rg /ZaDb 0 Tf)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[628.25 158.95801 635.95 166.823]/T(P2_cb046_2)/V/Yes/BS<</S/S/W 1>>/Ff 0>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 240 0 R/Yes 241 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[628.25 158.958 635.95 166.823]/T(P2_cb046_2)/V/Off>>
 endobj
 
 115 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 238 0 R/Yes 239 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[643.95 158.958 651.65 166.823]/T(P2_cb047_3)/V/Off>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 682 0 R/Yes 683 0 R>>>>/AS/Yes/DA(0.06 0.2 0.4 rg /ZaDb 0 Tf)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[643.95 158.95801 651.65 166.823]/T(P2_cb047_3)/V/Yes/BS<</S/S/W 1>>/Ff 0>>
 endobj
 
 116 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 240 0 R/Yes 241 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[659.65 158.958 667.35 166.823]/T(P2_cb048_C)/V/Off>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 242 0 R/Yes 243 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[659.65 158.958 667.35 166.823]/T(P2_cb048_C)/V/Off>>
 endobj
 
 117 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 242 0 R/Yes 243 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[675.35 158.958 683.05 166.823]/T(P2_cb049_H)/V/Off>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 244 0 R/Yes 245 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[675.35 158.958 683.05 166.823]/T(P2_cb049_H)/V/Off>>
 endobj
 
 118 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 244 0 R/Yes 245 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[691.25 158.958 698.95 166.823]/T(P2_cb050_box)/V/Off>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 246 0 R/Yes 247 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[691.25 158.958 698.95 166.823]/T(P2_cb050_box)/V/Off>>
 endobj
 
 119 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 246 0 R/Yes 247 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[726.55 163.558 734.25 171.423]/T(P2_cb051_2)/V/Off>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 248 0 R/Yes 249 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[726.55 163.558 734.25 171.423]/T(P2_cb051_2)/V/Off>>
 endobj
 
 120 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 248 0 R/Yes 249 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[742.25 163.558 749.95 171.423]/T(P2_cb052_3)/V/Off>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 684 0 R/Yes 685 0 R>>>>/AS/Yes/DA(0.06 0.2 0.4 rg /ZaDb 0 Tf)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[742.25 163.55799 749.95 171.423]/T(P2_cb052_3)/V/Yes/BS<</S/S/W 1>>/Ff 0>>
 endobj
 
 121 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 686 0 R/Yes 687 0 R>>>>/AS/Yes/DA(0.06 0.2 0.4 rg /ZaDb 0 Tf)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[757.95 163.55799 765.65 171.423]/T(P2_cb053_C)/V/Yes/BS<</S/S/W 1>>/Ff 0>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 250 0 R/Yes 251 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[757.95 163.558 765.65 171.423]/T(P2_cb053_C)/V/Off>>
 endobj
 
 122 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 250 0 R/Yes 251 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[773.65 163.558 781.35 171.423]/T(P2_cb054_H)/V/Off>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 252 0 R/Yes 253 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[773.65 163.558 781.35 171.423]/T(P2_cb054_H)/V/Off>>
 endobj
 
 123 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 252 0 R/Yes 253 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[789.55 163.558 797.25 171.423]/T(P2_cb055_box)/V/Off>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 254 0 R/Yes 255 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[789.55 163.558 797.25 171.423]/T(P2_cb055_box)/V/Off>>
 endobj
 
 124 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 254 0 R/Yes 255 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[39.7 117.908 47.4 125.773]/T(P2_cb056_2)/V/Off>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 256 0 R/Yes 257 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[39.7 117.908 47.4 125.773]/T(P2_cb056_2)/V/Off>>
 endobj
 
 125 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 688 0 R/Yes 689 0 R>>>>/AS/Yes/DA(0.06 0.2 0.4 rg /ZaDb 0 Tf)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[55.4 117.90799 63.1 125.77301]/T(P2_cb057_3)/V/Yes/BS<</S/S/W 1>>/Ff 0>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 686 0 R/Yes 687 0 R>>>>/AS/Yes/DA(0.06 0.2 0.4 rg /ZaDb 0 Tf)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[55.4 117.90799 63.1 125.77301]/T(P2_cb057_3)/V/Yes/BS<</S/S/W 1>>/Ff 0>>
 endobj
 
 126 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 256 0 R/Yes 257 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[71.1 117.908 78.8 125.773]/T(P2_cb058_C)/V/Off>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 258 0 R/Yes 259 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[71.1 117.908 78.8 125.773]/T(P2_cb058_C)/V/Off>>
 endobj
 
 127 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 258 0 R/Yes 259 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[86.8 117.908 94.5 125.773]/T(P2_cb059_H)/V/Off>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 260 0 R/Yes 261 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[86.8 117.908 94.5 125.773]/T(P2_cb059_H)/V/Off>>
 endobj
 
 128 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 260 0 R/Yes 261 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[102.7 117.908 110.4 125.773]/T(P2_cb060_1)/V/Off>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 262 0 R/Yes 263 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[102.7 117.908 110.4 125.773]/T(P2_cb060_1)/V/Off>>
 endobj
 
 129 0 obj
-<</Type/Annot/Subtype/Widget/AP<</N<</Off 262 0 R/Yes 263 0 R>>>>/AS/Off/DA(/ZaDb 0 Tf 0.06 0.2 0.4 rg)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[137.8 117.908 145.5 125.773]/T(P2_cb061_2)/V/Off>>
+<</Type/Annot/Subtype/Widget/AP<</N<</Off 688 0 R/Yes 689 0 R>>>>/AS/Yes/DA(0.06 0.2 0.4 rg /ZaDb 0 Tf)/F 4/FT/Btn/MK<</CA(4)>>/P 195 0 R/Rect[137.8 117.90799 145.5 125.77301]/T(P2_cb061_2)/V/Yes/BS<</S/S/W 1>>/Ff 0>>
 endobj
 
 130 0 obj
@@ -974,7 +974,7 @@ endobj
 211 0 obj
 <</Type/XObject/Subtype/Form/BBox[0 0 7.7 7.865]/Resources<</Font<</ZaDb 4 0 R>>>>/Length 63/Filter/FlateDecode>>
 stream
-xú+T0–30F@l¢PîÆ‡¢†ïËí§`¶gj¢í∑4R0‘35WIQ–0—T…RpQ à(7
+xú+T0–30F@l¢PîÆ‡¢†ïËí§`¶gj™í∑4R0‘35WIQ–0—T…RpQ àE8
 endstream
 endobj
 
@@ -988,7 +988,7 @@ endobj
 213 0 obj
 <</Type/XObject/Subtype/Form/BBox[0 0 7.7 7.865]/Resources<</Font<</ZaDb 4 0 R>>>>/Length 63/Filter/FlateDecode>>
 stream
-xú+T0–30F@l¢PîÆ‡¢†ïËí§`¶gj¢í∑4R0‘35WIQ–0—T…RpQ à(7
+xú+T0–30F@l¢PîÆ‡¢†ïËí§`¶gj™í∑4R0‘35WIQ–0—T…RpQ àE8
 endstream
 endobj
 
@@ -1282,7 +1282,7 @@ endobj
 255 0 obj
 <</Type/XObject/Subtype/Form/BBox[0 0 7.7 7.865]/Resources<</Font<</ZaDb 4 0 R>>>>/Length 63/Filter/FlateDecode>>
 stream
-xú+T0–30F@l¢PîÆ‡¢†ïËí§`¶gj™í∑4R0‘35WIQ–0—T…RpQ àE8
+xú+T0–30F@l¢PîÆ‡¢†ïËí§`¶gj¢í∑4R0‘35WIQ–0—T…RpQ à(7
 endstream
 endobj
 
@@ -2948,19 +2948,18 @@ endstream
 endobj
 
 581 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 151.9 13.169983]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 123/Filter/FlateDecode>>
+<</Type/XObject/Subtype/Form/BBox[0 0 151.9 13.169983]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 122/Filter/FlateDecode>>
 stream
-xúÕΩ
-¬0F·˝Ωäwlá¶˝“Ú≠ïÇã®Ë“Õ∆‚äA‘À7ÚpÊSá/˚ÌO?π¨S£1‚T}À1‚é>†·_Z`ŸÔ;U±3ÍMºΩ©'„ïéS!R…äª„ã∂±n*Yq”˘1”ñ˘˚k‘
+xúçªÇ@˚ÛßÑÇÖ{!õΩ-ÜƒF£…&4î†Òâ[†üÔö…¥3u¸≤?ÏÜìÕtÊå"NºYhôåx°èh¯']°l]ùô(„åzø<7„≈¯»NÖj•û«u£6ÍßíOK∫≠3•dºcà8c»„/c
 endstream
 endobj
 
 582 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 152.29999 13.169983]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 131/Filter/FlateDecode>>
+<</Type/XObject/Subtype/Form/BBox[0 0 152.29999 13.169983]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 121/Filter/FlateDecode>>
 stream
-xúé±
-¬0˜ˇ)æ±L˙«Ví—J¿EPà∏tkDR,°˙¯∆;n?ÈæË;z„S*vçP¶ f¡cÙs†%Í5¯;è§–
-÷≠1‹¡yí˚Z†·ÓTùSÃPXA	Ö≠_ÆÈp|LyÇı1«4b®X™°Æ·ûdù»ñá≈.!©
+xúçª
+¬@˚Ûß‘¬Mˆ°‰∂ëE·äu–5*f¡‘œwùaÍ©ÙÀv∑∆ñüRqY'ZkÏJ§Òé»h5ˇé=Ωiö bıåjõo
+ıÇŸ!ﬂ&.åÁ¶cæv˘îÜîß◊úzGTÏÀ˜:”™
 endstream
 endobj
 
@@ -2972,66 +2971,66 @@ endstream
 endobj
 
 584 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 115.95151 14.5]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 109/Filter/FlateDecode>>
+<</Type/XObject/Subtype/Form/BBox[0 0 115.95151 14.5]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 111/Filter/FlateDecode>>
 stream
-xúç1
-É@D˚9≈î¶Ÿu7n¿V,b!|~IPTà9æﬂyºÓy˘≥Íj¨<ÏF∏ª2Öd]‚¶0£‰ºÿ^à,\* kîæ’Ôè¶≤Aı√=ü∫ÔÀÃ»ebºQﬁh=Kù√ˇm
+xú”©PpÚuÊ*‰2T(b 44÷≥454≤åÙLäRπ¬πÚ∏úB∏@∞(ùÀH¡Dœ‘ƒBR∏Ù=Rs ÄÃ4.ç‘‘lC}ü‘‚‚¸<†y˘i
+Fö
+!Y\Æ!\Å\Æ@ª ‹öõ
 endstream
 endobj
 
 585 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 466.25 12.470001]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 200/Filter/FlateDecode>>
+<</Type/XObject/Subtype/Form/BBox[0 0 466.25 12.470001]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 202/Filter/FlateDecode>>
 stream
-xú5è1O√0Ñ˜˜+nlá:vH°¥[Q%$ê,±t1…kdjÏ`ªI˚Ôq@Ët“ÈtﬂpïæbˇÚDﬂ§0+4˜ç®◊PR4RJÖ»ÙNûˆö$f≈ûj®Z¨ÎtW ’F<˛ÂÍô›àO¥x)∑&viãx˘à∂Ö9öû·xdáª™ŸÅØCàâs∂æOòÿúq\L1¯'Î˘6q)†Cgn€p∂µ˘üå·RHÜÒ›Ô~5Ô—ÜØ¡DõÇKËO:hz£Cπ˘N_Gg
+xú5èAK√@ÑÔÔWÃEP∞€ÏíòRoëÇ¬ÇÁÿ}M£…æu7i“ÔVêaæa.≥µ+ö∑˙!ç%[£|*ï©†U÷EQhD¶Ú‘X*pSÏ»@ke¥Åuπ‹‘jßMﬁV7ﬁæÚpA{¢˚fÓ6ß~≈YF^$~ÔQWw»;àg|Œ›3¬–^'NÈ:ß`≈µ◊=˙1DπﬂÑ#x{ˆG∆“Og¥8Œií1GLˇ1HòZÔêdˆN=¿~—¡“;Ú’_æ3G±
 endstream
 endobj
 
 586 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 387.45 25.519989]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 248/Filter/FlateDecode>>
+<</Type/XObject/Subtype/Form/BBox[0 0 387.45 25.519989]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 249/Filter/FlateDecode>>
 stream
-xúuPAj√0ºÎsåi≠ƒr6ÖÇùz…°X–K.Jºµ…ïÂ4œØúBË•,ÀŒŒ¿Ï∞kyEµ€≤/ñ‡;tÇ4œ¯SëÚ,)äºÄ#ˆ¡´$€`)◊1ÒGñm‡„ú"_˙çÙ~≤U„Áñåü0úGg/Ñ£’vvÿØ∂∏	/(go√∏Ì®MØÃëûqó˘JÈÖﬂGP¶≈‰ù∫ﬁìÅÇ¥ß‰Èﬂ√YuéÓHM≥#xk5–‹}ˆ—#|¸Ë:ZÁ°&—tÕË„!∏Ä=ú8íXÑpΩ“öL∞L¬“»iøñÒ¶‡∑µdÔ¨?˝‚wc⁄
+xú}PMkÑ0ºÁWÃQAc˝*JOÓ≤–K°≈@/^bÃ™[56âª€ﬂXzË©<fﬁò·EÏé√Àë|í7áië”,Gí“<.À¢Ññ‰ù,‰¿»ˆ—=I˛ÿ¨s˚∞§YÒ∏ÛËYNW4;Ø∂['k 6c’<	;Hß¥Qç◊OÍ*?p!ÎƒÖü§∂ç◊¯∏çv á±_ìÏ∞™u[—™{ æt‡ù√÷ç
+>ÿÂüç◊rÒ—kµπ´y3£ ∏C‘ÛYÜ.]√Ï¶	úm]äz’„bë—™ΩPƒaˆÑcÕ*§UXΩÜq¸≤$¶?˘'Fﬁ»…ΩÒ ≤^Ù
 endstream
 endobj
 
 587 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 387.65 25.519989]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 209/Filter/FlateDecode>>
+<</Type/XObject/Subtype/Form/BBox[0 0 387.65 25.519989]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 208/Filter/FlateDecode>>
 stream
-xú}ê±N1D˚˝ä)°¿g'9îS∫ã"AAÅdâ⁄äÕŸë±{·"æ4Th5≈ÓHoG”È+∆ß#Ωì¬“§∞›˜‚æ«f+z5˚≈—%5I¨S&⁄¸±µm˜;%Ö‹Ì§TÎﬁ=∏¯âfΩ“Õ#Œ&¡ÿÀGeTol^j˜,Á‰jÁ√‰cW,Å=é9ÊÇ—DìŒ&Y∏ÎMH`ÔPc∞Æ`6°‘~…∑–óT.f˝‡Z
-pàÏ,|.·+ßï—¯πp≥ƒú&ÒC;iz¶S+Â¸¶QÊ
+xú}P¡j√0ΩÎ+ﬁq;,µ€f4‰÷QË;;ª©€tsÏ‘≤óıÔß;!§˜OZò/l_ûËJì§∆jSWè5ñ´™÷M≥iêΩQ†≠!Ö9“ôñds˛A´J≠◊JÈ/ˆŒB§›=É]ÜEW8«AJ‚ò0]r/‰…z∞›Gã·&{∏¯Ã„XFp'ÜGt>≤„_À°‰C+«"Í=Ã˚øåﬁﬁƒ›ª û)¶FgÀπœ-f—•%ªÍg‹Œ–+Ì‰+ﬂqRL
 endstream
 endobj
 
 588 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 387.45 12.420013]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 194/Filter/FlateDecode>>
+<</Type/XObject/Subtype/Form/BBox[0 0 387.45 12.420013]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 192/Filter/FlateDecode>>
 stream
-xúMèÕ
-¬@ÑÔyä9*ÿ⁄˙SÒRºx<GM◊ ∫≈›≠⁄∑w+$$ìÃ´7 ˝Üî„;«t1Ogs‰Y:õdY>Ö:í•RQÜæú¶…ﬂZ]¢üi±,z=ﬁây" äõ∆4≠√:".#h'bG8ôV‰8˝
-˝ÖC…ÜÌY‡Øu<Œ€‰π≥8˘E;1¶y%=a◊˙ƒ÷V√5ÅÉxú:0Ó¬æç ∞’F“!‘ç∂ä¥çü~ ~G7
+xú%è¡j√0DÔ˚sL ï-''95%êC{(z…EëïXı÷j%+nˇæ2aYx<f¶Pø8ºΩ–ILy%÷M-65d)6UY 5Ç•Ë†®ƒ<·Fd%Í™Åj≥|jƒˆ¡≈…ÚØ¥0)DvHÅœãÛì;\5ÛEõ~√:∆WGƒŒOEÁZª«`'<ß÷˘˘bÖo÷∫{N_9†”Ëgã{”€iCÁwŒÙb	ıIGEÔtÃù˛…L>Â
 endstream
 endobj
 
 589 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 387.65 12.420013]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 161/Filter/FlateDecode>>
+<</Type/XObject/Subtype/Form/BBox[0 0 387.65 12.420013]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 169/Filter/FlateDecode>>
 stream
-xú%é=¬0Ñ˜˜W‹®É1Èq©\ÑÄsZ_€JM1M’˛{S‰x‡xnπ≠˛¢8ÈE
-üÄBúß"K°§H")U«t%KÖ&â%Æ°**œ†oAnv"˘˜Ìâ˚7rëBﬂiU∏ÆiΩÂqƒı–ìCezckﬁ√ﬁ¯Œ6®fÃp∆∑Ï‡[cÒd3NnÉÉ±Mœb˝†R”Ö p˜oó2…
+xú%é±
+¬0Ñ˜ˇ)n‘¡ò¥V*ù¨.B¿≈%∂±Tc¢I´÷ß7*w««7ï/î€›I‡#êÊõgúÕŒE
+ØiOñJI_˘Üàîâ|YG8Y∞ŸøO7⁄<ê≥ÚD£•–^U£⁄∑∆”˘KÄäF’˚‡|e¥Ô£√ï≤8∆a7]∏ˆ°≠~Pıùª5¿Yßj6Ü<”Z“é÷Ò˜34Á
 endstream
 endobj
 
 590 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 87.38 14.5]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 110/Filter/FlateDecode>>
+<</Type/XObject/Subtype/Form/BBox[0 0 87.38 14.5]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 107/Filter/FlateDecode>>
 stream
-xú”©PpÚuÊ*‰2T(bCS=cC#=SÖ¢TÆpÆ<.ß.,JÁ2R0—≥0UI·“˜HÕ)S∞PI„“Ã+,Õ,™T–W»Ã+K-.…LO,…Ãœ”T…‚r·
-‰rZ EÂ
+xúÕΩ
+É0Ö·˝\≈Îí4j ≥?–≈A¯†≥h*Qj∞z˘U^û˘’r≤hJ|ax\ùUô£IïÂÊÒ∆ÇB‰›6"eÆú•–/?ˇË(<™˚=∆∞.‘B7Ø„Ó ÑZ–¢æ¸
 endstream
 endobj
 
 591 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 13.050003 14.5]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 91/Filter/FlateDecode>>
+<</Type/XObject/Subtype/Form/BBox[0 0 13.050003 14.5]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 92/Filter/FlateDecode>>
 stream
 xú”©PpÚuÊ*‰2T(b 4‘305000V04“3U(JÂ
 Á „r
-·2P ¡¢t.#=SÖê.}è‘ú2Öê4.CMÖê,.◊Æ@.W†â gıF
+·2P ¡¢t.#=SKPI·“˜HÕ)S 2”∏4L5B≤∏\C∏π\Å¶ ∂P4
 endstream
 endobj
 
@@ -3048,15 +3047,15 @@ endobj
 stream
 xú”©PpÚuÊ*‰2T(b 4‘30500¥P04“3U(JÂ
 Á „r
-·2P ¡¢t.#=SÖê.}è‘ú2Öê4.CMÖê,.◊Æ@.W†â iÓT
+·2P ¡¢t.#=SÖê.}è‘ú2Öê4.#SMÖê,.◊Æ@.W†â i—R
 endstream
 endobj
 
 594 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 87.380008 14.5]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 107/Filter/FlateDecode>>
+<</Type/XObject/Subtype/Form/BBox[0 0 87.380008 14.5]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 100/Filter/FlateDecode>>
 stream
-xú”©PpÚuÊ*‰2T(bCS=cC#=SÖ¢TÆpÆ<.ß.,JÁ2R0—≥0UI·“˜HÕ)S∞PI„“…»ÃÀ÷-HÃ,“-ŒH,J’T…‚r·
-‰rö —2
+xú”©PpÚuÊ*‰2T(bCS=cC#=SÖ¢TÆpÆ<.ß.,JÁ2R0—≥0UI·“˜HÕ)S∞PI„“ œIU(»I¨‘T…‚r·
+‰r ©c
 endstream
 endobj
 
@@ -3065,37 +3064,39 @@ endobj
 stream
 xú”©PpÚuÊ*‰2T(b 4‘30500±T04“3U(JÂ
 Á „r
-·2P ¡¢t.#=SKPI·“˜HÕ)S 2”∏4,4B≤∏\C∏π\Å¶ π)A
+·2P ¡¢t.#=SKPI·“˜HÕ)S 2”∏4Ã4B≤∏\C∏π\Å¶ π?
 endstream
 endobj
 
 596 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 256.65 53.01999]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 236/Filter/FlateDecode>>
+<</Type/XObject/Subtype/Form/BBox[0 0 256.65 53.01999]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 213/Filter/FlateDecode>>
 stream
-xúÖPÀj√0ºÎ+Êò@ÎH¡.∏Ω9Ñ¶á@Ü^rŸXKEë\Kµ˚˘UrÈ≠eÿ›fá]µﬂhˆÒ)ÊÖuUw*UHU◊5FÔ¬ã¶ó{±˛e[ù◊∑J≤,•Tóyµc7!S'±xÚ«d{J|èsòLù¡&∏0¢!GæcDg5èÑîÂLHß,Y¢˝¯Û¿õ!ÊxÉΩ’)xŒ›Œˆ∆e§¯ê√wa‘∞Wk::∆l(¡–0∞èˇ€Á…0Ïôzyçºx}l0ë˚‚à√‚9Xürxm…Ö˛∞,Æñ€Vºàm~Î\™d"
+xúÖê1O√0Öwˇä7&RIÌí El≠*uÈÄdC+ΩÜ «gl'–è√¬:›Ó”{O∫≠˛¬˛|B·3Ø¬Æ©´áç™§j€ÅƒãpbØÖƒ:aª_™/˘|ßd%ÎZJµÍÌâÏÇåÆ¢8‰M K!uEWbâ0ËÁòxÇg?{wA-π¥¬»s÷%Ù˚ü¡Ö8≤ã‡+“a0=¬Å˜x~Eò-EtEo…Ñß\‰¯6∫aÛº∑ÊF£Cœ.∂]Y˝òéZ<âc~ÿ7ènVë
 endstream
 endobj
 
 597 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 256.65 53.01999]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 247/Filter/FlateDecode>>
+<</Type/XObject/Subtype/Form/BBox[0 0 256.65 53.01999]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 238/Filter/FlateDecode>>
 stream
-xúÖëAO√0ÖÔ˘Ô∫fjë∆n≠ä∏ÏÄTâ≥Y≥¶‡≈%Mi·◊ìvH‹ò"¸lOv6ıå‚P™•1≈–ÿÊYrü#◊I™wªºQ/ ©¢V)ñÁ[µ˝´÷MîÔtö§Yñ¶z…7OÜ?K'uÛ(Ã2!XÉI¸ªi`f:˜l…°¥ƒl\k†@}œ_(Ö≈„ı€ø‡ YrGrÕÔHAº*A@hFfÙVÇÏ/N„∞Z^£_0¬kû∫÷Ü» ÑéC‹¡äÔæ≈]Ts/>‡UÇΩŒßIÔZL]Ï&Ÿê«©ãqt6…:_’ÍYUÒW~ Ï¬vë
+xúÖê±N√0Üw?≈?6"MÌ$E
+l≠*1¿ äƒí≈Må	rÏ‡≥Cy{Ñƒ:›p˜Iˇw∫]{¡··»ﬁô¿GjÅr_◊{ÏE¡E”4ä=3À-„XÀkV˛“vHÎ≠‡ØkŒ≈:ÔÓîYê–€›† ç≥£E
+j¶à.É6nQË£'Á—m™ÚRïò≠Ó≤[îâ{E—BÜˆÌO«ÏÊ8ßÑÁç¸ƒ0.9&E$µ Ò§(Hpé!8õ£7íË~§Ä‡¥6j’˝´®“=Ω˝+§†Â§∂´‰¢WòbP?ä‚;Ì‘≤GvJè˝9ub∂
 endstream
 endobj
 
 598 0 obj
 <</Type/XObject/Subtype/Form/BBox[0 0 256.75 53.01999]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 216/Filter/FlateDecode>>
 stream
-xúÖê1O√0Öwˇä7ÇT\ª$BYã*± Åàƒl≈óÿmü”T¸zút`ùnxÔÈæ”›∂æbˇ˙,æÑ∆ú[cWÚ©D©•“UU!í¯Éÿ◊Ba©ÿâ›oZ€l?h%UQ(•Ω}°˛Çµ‚Ó√Öè∏PdFhëÅÕô0∫êË:Üò»¬0‰8t»„ÿ¡˜®è“eÁ[â∑H÷7i∑æœtˇMºYÙÄ∆Qs 7ò˛fØ`Îπôòˇ_0;ﬂ8¥!ûMO>1n÷ƒ$◊ÈC-ﬁ≈!?6˛\x
+xúÖê1O√0Ö˜˚ol%HÌ*
+lEï∫ Ådâ•ãâØi®kªé‡ﬂ„§n Îøw˜Ó”≠‘'6Oèt!âè\Î™,Ó*T≤≤ÆkD¶Wr¥Q$0Ωÿ“˙Í*ìÂ[)
+QñB»Èø⁄±ë≠-û≠˛‚Ìèl}‡xè£&ÓSètd∞;j◊ô]¶Ê%‘˚ü¡m7rè≥y”Õ	˚EÚ÷Ê¡á!`pçe˜ÀáÎfúı)O˝Ó£…D-œ0ŒgRt	ùõi-Î€bé⁄*z°m>‚7∏__
 endstream
 endobj
 
 599 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 193.48001 14.5]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 111/Filter/FlateDecode>>
+<</Type/XObject/Subtype/Form/BBox[0 0 193.48001 14.5]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 104/Filter/FlateDecode>>
 stream
-xúçª
-É@˚ÛßåÕÓ*
-kk“.§YÉº∏HÙÛ›0L7VN6œ;6‰<íâ:7•w.Ua*∆ÄV4«?ÒãÇ•ÒÂ˚Àèû2‡÷i‹]F•Â™{x´Œ<4ŒeB+Ë—¶—‘´d
+xú”©PpÚuÊ*‰2T(b ¥4‘3±00 ≤åÙLäRπ¬πÚ∏úB∏@∞(ùÀH¡Dœ¬T!$ÖKﬂ#5ßL¡B!$çK√ø(1G°∞4µ∏$3?/3/]S!$ãÀ5Ñ+êÀh> ‘3W
 endstream
 endobj
 
@@ -3108,88 +3109,90 @@ endstream
 endobj
 
 601 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 193.57996 14.5]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 105/Filter/FlateDecode>>
+<</Type/XObject/Subtype/Form/BBox[0 0 193.57996 14.5]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 114/Filter/FlateDecode>>
 stream
 xú”©PpÚuÊ*‰2T(b ¥4‘35∑¥4S04“3U(JÂ
 Á „r
-·2P ¡¢t.#=SÖê.}è‘ú2Öê4.ﬂÃºL›ÚåÃí‘§¸ƒ¢îbMÖê,.◊Æ@.W†˘ ⁄I`
+·2P ¡¢t.#=SÖê.}è‘ú2Öê4.çÄ‘‘"›ƒ‚‚‘‚‚‹‘ºÖ‰å‘‰ÏúÃ‚MÖê,.◊Æ@.W†E Âô„
 endstream
 endobj
 
 602 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 256.65 24.619996]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 166/Filter/FlateDecode>>
+<</Type/XObject/Subtype/Form/BBox[0 0 256.65 24.619996]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 127/Filter/FlateDecode>>
 stream
-xú}OMÇ@ºø_1«:§ª¢ÇL°KP∞‡YÛ%õ∫[∫d??ı‘)Ü9º˘x0æ˙ =ÈE”Lâ 
-Ω8Bx±Lí$∆¿Tê°Të¿Ç°°‡«Vı¨Ô§D
-!ó€?q˜Fußç‚—A˜e√{∏≤Íé˚gW:Ü60÷qemªG°Mmßdˆ÷Æ¡-‘„ÔÔLóùmñŒ≈j„x÷JÆËJ˘<Í—Ô:F
+xúMé=¬0Ñ˜˚7Í`öÑ4êµRpq^pVíV•5X?Íœ7›‰∏·πgπJælˆ[<`8ó⁄⁄)_”ZÂM¡sJ8‚éF†πdÍaˇ¥ƒ≤oåV⁄9≠Õ¬’.JáïÃô1çôÁ˜uàOÊéØKbìZSnh¥Â¬Ä¥!x
 endstream
 endobj
 
 603 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 256.65 24.619996]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 153/Filter/FlateDecode>>
+<</Type/XObject/Subtype/Form/BBox[0 0 256.65 24.619996]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 182/Filter/FlateDecode>>
 stream
-xúMé¡
-Ç@ÑÔˇSÃ)
-j›]6Aº)bÑåÖË(Ìj÷ö•f=~zãaﬂ|óÒÙQ”ã>S‰V1)ô/Ç —Y:—É"Ms∫ä‰ü÷f⁄7Ç3ÆÁbfog›à ∫§e∫œ!Ã€9,0‘n∞uST∂GŸµû≈Â"?b¨çm{±Vk\„s V–7J4ÂîL4˙*ü
+xú}èΩ
+¬@Ñ˚}äÈ¢†Ò.ƒ@∞“ ÿX®á÷í¨ö†^ºüﬁãXX…2≈~≥;0#ıƒlY–ç$A…8ç≥1í$ŒdûÁ”éÆ4S$–ç9RÚc´*°±HS!d∑è|æ#á:PoªA°+û`µFTxÎÙ•~1‹âQzcµâÅﬁ;∆>†ÔAÖ>TÛ7π’≠oªÔ©Øj>ÛÖØŒF¥F7\:XÌM…6˛DÕ≠h™æ√ÕAL
 endstream
 endobj
 
 604 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 256.75 24.619996]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 142/Filter/FlateDecode>>
+<</Type/XObject/Subtype/Form/BBox[0 0 256.75 24.619996]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 132/Filter/FlateDecode>>
 stream
-xúMé±Ç0Ñ˜ˇ)n‘Å“V¿4nì&Œ~§A€FàO/lÊr√wﬂr©ùQûèÙ&Öi©ÇŒ3±œ°µ(î1¶Äg∫“@•%â5˛A˙O€zŸ%ÖÃ2)’ Èâ˚lCõx~ç>rç∆ı0πÿ"∏/áûnp…‘∫»˜ÒÊÎ ∂∞Uñ.T-ß~T‡(≥
+xúMé1Ç0Ñ˜˜+n‘¡“6”∏a0.&/q∆Ú§
+A£˛|Àf.7|˜-óÒÂaKO2¯§ÿ‹©ukUaº˜F°T2iÃ[≤öõ¥ØåV⁄9≠ÕÃŸ^˙7<¯BãùHsÆCá%t˝uzm•nÒ>»§ñ‡ULG™“ã˚u# 
 endstream
 endobj
 
 605 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 256.65 24.619996]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 139/Filter/FlateDecode>>
+<</Type/XObject/Subtype/Form/BBox[0 0 256.65 24.619996]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 134/Filter/FlateDecode>>
 stream
 xúMé±
-¬0Ñ˜ˇ)n‘¡4	i!k•‡"(ú£˝’Jl5Sﬂﬁtì„Ü˚æÂ*7£›oÈM
-πTA◊F45¥ç≤÷6àL'©u$±$ﬁHˇi◊æQRHc§TÀÆv>∞pWZ|LÉ·ãÀÙ|N‹#˘s`‰!›1çû˝bß,÷pÍ©+Ø~ì†)?
+¬0Ñ˜ˇ)n‘¡4	i k•‡"(¸‡,m‘Vm4≠Fﬂﬁtì„ÜÔæÂ
+˛†⁄ÆÈI
+)WAóFÿZ´ús—”Å™ò$Êƒ3È?ÕmﬁWJ
+iåîjÊb„oo8âªÆô^—£	˜«1vcê∫ÈÇ´ˇ"Öÿéb	Ó©f⁄Sùè¸ |Æ$ë
 endstream
 endobj
 
 606 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 256.65 24.619996]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 157/Filter/FlateDecode>>
+<</Type/XObject/Subtype/Form/BBox[0 0 256.65 24.619996]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 166/Filter/FlateDecode>>
 stream
-xú}OΩ
-¬0‹øß∏Qc⁄Bp´\
-
-Ábø÷Jmjˇﬁﬁ÷…IéÓáÉ[€ÚrK7RxNT–i"≤ZãLc2x¶#î[íò·[“?±≠'•§êI"•öız«˝∂°≈ﬁwC‰·‰ôápv1†q%W·Ó—π!Ú6ËÆUÀUÔπ™ﬂX¬^˛nªëÒmñTL?>9
-6„
+xú}èOÇ@ƒÔÔSÃ±ÈÓ¢ÇtSâÑ¬ÖŒ¬nµ±¨ÊüÃoﬂ⁄©Ssx3èL(ﬂ»™úûƒ1{sà8
+íB	O”4AØÈBé2I´˙âüZ*üÔ8X1∆◊;,µ}!Öº“Ê‘vSáRV«0Øk4N°ôîiq5Vﬁ®eèaúîv„Äπ7£∆x◊8‘ÿB>˛¬≠qû—:ªﬂﬂB“ô
+?Á3ƒ7⁄
 endstream
 endobj
 
 607 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 256.75 24.619996]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 140/Filter/FlateDecode>>
+<</Type/XObject/Subtype/Form/BBox[0 0 256.75 24.619996]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 123/Filter/FlateDecode>>
 stream
-xúMé±
-¬0Ñ˜ˇ)n‘¡4	m%k• àÉpÆ¯k#1`ö∂‚”õnr‹›∑\a?hé;zì¬ú´†´Rl+h-jeå©ô.®±$±$>Hˇi{À˚FI!ÀRJµp±g?¡¿ﬁiuv_∆‘˘ëÃ—•ƒ›ÄCÉŸ•¬¯∫rÑwÅ≈ˆI≠•µ˘”O'Æ
+xú”©PpÚuÊ*‰2T(bC#S=sS##=3CKKK3Ö¢TÆpÆ<.ß.,JÁ2BíIäÎËòòÇ¯˙©9e
+ñ
+!i\n©©)Iâ…Ÿ
+Eâ≈©≈
+…âE)zö
+!Y\Æ!\Å\Æ@À∂?ú
 endstream
 endobj
 
 608 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 256.65 24.619996]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 148/Filter/FlateDecode>>
+<</Type/XObject/Subtype/Form/BBox[0 0 256.65 24.619996]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 144/Filter/FlateDecode>>
 stream
-xúMéªÇ@D˚˚Sj¡≤ªím5$6&õX£\s≥*(èøw±2ì)ŒôfR?cw‹”ã¶Xõg™»a≠*åsÆ@œt¶@;Ok˙ÜÏﬂÏÎË£ïŒ2≠Õ ÈÅeÑÉø—¶úüRuSª`aë«î\‰√§´π«µ≠B√ﬁ-„ÁWX0Vë‘˛N•ßïÒ‰Bî.õ
+xúMé=É0Ñ˜˜W‹ÿ∆$®ê’"ti°ËìX¢6R”/ˇ}u+«œ=ÀÂ˙ã˙t†	|÷
+»≤`U	)Y%îRfOWäTk‚ÿ2ﬂH˛iÌ÷=úÒ¢‡\lú˝¯ÜÇÓhw6wa¨ı)Ö6å·π`i¿‘!MØË≤)é:Ô]kÏ¿ˆ–=5ö.‘¨«~ı*	
 endstream
 endobj
 
 609 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 256.65 24.619996]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 169/Filter/FlateDecode>>
+<</Type/XObject/Subtype/Form/BBox[0 0 256.65 24.619996]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 163/Filter/FlateDecode>>
 stream
-xú}OΩ
-É0‹øß∏Qá∆D¨ê’"tÈPË“EL‘ç”ø∑ØÌ‘©7‹wpâz¢8Ïh&Å«JÅtõ±|ã4eπêRÊÜŒ‰®PƒÒÅo)˝âï^˝ç‡ågÁ‚£ìΩÈÔêPEß‡+€v¡8‹ÎZÑ«mõ∆x„∫Q/®úF=SÂÊ[’€Bu˝ª}âj?N∏/uoßKÃæïR—ë ı‘F`;4
+xú}èª
+¬@E˚˘ä)ì¬}ô∂MÿX6i3∆»&WıÔ›ÿh%√Öy‹{`∏ybπØ‡QUû±"G•X!µ÷Ç#åP∏VË@˝úM˜)ò»2!‰:Ûπ5ö3$’≈:GcGmÁ∂˜89˚¢ÄM≤6|≤Ûù¯‚›<Pì¢¯Ml1Es˝ãÔç'|ƒ8ˆÒ◊P«ßﬁ«K:O
 endstream
 endobj
 
 610 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 256.75 24.619996]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 155/Filter/FlateDecode>>
+<</Type/XObject/Subtype/Form/BBox[0 0 256.75 24.619996]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 142/Filter/FlateDecode>>
 stream
-xú}O=¬0‹ﬂØxã†Éi⁄J÷ñÇãÉpéÌK≠<¶—˙Ûm;9…q√}ppô˝`u™·	
-ßô
-uëãCÅZãRcJåPYê∏ ˆ†b€Õ˛^I!Û\JµËÏH¸FÉ÷√∂v‹æÿ%¬t#‹`7xOëBKx•4Ö5`{∫–·¯pÃãÿ°Ωˇ˜ìX[çÖ34Ûë//\6Ü
+xúMé±
+¬0Ñ˜ˇ)n‘¡4	i%kµ‡‚ úã˛∂ïíhZ}{”MéÓª·Æp‘ÁΩIa…V–•˚ZãJYk+D¶+y™I¨äÈø⁄›3ﬂ))§1R™5'gX∏mé<Û^±ƒ!ÒÑ∑æıcÿß¯≈2§>œ¥Sb˜§∆—Öö|Î≥§)j
 endstream
 endobj
 
@@ -3198,23 +3201,23 @@ endobj
 stream
 xú”©PpÚuÊ*‰2T(b 4‘306004Q04“3U(JÂ
 Á „r
-·2P ¡¢t.#=SKPI·“˜HÕ)S 2”∏4Ã4B≤∏\C∏π\Å¶ ∂X5
+·2P ¡¢t.#=SKPI·“˜HÕ)S 2”∏4Ã5B≤∏\C∏π\Å¶ ∂g6
 endstream
 endobj
 
 612 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 387.45 65.52002]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 313/Filter/FlateDecode>>
+<</Type/XObject/Subtype/Form/BBox[0 0 387.45 65.52002]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 302/Filter/FlateDecode>>
 stream
-xúÖíªn¬0Üw?≈ø·VµT•ba®â%ã∞ãÂì:Ê÷ßØ≠ËTdù·\>üœí{˘≥Â\|ä>1˙>åì—˜√d<H”<âïpbñãÕÒ1∏vsÀw˝4IG£4Ì7yoAvèG‰k—^0o'êP;kª∆R–lçí'Tö„≠ïñ¶∆¡≥€@∫f‰ÄR:ksÑ	O≠KVd1gÀô”“ïÑÚèä6;BiMπ-:ÿ◊?¸L⁄3_¥Kv¡≥µ§äNÇ\∑Ö¥ºSêÔºöbx"‘Qõ<*i|˝k”to:,I÷;Øa∂(/7ÕÜ¯‘Ü÷ÏÕªÓ≈o¡K≥—Å‹ﬂt¨ÿ¯(dMb,aäÏR~Æo;LQjÊ:Jú™+öúπ,Ø"ãø‡O)õ≠
+xúÖQªn¬@ÏÔ+¶6è(	U@H°H∞îÜÊ∏[ÏgüsLÚı9Lë.—j•}å43ª„‚ÇÂv≈>Yé.eéÈ√úœÊ∏üÚ˘$À&pƒﬁY√ñÀpW≤…Ô∂Pi< 3ûÕfYñ_˚ÒÜÃè(él∞±ˆÙÑ÷à/ÑäPäö0ÍKa»Ï∫	‰\lÉáhtÄˆ⁄P8∂Vë¡j∑ÉåŒ[áNá
+GaÃA»”C*hm[¯‡¢—QO!ç˛E˚¿ÖRcGµ=”~pÁ+€›Ìá7äÔën]h®√sT⁄&ÑAVºnß	∆ØÆˆÉÑˇWÉnºV‘€ñFÀ™§"˘_†é!ÕmY‚x£:q¢"°⁄ 6tªá#ﬂí«hp∂&÷ƒ{æu¡^Ÿ:}Óÿçáò
 endstream
 endobj
 
 613 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 387.65 65.52002]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 281/Filter/FlateDecode>>
+<</Type/XObject/Subtype/Form/BBox[0 0 387.65 65.52002]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 265/Filter/FlateDecode>>
 stream
-xúÖëªN√@E˚˝ä€9)€y	HÅ‰â
-ÑMöïΩ∂ólv`gúÑøgùÜ4öb^˜\i≤ÍÇÚy´æTÅsÃãõ’lΩ¬z1[ÕÛ|é`‘ªÚ™¨Té1BßÊø”™âÌ¥»g˘rôÁ≈Xgè∆ùpã™Uì7∂æCl◊ã7ÃÈñºÕÎYån@-∂‰(†‘N˚⁄l–RËå»x(Ñ∫'bç†}g0EıÒ'q?·^7tÊÏh°Õ˙Hw£ﬁO78ÕC’5N&à≠µÉ≥>íìW}2	Nådw˘§ 	jÚÌ¿ñ¸Oˆ`‹˜›ˇXÜ∆xaP‘OYÀ¥ò(ÂhH°˘Ä‰Å√
-X¨ã|¢¸u”›'W¬ÆR/j_Û ¡~
+xúÖQªn√0‹ı∑%bÀy°m∂:¥C]≤∏k´ë%ï≤Û˙˙JY∫µ êGÚéKu¡Êu+æEÖsÚ
+Ûáe±Zb5/ñ3)g`Ô¬âçŸ∏≥ﬂ™“	ûV≤êãÖîUŒÀg≤'<B}äÒv‡Ë¶´BÔ=lÕ)⁄èM„<ìﬁO÷>≠—ö>®5NÉ,u‰˙ò:o”–%w÷CÔÉ≠Ø ÊÃÍ0Å˙˙{Ô¢∑¥∆ôΩkÉ6°Ó€5¸âÿ÷!òÑG?8ù’ò"ı8ÃI^ôéˆì/ÊHˆ˙ÑQwÕ•tQy¯_^{än‘„Ï˘8¬áñGDs£2/Q‹	vJºâ]z¬u∆uú
 endstream
 endobj
 
@@ -3223,54 +3226,54 @@ endobj
 stream
 xú”©PpÚuÊ*‰2T(b 4‘30≤¥4≥P04“3U(JÂ
 Á „r
-·2P ¡¢t.#=SKPI·“˜HÕ)S 2”∏4,4B≤∏\C∏π\Å¶ ΩåQ
+·2P ¡¢t.#=SKPI·“˜HÕ)S 2”∏4Ã5B≤∏\C∏π\Å¶ Ω}P
 endstream
 endobj
 
 615 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 387.45 30.52002]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 203/Filter/FlateDecode>>
+<</Type/XObject/Subtype/Form/BBox[0 0 387.45 30.52002]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 202/Filter/FlateDecode>>
 stream
-xú}è1o¬0Ö˜˚oA©'M$™n©Pªt(µƒ¬í:G∏÷8≠Ì@€_è√¬ÜN7ºwzüﬁ-Ù/Í◊'˙°ß¥9ÓóUVV(ñYU(U¿3m»Q≠IaﬂQqΩÍ6ŸÛ\e™,ï GΩxa{ƒÙé¶ÔqhŸ≈ ”[À&Çèí√ÿN◊œuÇ7≠∏.‹a'ñ‰ü√v+_IIQ	1<¬ˆç˘√« 6B‚ﬁ˜C∑«3Ëœõ%FÙ|DßáÔ∆KË]vI≠4Ω—*ΩRJ}
+xú}PΩN√0‹øß∏Ü$NH§¢n≠*±t@2b6ÒW«‡⁄©Rx{“.lËt√›Iw“5Úª„û.‘‚∫≤≈”f®˚›¶:!:D¶wÚ¥ì$pC4‘˝•RØv’äZÙΩÌM7/Ï<CûË·-q¨Fˆ9≤FÊî≠7»S≈Lòù˙·ÿh^ÿÖô#bp|w∑∞~t%ŸÖ°9Y„qµyÇ¬πd∆÷¬‡˘˘ÔºÚãME9úòıáø†\&YÕH°x]ﬂKí^È∞˛|¯OG
 endstream
 endobj
 
 616 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 387.65 30.52002]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 219/Filter/FlateDecode>>
+<</Type/XObject/Subtype/Form/BBox[0 0 387.65 30.52002]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 198/Filter/FlateDecode>>
 stream
-xú}P±n¬0›˝o+5N îî™K$K]X¨‰Ç]ªÿ°ÅøÔÖ•[uz√›ª˜ﬁÈ˙Ü›«^\DÅëQ`πÆ‰KÖr-´R©âƒßbßÖ¬TÈ$ ?V∑<~.îT´ïR≈‘/ﬁ…ˇ`›âY}s◊úi¿q∂ƒ!#º≈‘Á„¸£uçEO·
-}õ±è>&‘¡ö––ñy√rKåDÑd¬â2LzPìt˝ıÔùÛ¨æFì·MbÉ&¥lpó–Æ'tÈ…§@)?·rÂCñÛZãÉ®˘CøEU}
+xú}Oªn√0‹˘∑µjÀN\§…P¿ÅÅÈD@g≈°k’!]ß%K∑Ç8êGÚàc™/(?∂t¶sDÜ≈™H^
+‰´§»ï ·ô>i§Rì¬-¸ÂS}äÌÁL%jπT*ªÒÙù˚ºB7ÙX]¨@l›±¨1{+i€√çÛ0®ß nà…á»g+-”˜GSwÃÌ/Ü∏ 3ù¨C„c›ﬂï}<˚Ü'ËÔ-Ïÿ¯ë}x¿y‚ ÷ç!πã*M{™‚ÔWÏ‡I 
 endstream
 endobj
 
 617 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 387.65 24.619996]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 226/Filter/FlateDecode>>
+<</Type/XObject/Subtype/Form/BBox[0 0 387.65 24.619996]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 197/Filter/FlateDecode>>
 stream
-xú}ê1oÉ0Öwˇä∑%C:EÍí!ë+Å µ©14˝˜u:u™N7º{“˚Ù.ìwœ5˚d9æ‚Êx:ÏyπGQ2Ø™™Ñ'÷0Àéí	<∆ﬂXÒ«ñ:ﬁ”\p±€	ë?tˆBfEŸ≥ÌYiØf∆g,ìqJ„çzÁ)S} èŒ∑¯¥sﬁSHc\ph∑|≤∑6Å≤
-EjFK†˚dîçYŒ¬ı!Å|ˇó?õQGŒ§F?côIs4*t.W¨—rÿ\È√≠{j–7m"º©_Î6·ø·'….Ï_Ù</T‹
+xú}O=O√0›ÔWº±ï¿µC5åAïX: YbÈba75J|∆é‡◊„21°”Ô›˚–mÙ'˙„}ê¬RW·aøÌM#Z’u]ã‰Ëïıö$nìj˛úµ≠¸ΩíBn∑R™ﬁ<ªÒä˙L´£±…d3˚Gî8≤±¯‚í0ò…·¥˙ˆÒ¥∆‚ÁﬁJ úÓ9ñ,2ó`˙‰√ Æí~™I‡≠38s¬˙˝ﬂ˛˘‚0å|uUæpö≤¯54Ω–°æ˛òÖHl
 endstream
 endobj
 
 618 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 256.65 35.570009]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 210/Filter/FlateDecode>>
+<</Type/XObject/Subtype/Form/BBox[0 0 256.65 35.570009]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 239/Filter/FlateDecode>>
 stream
-xúÖê1O1Öwˇä7“Å4◊ﬁÅP∑CUaË äƒ”ÜÊíí‰z˝˘∏LL ÀÉ˝û?[ûõ˙Ì#}QÉI≤¡¢k’]áÂRu˜ZÎd¶7ä‘“∏Fﬁ”‚ólúÙo≠t€j›\Î˘á3D˙†õÁxÊR˝ﬁVü"™}å¡:F©£„Xb™~«®∆Î¶GÒ∏¬êJ≈ÊÛO¯.ç¡Å/ß`}DäBﬁq∆…˙¨∞e[∆,Ëî¶îèÏ0q‚îÖˇ“á‰ƒ,3uí’èmËÖ÷Ú∞oEçWˇ
+xúÖê?O√0≈wä∑ ¡@Í¥U≈VTâÖaâŸçœâibˇ!Ù€sÈƒ:›pÔtÔ˝t+ıç√Àì¯5fÓÎf[=4ÿl™f'•‹#íx^îêX*vb˝k≠Î˜µ¨‰v+eΩÃ´gæ¿++nUâ@æ◊æ•ë|Np¡&ä.Ã!û…‡D≠.â’0ï	⁄‹A}¸i≠ãq)Îò)&Ãâaµπ<b◊‹¿:ÔRœ÷zêå
+oπò+√øÊmòf,…µ|J◊g[Ü·"£/Å6Ü∆YÀ¡>„§€sCÒ&UW˚£Ø‚»œ˝ˆhπ
 endstream
 endobj
 
 619 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 256.65 35.570009]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 213/Filter/FlateDecode>>
+<</Type/XObject/Subtype/Form/BBox[0 0 256.65 35.570009]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 190/Filter/FlateDecode>>
 stream
-xúÖP1n√0‹˘ä€¡≤úÿ-≤:†»PT@g≈fl7ÜîH¥Ùıï3ujAp‡›Òx`nÓ®[∫RÅ[Í´™T/÷kUΩj≠7Lü‰®6§±TËhıã6m¬≥B+]ñZÀúÔyúë®=}àÈßa‰,ﬂ±Òå€ =,Ê!Nvƒ—4˝"ÕyÊê∞(SÀN"ûaæ˛<%L]7rã∆ª¥,ÉÎVÁáZa€ssﬂ/>ô?%é·›#“—€–˛ooc
-zÒQ8®áxgËùvÈm?NuY<
+xú}èÀ
+¬0E˜Ûw©c™≠"Ó¡ç†pöÈCkRì÷«ﬂõ∫r%óYÃ8√ù™6á-›)¡3NÇYñäEÜ˘\dK)Â
+ûÈLñ6ä$Ü¯íf?Xôxü$R»4ï2ˆÈûõ"*h¥gm⁄ Y(ú?ÿøq‹Æ—qËj["∏ﬁ‘Eﬂ4Œ›‘c®À_µuux=OÚäÛ+tojáVwUÑ¨Û
+≠wŒª¯º1Ï≈W∫St¢]l˝R=FG
 endstream
 endobj
 
 620 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 256.75 35.570009]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 207/Filter/FlateDecode>>
+<</Type/XObject/Subtype/Form/BBox[0 0 256.75 35.570009]/Matrix[1 0 0 1 0 0]/Resources<</Font<</Helv 3 0 R>>>>/Length 188/Filter/FlateDecode>>
 stream
-xúÖêAO√0ÖÔ˛ÔáµN◊2!NU‚ D§ùC„—BH I7¯˜§ìê8Å,Kœ~ÚgÀµ˛ƒˆ˛Ü>H·XR°È⁄j”aΩÆ∫3_"
-Ì»”Vcâ¯LÕ/[€“_)Æ∏mô’R◊∑‚(÷ûŒÛl≈ÁÑ…Cq›¿xªà«Ä∑)%±ÿâº¢Éó¢ìáq5ø„˙ÂOxE2ˆ!"âì!O¡#á‡“Ù◊wH?€OË<
-íõ¨ƒˇ—á0òßŸô¯UÓâ∂:Ùö®/Ô˙-+SÔ
+xú}è;o√0Ñw˛äõ¡6ÂÇ&õY†®ÄŒÆÕ<Z«R$9ŒœØ“°ÌTíw¿G0”w‘ª]IaéR»´2]V(ä¥Z2Û3ú–çTkb< )ˇÎ>˙â‚îÀíY=ˆl+√1:–ì‚,_¡á©ó1x¥Ô>v≠òE>1äÙ'¡·|èSgú$É9û;,†?˛E{3πN÷»Ò⁄ÏO¸≠±ìEêã⁄ 0#lk≈•ﬂ‡F”5ÒÛ/cG
 endstream
 endobj
 
@@ -3311,7 +3314,7 @@ endstream
 endobj
 
 626 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 7.349991 7.507477]/Matrix[1 0 0 1 0 0]/Length 16/Filter/FlateDecode>>
+<</Type/XObject/Subtype/Form/BBox[0 0 7.350006 7.507477]/Matrix[1 0 0 1 0 0]/Length 16/Filter/FlateDecode>>
 stream
 xú+‰2T(Á
 ‰ B©
@@ -3319,11 +3322,11 @@ endstream
 endobj
 
 627 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 7.349991 7.507477]/Matrix[1 0 0 1 0 0]/Resources<</Font<</ZaDb 622 0 R>>>>/Length 67/Filter/FlateDecode>>
+<</Type/XObject/Subtype/Form/BBox[0 0 7.350006 7.507477]/Matrix[1 0 0 1 0 0]/Resources<</Font<</ZaDb 622 0 R>>>>/Length 67/Filter/FlateDecode>>
 stream
 xú+‰2T(Ár
-·2PHÁ2‘376±¥¥4T0‘312Ã-BR∏Ù£]íÃı†r!i\∆ö
-!Y\Æ!\Å\ ’√
+·2PHÁ2‘3765000S0‘312çBR∏Ù£]íÃı†r!i\∆ö
+!Y\Æ!\Å\  ≈√
 endstream
 endobj
 
@@ -3675,38 +3678,6 @@ endstream
 endobj
 
 670 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 7.699997 7.8650209]/Matrix[1 0 0 1 0 0]/Length 16/Filter/FlateDecode>>
-stream
-xú+‰2T(Á
-‰ B©
-endstream
-endobj
-
-671 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 7.699997 7.8650209]/Matrix[1 0 0 1 0 0]/Resources<</Font<</ZaDb 622 0 R>>>>/Length 65/Filter/FlateDecode>>
-stream
-xú+‰2T(Ár
-·2PHÁ2‘37≥C=ScÀ\!$ÖK?*—%I¡\œ*í∆•a¨©í≈Â¬» Ÿp/
-endstream
-endobj
-
-672 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 7.699997 7.8650209]/Matrix[1 0 0 1 0 0]/Length 16/Filter/FlateDecode>>
-stream
-xú+‰2T(Á
-‰ B©
-endstream
-endobj
-
-673 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 7.699997 7.8650209]/Matrix[1 0 0 1 0 0]/Resources<</Font<</ZaDb 622 0 R>>>>/Length 65/Filter/FlateDecode>>
-stream
-xú+‰2T(Ár
-·2PHÁ2‘37≥C=ScÀ\!$ÖK?*—%I¡\œ*í∆•a¨©í≈Â¬» Ÿp/
-endstream
-endobj
-
-674 0 obj
 <</Type/XObject/Subtype/Form/BBox[0 0 7.700012 7.8650209]/Matrix[1 0 0 1 0 0]/Length 16/Filter/FlateDecode>>
 stream
 xú+‰2T(Á
@@ -3714,12 +3685,48 @@ xú+‰2T(Á
 endstream
 endobj
 
-675 0 obj
+671 0 obj
 <</Type/XObject/Subtype/Form/BBox[0 0 7.700012 7.8650209]/Matrix[1 0 0 1 0 0]/Resources<</Font<</ZaDb 622 0 R>>>>/Length 67/Filter/FlateDecode>>
 stream
 xú+‰2T(Ár
 ·2PHÁ2‘3770004R0‘35≤åBR∏Ù£]íÃı†r!i\∆ö
 !Y\Æ!\Å\ …Åπ
+endstream
+endobj
+
+672 0 obj
+<</Type/XObject/Subtype/Form/BBox[0 0 7.6999819 7.8650209]/Matrix[1 0 0 1 0 0]/Length 16/Filter/FlateDecode>>
+stream
+xú+‰2T(Á
+‰ B©
+endstream
+endobj
+
+673 0 obj
+<</Type/XObject/Subtype/Form/BBox[0 0 7.6999819 7.8650209]/Matrix[1 0 0 1 0 0]/Resources<</Font<</ZaDb 622 0 R>>>>/Length 70/Filter/FlateDecode>>
+stream
+xú+‰2T(Ár
+·2PHÁ2‘37≥¥¥¥0R0‘35≤ÃåBR∏Ù£]íÃı¿rÜñ
+!i\∆ö
+!Y\Æ!\Å\ Â5R
+endstream
+endobj
+
+674 0 obj
+<</Type/XObject/Subtype/Form/BBox[0 0 7.6999819 7.8650209]/Matrix[1 0 0 1 0 0]/Length 16/Filter/FlateDecode>>
+stream
+xú+‰2T(Á
+‰ B©
+endstream
+endobj
+
+675 0 obj
+<</Type/XObject/Subtype/Form/BBox[0 0 7.6999819 7.8650209]/Matrix[1 0 0 1 0 0]/Resources<</Font<</ZaDb 622 0 R>>>>/Length 70/Filter/FlateDecode>>
+stream
+xú+‰2T(Ár
+·2PHÁ2‘37≥¥¥¥0R0‘35≤ÃåBR∏Ù£]íÃı¿rÜñ
+!i\∆ö
+!Y\Æ!\Å\ Â5R
 endstream
 endobj
 
@@ -3776,23 +3783,6 @@ endstream
 endobj
 
 682 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 7.700012 7.8650209]/Matrix[1 0 0 1 0 0]/Length 16/Filter/FlateDecode>>
-stream
-xú+‰2T(Á
-‰ B©
-endstream
-endobj
-
-683 0 obj
-<</Type/XObject/Subtype/Form/BBox[0 0 7.700012 7.8650209]/Matrix[1 0 0 1 0 0]/Resources<</Font<</ZaDb 622 0 R>>>>/Length 67/Filter/FlateDecode>>
-stream
-xú+‰2T(Ár
-·2PHÁ2‘3770004R0‘35≤åBR∏Ù£]íÃı†r!i\∆ö
-!Y\Æ!\Å\ …Åπ
-endstream
-endobj
-
-684 0 obj
 <</Type/XObject/Subtype/Form/BBox[0 0 7.700012 7.86499]/Matrix[1 0 0 1 0 0]/Length 16/Filter/FlateDecode>>
 stream
 xú+‰2T(Á
@@ -3800,7 +3790,7 @@ xú+‰2T(Á
 endstream
 endobj
 
-685 0 obj
+683 0 obj
 <</Type/XObject/Subtype/Form/BBox[0 0 7.700012 7.86499]/Matrix[1 0 0 1 0 0]/Resources<</Font<</ZaDb 622 0 R>>>>/Length 67/Filter/FlateDecode>>
 stream
 xú+‰2T(Ár
@@ -3809,7 +3799,7 @@ xú+‰2T(Ár
 endstream
 endobj
 
-686 0 obj
+684 0 obj
 <</Type/XObject/Subtype/Form/BBox[0 0 7.700012 7.8650209]/Matrix[1 0 0 1 0 0]/Length 16/Filter/FlateDecode>>
 stream
 xú+‰2T(Á
@@ -3817,12 +3807,28 @@ xú+‰2T(Á
 endstream
 endobj
 
-687 0 obj
+685 0 obj
 <</Type/XObject/Subtype/Form/BBox[0 0 7.700012 7.8650209]/Matrix[1 0 0 1 0 0]/Resources<</Font<</ZaDb 622 0 R>>>>/Length 67/Filter/FlateDecode>>
 stream
 xú+‰2T(Ár
 ·2PHÁ2‘3770004R0‘35≤åBR∏Ù£]íÃı†r!i\∆ö
 !Y\Æ!\Å\ …Åπ
+endstream
+endobj
+
+686 0 obj
+<</Type/XObject/Subtype/Form/BBox[0 0 7.699997 7.8650209]/Matrix[1 0 0 1 0 0]/Length 16/Filter/FlateDecode>>
+stream
+xú+‰2T(Á
+‰ B©
+endstream
+endobj
+
+687 0 obj
+<</Type/XObject/Subtype/Form/BBox[0 0 7.699997 7.8650209]/Matrix[1 0 0 1 0 0]/Resources<</Font<</ZaDb 622 0 R>>>>/Length 65/Filter/FlateDecode>>
+stream
+xú+‰2T(Ár
+·2PHÁ2‘37≥C=ScÀ\!$ÖK?*—%I¡\œ*í∆•a¨©í≈Â¬» Ÿp/
 endstream
 endobj
 
@@ -4058,193 +4064,195 @@ xref
 0000002270 00000 n 
 0000002489 00000 n 
 0000002710 00000 n 
-0000002932 00000 n 
-0000003161 00000 n 
-0000003362 00000 n 
-0000003577 00000 n 
-0000003908 00000 n 
-0000004317 00000 n 
-0000004656 00000 n 
-0000004985 00000 n 
-0000005264 00000 n 
-0000005791 00000 n 
-0000005980 00000 n 
-0000006513 00000 n 
-0000006702 00000 n 
-0000007223 00000 n 
-0000007411 00000 n 
-0000007784 00000 n 
-0000008188 00000 n 
-0000008540 00000 n 
-0000009093 00000 n 
-0000009650 00000 n 
-0000010195 00000 n 
-0000010469 00000 n 
-0000010726 00000 n 
-0000010970 00000 n 
-0000011212 00000 n 
-0000011472 00000 n 
-0000011713 00000 n 
-0000011968 00000 n 
-0000012239 00000 n 
-0000012498 00000 n 
-0000012732 00000 n 
-0000012947 00000 n 
-0000013163 00000 n 
-0000013405 00000 n 
-0000013626 00000 n 
-0000013841 00000 n 
-0000014061 00000 n 
-0000014298 00000 n 
-0000014515 00000 n 
-0000014737 00000 n 
-0000014980 00000 n 
-0000015195 00000 n 
-0000015438 00000 n 
-0000015654 00000 n 
-0000015871 00000 n 
-0000016093 00000 n 
-0000016336 00000 n 
-0000016549 00000 n 
-0000016771 00000 n 
-0000017008 00000 n 
-0000017225 00000 n 
-0000017416 00000 n 
-0000017930 00000 n 
-0000018365 00000 n 
-0000018556 00000 n 
-0000018872 00000 n 
-0000019226 00000 n 
-0000019580 00000 n 
-0000019916 00000 n 
-0000020254 00000 n 
-0000020587 00000 n 
-0000020821 00000 n 
-0000021056 00000 n 
-0000021291 00000 n 
-0000021524 00000 n 
-0000021764 00000 n 
-0000022001 00000 n 
-0000022237 00000 n 
-0000022474 00000 n 
-0000022711 00000 n 
-0000022943 00000 n 
-0000023180 00000 n 
-0000023412 00000 n 
-0000023651 00000 n 
-0000023870 00000 n 
-0000024109 00000 n 
-0000024340 00000 n 
-0000024549 00000 n 
-0000024758 00000 n 
-0000024989 00000 n 
-0000025200 00000 n 
-0000025433 00000 n 
-0000025644 00000 n 
-0000025877 00000 n 
-0000026088 00000 n 
-0000026299 00000 n 
-0000026534 00000 n 
-0000026769 00000 n 
-0000026982 00000 n 
-0000027195 00000 n 
-0000027430 00000 n 
-0000027639 00000 n 
-0000027851 00000 n 
-0000028063 00000 n 
-0000028275 00000 n 
-0000028507 00000 n 
-0000028721 00000 n 
-0000028957 00000 n 
-0000029171 00000 n 
-0000029385 00000 n 
-0000029599 00000 n 
-0000029813 00000 n 
-0000030027 00000 n 
-0000030263 00000 n 
-0000030477 00000 n 
-0000030691 00000 n 
-0000030927 00000 n 
-0000031141 00000 n 
-0000031355 00000 n 
-0000031569 00000 n 
-0000031785 00000 n 
-0000031999 00000 n 
-0000032213 00000 n 
-0000032449 00000 n 
-0000032663 00000 n 
-0000032879 00000 n 
-0000033089 00000 n 
-0000033323 00000 n 
-0000033533 00000 n 
-0000033743 00000 n 
-0000033955 00000 n 
-0000034167 00000 n 
-0000034379 00000 n 
-0000034615 00000 n 
-0000034827 00000 n 
-0000035039 00000 n 
-0000035277 00000 n 
-0000035491 00000 n 
-0000035729 00000 n 
-0000035943 00000 n 
-0000036157 00000 n 
-0000036367 00000 n 
-0000036603 00000 n 
-0000036815 00000 n 
-0000037027 00000 n 
-0000037237 00000 n 
-0000037451 00000 n 
-0000037665 00000 n 
-0000037879 00000 n 
-0000038117 00000 n 
-0000038331 00000 n 
-0000038545 00000 n 
-0000038759 00000 n 
-0000038997 00000 n 
-0000039211 00000 n 
-0000039425 00000 n 
-0000039663 00000 n 
-0000039901 00000 n 
-0000040139 00000 n 
-0000040353 00000 n 
-0000040567 00000 n 
-0000040805 00000 n 
-0000041043 00000 n 
-0000041281 00000 n 
-0000041495 00000 n 
-0000041711 00000 n 
-0000042231 00000 n 
-0000042295 00000 n 
+0000002933 00000 n 
+0000003150 00000 n 
+0000003351 00000 n 
+0000003567 00000 n 
+0000003898 00000 n 
+0000004292 00000 n 
+0000004632 00000 n 
+0000004942 00000 n 
+0000005230 00000 n 
+0000005755 00000 n 
+0000005943 00000 n 
+0000006476 00000 n 
+0000006665 00000 n 
+0000007179 00000 n 
+0000007367 00000 n 
+0000007702 00000 n 
+0000008078 00000 n 
+0000008434 00000 n 
+0000008978 00000 n 
+0000009535 00000 n 
+0000010089 00000 n 
+0000010314 00000 n 
+0000010611 00000 n 
+0000010840 00000 n 
+0000011069 00000 n 
+0000011336 00000 n 
+0000011554 00000 n 
+0000011797 00000 n 
+0000012068 00000 n 
+0000012310 00000 n 
+0000012544 00000 n 
+0000012759 00000 n 
+0000012975 00000 n 
+0000013217 00000 n 
+0000013438 00000 n 
+0000013653 00000 n 
+0000013873 00000 n 
+0000014089 00000 n 
+0000014327 00000 n 
+0000014549 00000 n 
+0000014792 00000 n 
+0000015007 00000 n 
+0000015250 00000 n 
+0000015466 00000 n 
+0000015683 00000 n 
+0000015905 00000 n 
+0000016148 00000 n 
+0000016361 00000 n 
+0000016583 00000 n 
+0000016820 00000 n 
+0000017037 00000 n 
+0000017228 00000 n 
+0000017699 00000 n 
+0000018112 00000 n 
+0000018303 00000 n 
+0000018628 00000 n 
+0000018944 00000 n 
+0000019258 00000 n 
+0000019638 00000 n 
+0000019944 00000 n 
+0000020257 00000 n 
+0000020491 00000 n 
+0000020726 00000 n 
+0000020961 00000 n 
+0000021194 00000 n 
+0000021434 00000 n 
+0000021671 00000 n 
+0000021907 00000 n 
+0000022144 00000 n 
+0000022381 00000 n 
+0000022613 00000 n 
+0000022850 00000 n 
+0000023082 00000 n 
+0000023321 00000 n 
+0000023540 00000 n 
+0000023779 00000 n 
+0000024010 00000 n 
+0000024219 00000 n 
+0000024428 00000 n 
+0000024659 00000 n 
+0000024870 00000 n 
+0000025081 00000 n 
+0000025292 00000 n 
+0000025503 00000 n 
+0000025714 00000 n 
+0000025947 00000 n 
+0000026160 00000 n 
+0000026395 00000 n 
+0000026630 00000 n 
+0000026843 00000 n 
+0000027078 00000 n 
+0000027287 00000 n 
+0000027521 00000 n 
+0000027733 00000 n 
+0000027945 00000 n 
+0000028155 00000 n 
+0000028391 00000 n 
+0000028605 00000 n 
+0000028819 00000 n 
+0000029033 00000 n 
+0000029247 00000 n 
+0000029461 00000 n 
+0000029675 00000 n 
+0000029911 00000 n 
+0000030125 00000 n 
+0000030339 00000 n 
+0000030553 00000 n 
+0000030789 00000 n 
+0000031003 00000 n 
+0000031217 00000 n 
+0000031433 00000 n 
+0000031647 00000 n 
+0000031883 00000 n 
+0000032097 00000 n 
+0000032311 00000 n 
+0000032527 00000 n 
+0000032737 00000 n 
+0000032971 00000 n 
+0000033181 00000 n 
+0000033391 00000 n 
+0000033603 00000 n 
+0000033839 00000 n 
+0000034051 00000 n 
+0000034287 00000 n 
+0000034499 00000 n 
+0000034711 00000 n 
+0000034949 00000 n 
+0000035163 00000 n 
+0000035401 00000 n 
+0000035615 00000 n 
+0000035829 00000 n 
+0000036039 00000 n 
+0000036275 00000 n 
+0000036487 00000 n 
+0000036699 00000 n 
+0000036909 00000 n 
+0000037123 00000 n 
+0000037337 00000 n 
+0000037551 00000 n 
+0000037789 00000 n 
+0000038003 00000 n 
+0000038217 00000 n 
+0000038431 00000 n 
+0000038669 00000 n 
+0000038883 00000 n 
+0000039097 00000 n 
+0000039335 00000 n 
+0000039573 00000 n 
+0000039811 00000 n 
+0000040025 00000 n 
+0000040239 00000 n 
+0000040477 00000 n 
+0000040715 00000 n 
+0000040953 00000 n 
+0000041167 00000 n 
+0000041383 00000 n 
+0000041903 00000 n 
+0000041967 00000 n 
+0000042063 00000 n 
+0000042178 00000 n 
 0000042391 00000 n 
 0000042506 00000 n 
 0000042719 00000 n 
-0000042834 00000 n 
-0000043047 00000 n 
-0000043164 00000 n 
-0000043379 00000 n 
-0000043496 00000 n 
-0000043711 00000 n 
-0000043828 00000 n 
-0000044043 00000 n 
-0000044160 00000 n 
-0000044375 00000 n 
-0000044492 00000 n 
-0000044707 00000 n 
-0000044824 00000 n 
-0000045039 00000 n 
-0000045156 00000 n 
-0000045371 00000 n 
-0000045488 00000 n 
-0000045703 00000 n 
-0000045820 00000 n 
-0000046035 00000 n 
-0000046152 00000 n 
-0000046367 00000 n 
-0000046484 00000 n 
-0000046699 00000 n 
-0000046816 00000 n 
-0000047031 00000 n 
+0000042836 00000 n 
+0000043051 00000 n 
+0000043168 00000 n 
+0000043383 00000 n 
+0000043500 00000 n 
+0000043715 00000 n 
+0000043832 00000 n 
+0000044047 00000 n 
+0000044164 00000 n 
+0000044379 00000 n 
+0000044496 00000 n 
+0000044711 00000 n 
+0000044828 00000 n 
+0000045043 00000 n 
+0000045160 00000 n 
+0000045375 00000 n 
+0000045492 00000 n 
+0000045707 00000 n 
+0000045824 00000 n 
+0000046039 00000 n 
+0000046156 00000 n 
+0000046371 00000 n 
+0000046488 00000 n 
+0000046703 00000 n 
+0000047649 00000 n 
+0000047764 00000 n 
 0000047977 00000 n 
 0000048092 00000 n 
 0000048305 00000 n 
@@ -4356,416 +4364,414 @@ xref
 0000065689 00000 n 
 0000065804 00000 n 
 0000066017 00000 n 
-0000066132 00000 n 
-0000066345 00000 n 
-0000071455 00000 n 
-0000071510 00000 n 
-0000071704 00000 n 
-0000076562 00000 n 
-0000082312 00000 n 
-0000082379 00000 n 
-0000082505 00000 n 
-0000082631 00000 n 
-0000082849 00000 n 
-0000082951 00000 n 
-0000083153 00000 n 
-0000083394 00000 n 
-0000083611 00000 n 
-0000083713 00000 n 
-0000083907 00000 n 
-0000084109 00000 n 
-0000084292 00000 n 
-0000084399 00000 n 
-0000084506 00000 n 
-0000084613 00000 n 
-0000084720 00000 n 
-0000084827 00000 n 
-0000084934 00000 n 
-0000085042 00000 n 
-0000085150 00000 n 
-0000085258 00000 n 
-0000085366 00000 n 
-0000085501 00000 n 
-0000085720 00000 n 
-0000085834 00000 n 
-0000085958 00000 n 
-0000086066 00000 n 
-0000086180 00000 n 
-0000086304 00000 n 
-0000086418 00000 n 
-0000086542 00000 n 
-0000086650 00000 n 
-0000086774 00000 n 
-0000086882 00000 n 
-0000087006 00000 n 
-0000087117 00000 n 
-0000087228 00000 n 
-0000087339 00000 n 
-0000087450 00000 n 
-0000087713 00000 n 
-0000087994 00000 n 
-0000088275 00000 n 
-0000088384 00000 n 
-0000088509 00000 n 
-0000088618 00000 n 
-0000088743 00000 n 
-0000088852 00000 n 
-0000088977 00000 n 
-0000089090 00000 n 
-0000089251 00000 n 
-0000089412 00000 n 
-0000089525 00000 n 
-0000089686 00000 n 
-0000089847 00000 n 
-0000089960 00000 n 
-0000090121 00000 n 
-0000090282 00000 n 
-0000090391 00000 n 
-0000090520 00000 n 
-0000090629 00000 n 
-0000090758 00000 n 
-0000090867 00000 n 
-0000090996 00000 n 
-0000091105 00000 n 
-0000091234 00000 n 
-0000091343 00000 n 
-0000091472 00000 n 
-0000091581 00000 n 
-0000091710 00000 n 
-0000091819 00000 n 
-0000091948 00000 n 
-0000092057 00000 n 
-0000092186 00000 n 
-0000092295 00000 n 
-0000092424 00000 n 
-0000092531 00000 n 
-0000092638 00000 n 
-0000092745 00000 n 
-0000092886 00000 n 
-0000093034 00000 n 
-0000093164 00000 n 
-0000093272 00000 n 
-0000093420 00000 n 
-0000093559 00000 n 
-0000093694 00000 n 
-0000093818 00000 n 
-0000093926 00000 n 
-0000094050 00000 n 
-0000094164 00000 n 
-0000094288 00000 n 
-0000094429 00000 n 
-0000094553 00000 n 
-0000094661 00000 n 
-0000094809 00000 n 
-0000094923 00000 n 
-0000095050 00000 n 
-0000095161 00000 n 
-0000095269 00000 n 
-0000095393 00000 n 
-0000095501 00000 n 
-0000095625 00000 n 
-0000095733 00000 n 
-0000095857 00000 n 
-0000095968 00000 n 
-0000096093 00000 n 
-0000096218 00000 n 
-0000096393 00000 n 
-0000096519 00000 n 
-0000096645 00000 n 
-0000096823 00000 n 
-0000096949 00000 n 
-0000097075 00000 n 
-0000097253 00000 n 
-0000097379 00000 n 
-0000097505 00000 n 
-0000097683 00000 n 
-0000097809 00000 n 
-0000097935 00000 n 
-0000098113 00000 n 
-0000098239 00000 n 
-0000098365 00000 n 
-0000098543 00000 n 
-0000098669 00000 n 
-0000098799 00000 n 
-0000098977 00000 n 
-0000099103 00000 n 
-0000099229 00000 n 
-0000099407 00000 n 
-0000099533 00000 n 
-0000099659 00000 n 
-0000099837 00000 n 
-0000099963 00000 n 
-0000100089 00000 n 
-0000100267 00000 n 
-0000100393 00000 n 
-0000100519 00000 n 
-0000100697 00000 n 
-0000100823 00000 n 
-0000100949 00000 n 
-0000101127 00000 n 
-0000101253 00000 n 
-0000101379 00000 n 
-0000101557 00000 n 
-0000101683 00000 n 
-0000101809 00000 n 
-0000101987 00000 n 
-0000102113 00000 n 
-0000102239 00000 n 
-0000102417 00000 n 
-0000102543 00000 n 
-0000102669 00000 n 
-0000102847 00000 n 
-0000102977 00000 n 
-0000103409 00000 n 
-0000103813 00000 n 
-0000103968 00000 n 
-0000104393 00000 n 
-0000104532 00000 n 
-0000104671 00000 n 
-0000104786 00000 n 
-0000104893 00000 n 
-0000105008 00000 n 
-0000105123 00000 n 
-0000105230 00000 n 
-0000105353 00000 n 
-0000105476 00000 n 
-0000105599 00000 n 
-0000105722 00000 n 
-0000105845 00000 n 
-0000105968 00000 n 
-0000106091 00000 n 
-0000106206 00000 n 
-0000106321 00000 n 
-0000106436 00000 n 
-0000106551 00000 n 
-0000106666 00000 n 
-0000106773 00000 n 
-0000106896 00000 n 
-0000107003 00000 n 
-0000107166 00000 n 
-0000107329 00000 n 
-0000107436 00000 n 
-0000107567 00000 n 
-0000107699 00000 n 
-0000107830 00000 n 
-0000107962 00000 n 
-0000108094 00000 n 
-0000108224 00000 n 
-0000108355 00000 n 
-0000108485 00000 n 
-0000108616 00000 n 
+0000071127 00000 n 
+0000071182 00000 n 
+0000071376 00000 n 
+0000076234 00000 n 
+0000081984 00000 n 
+0000082051 00000 n 
+0000082177 00000 n 
+0000082303 00000 n 
+0000082521 00000 n 
+0000082623 00000 n 
+0000082825 00000 n 
+0000083066 00000 n 
+0000083283 00000 n 
+0000083385 00000 n 
+0000083579 00000 n 
+0000083781 00000 n 
+0000083964 00000 n 
+0000084071 00000 n 
+0000084178 00000 n 
+0000084285 00000 n 
+0000084392 00000 n 
+0000084499 00000 n 
+0000084606 00000 n 
+0000084714 00000 n 
+0000084822 00000 n 
+0000084930 00000 n 
+0000085038 00000 n 
+0000085173 00000 n 
+0000085392 00000 n 
+0000085506 00000 n 
+0000085630 00000 n 
+0000085738 00000 n 
+0000085852 00000 n 
+0000085976 00000 n 
+0000086090 00000 n 
+0000086214 00000 n 
+0000086322 00000 n 
+0000086446 00000 n 
+0000086554 00000 n 
+0000086678 00000 n 
+0000086789 00000 n 
+0000086900 00000 n 
+0000087011 00000 n 
+0000087122 00000 n 
+0000087385 00000 n 
+0000087666 00000 n 
+0000087947 00000 n 
+0000088056 00000 n 
+0000088181 00000 n 
+0000088290 00000 n 
+0000088415 00000 n 
+0000088524 00000 n 
+0000088649 00000 n 
+0000088762 00000 n 
+0000088923 00000 n 
+0000089084 00000 n 
+0000089197 00000 n 
+0000089358 00000 n 
+0000089519 00000 n 
+0000089632 00000 n 
+0000089793 00000 n 
+0000089954 00000 n 
+0000090063 00000 n 
+0000090192 00000 n 
+0000090301 00000 n 
+0000090430 00000 n 
+0000090539 00000 n 
+0000090668 00000 n 
+0000090777 00000 n 
+0000090906 00000 n 
+0000091015 00000 n 
+0000091144 00000 n 
+0000091253 00000 n 
+0000091382 00000 n 
+0000091491 00000 n 
+0000091620 00000 n 
+0000091729 00000 n 
+0000091858 00000 n 
+0000091967 00000 n 
+0000092096 00000 n 
+0000092203 00000 n 
+0000092310 00000 n 
+0000092417 00000 n 
+0000092558 00000 n 
+0000092706 00000 n 
+0000092836 00000 n 
+0000092944 00000 n 
+0000093092 00000 n 
+0000093231 00000 n 
+0000093366 00000 n 
+0000093490 00000 n 
+0000093598 00000 n 
+0000093722 00000 n 
+0000093836 00000 n 
+0000093960 00000 n 
+0000094101 00000 n 
+0000094225 00000 n 
+0000094333 00000 n 
+0000094481 00000 n 
+0000094595 00000 n 
+0000094722 00000 n 
+0000094833 00000 n 
+0000094941 00000 n 
+0000095065 00000 n 
+0000095173 00000 n 
+0000095297 00000 n 
+0000095405 00000 n 
+0000095529 00000 n 
+0000095640 00000 n 
+0000095765 00000 n 
+0000095890 00000 n 
+0000096065 00000 n 
+0000096191 00000 n 
+0000096317 00000 n 
+0000096495 00000 n 
+0000096621 00000 n 
+0000096747 00000 n 
+0000096925 00000 n 
+0000097051 00000 n 
+0000097177 00000 n 
+0000097355 00000 n 
+0000097481 00000 n 
+0000097607 00000 n 
+0000097785 00000 n 
+0000097911 00000 n 
+0000098037 00000 n 
+0000098215 00000 n 
+0000098341 00000 n 
+0000098471 00000 n 
+0000098649 00000 n 
+0000098775 00000 n 
+0000098901 00000 n 
+0000099079 00000 n 
+0000099205 00000 n 
+0000099331 00000 n 
+0000099509 00000 n 
+0000099635 00000 n 
+0000099761 00000 n 
+0000099939 00000 n 
+0000100065 00000 n 
+0000100191 00000 n 
+0000100369 00000 n 
+0000100495 00000 n 
+0000100621 00000 n 
+0000100799 00000 n 
+0000100925 00000 n 
+0000101051 00000 n 
+0000101229 00000 n 
+0000101355 00000 n 
+0000101481 00000 n 
+0000101659 00000 n 
+0000101785 00000 n 
+0000101911 00000 n 
+0000102089 00000 n 
+0000102215 00000 n 
+0000102341 00000 n 
+0000102519 00000 n 
+0000102649 00000 n 
+0000103081 00000 n 
+0000103485 00000 n 
+0000103640 00000 n 
+0000104065 00000 n 
+0000104204 00000 n 
+0000104343 00000 n 
+0000104458 00000 n 
+0000104565 00000 n 
+0000104680 00000 n 
+0000104795 00000 n 
+0000104902 00000 n 
+0000105025 00000 n 
+0000105148 00000 n 
+0000105271 00000 n 
+0000105394 00000 n 
+0000105517 00000 n 
+0000105640 00000 n 
+0000105763 00000 n 
+0000105878 00000 n 
+0000105993 00000 n 
+0000106108 00000 n 
+0000106223 00000 n 
+0000106338 00000 n 
+0000106445 00000 n 
+0000106568 00000 n 
+0000106675 00000 n 
+0000106838 00000 n 
+0000107001 00000 n 
+0000107108 00000 n 
+0000107239 00000 n 
+0000107371 00000 n 
+0000107502 00000 n 
+0000107634 00000 n 
+0000107766 00000 n 
+0000107896 00000 n 
+0000108027 00000 n 
+0000108157 00000 n 
+0000108288 00000 n 
+0000108419 00000 n 
+0000108583 00000 n 
 0000108747 00000 n 
-0000108911 00000 n 
-0000109075 00000 n 
-0000109232 00000 n 
-0000109370 00000 n 
-0000109508 00000 n 
-0000109648 00000 n 
-0000109788 00000 n 
-0000109945 00000 n 
-0000110077 00000 n 
-0000110209 00000 n 
-0000110341 00000 n 
-0000110472 00000 n 
-0000110603 00000 n 
-0000110734 00000 n 
-0000110874 00000 n 
-0000111014 00000 n 
-0000111154 00000 n 
-0000111302 00000 n 
-0000111450 00000 n 
-0000111598 00000 n 
-0000111738 00000 n 
-0000111878 00000 n 
-0000112018 00000 n 
-0000112158 00000 n 
-0000112298 00000 n 
-0000112438 00000 n 
-0000112578 00000 n 
-0000112718 00000 n 
-0000112858 00000 n 
-0000112990 00000 n 
-0000113122 00000 n 
-0000113279 00000 n 
-0000113428 00000 n 
-0000113567 00000 n 
-0000113706 00000 n 
-0000113843 00000 n 
-0000113980 00000 n 
-0000114120 00000 n 
-0000114260 00000 n 
-0000114417 00000 n 
-0000114556 00000 n 
-0000114695 00000 n 
-0000114834 00000 n 
-0000114991 00000 n 
-0000115140 00000 n 
-0000115289 00000 n 
-0000115438 00000 n 
-0000115587 00000 n 
-0000115736 00000 n 
-0000115885 00000 n 
-0000116034 00000 n 
-0000116183 00000 n 
-0000116331 00000 n 
-0000116479 00000 n 
-0000116627 00000 n 
-0000116775 00000 n 
-0000116923 00000 n 
-0000117071 00000 n 
-0000117219 00000 n 
-0000117367 00000 n 
-0000117499 00000 n 
-0000117689 00000 n 
-0000118294 00000 n 
-0000118489 00000 n 
-0000119062 00000 n 
-0000119251 00000 n 
-0000119545 00000 n 
-0000119738 00000 n 
-0000120334 00000 n 
-0000131579 00000 n 
-0000141227 00000 n 
-0000147131 00000 n 
-0000157607 00000 n 
-0000157893 00000 n 
-0000158194 00000 n 
-0000158486 00000 n 
-0000158786 00000 n 
-0000159098 00000 n 
-0000159362 00000 n 
-0000159647 00000 n 
-0000160025 00000 n 
-0000160451 00000 n 
-0000160838 00000 n 
-0000161210 00000 n 
-0000161549 00000 n 
-0000161831 00000 n 
-0000162097 00000 n 
-0000162389 00000 n 
-0000162655 00000 n 
-0000162938 00000 n 
-0000163205 00000 n 
-0000163618 00000 n 
-0000164042 00000 n 
-0000164435 00000 n 
-0000164722 00000 n 
-0000165013 00000 n 
-0000165294 00000 n 
-0000165638 00000 n 
-0000165969 00000 n 
-0000166289 00000 n 
-0000166606 00000 n 
-0000166941 00000 n 
-0000167259 00000 n 
-0000167585 00000 n 
-0000167932 00000 n 
-0000168265 00000 n 
-0000168532 00000 n 
-0000169022 00000 n 
-0000169480 00000 n 
-0000169747 00000 n 
-0000170127 00000 n 
-0000170523 00000 n 
-0000170927 00000 n 
-0000171315 00000 n 
-0000171706 00000 n 
-0000172091 00000 n 
-0000172252 00000 n 
-0000172346 00000 n 
-0000172592 00000 n 
-0000172754 00000 n 
-0000173000 00000 n 
-0000173160 00000 n 
-0000173407 00000 n 
-0000173568 00000 n 
-0000173816 00000 n 
-0000173976 00000 n 
-0000174223 00000 n 
-0000174385 00000 n 
-0000174639 00000 n 
-0000174800 00000 n 
-0000175050 00000 n 
-0000175211 00000 n 
-0000175454 00000 n 
-0000175615 00000 n 
-0000175861 00000 n 
-0000176022 00000 n 
-0000176268 00000 n 
-0000176427 00000 n 
-0000176668 00000 n 
-0000176827 00000 n 
-0000177071 00000 n 
-0000177231 00000 n 
-0000177481 00000 n 
-0000177642 00000 n 
-0000177885 00000 n 
-0000178047 00000 n 
-0000178299 00000 n 
-0000178460 00000 n 
-0000178708 00000 n 
-0000178869 00000 n 
-0000179117 00000 n 
-0000179277 00000 n 
-0000179527 00000 n 
-0000179686 00000 n 
-0000179932 00000 n 
-0000180091 00000 n 
-0000180332 00000 n 
-0000180491 00000 n 
-0000180735 00000 n 
-0000180896 00000 n 
-0000181139 00000 n 
-0000181300 00000 n 
-0000181546 00000 n 
-0000181707 00000 n 
-0000181953 00000 n 
-0000182114 00000 n 
-0000182360 00000 n 
-0000182521 00000 n 
-0000182767 00000 n 
-0000182928 00000 n 
-0000183176 00000 n 
-0000183338 00000 n 
-0000183590 00000 n 
-0000183751 00000 n 
-0000183999 00000 n 
-0000184160 00000 n 
-0000184408 00000 n 
-0000184569 00000 n 
-0000184817 00000 n 
-0000184976 00000 n 
-0000185222 00000 n 
-0000185383 00000 n 
-0000185631 00000 n 
-0000185792 00000 n 
-0000186038 00000 n 
-0000186199 00000 n 
-0000186445 00000 n 
-0000186606 00000 n 
-0000186852 00000 n 
-0000187014 00000 n 
-0000187266 00000 n 
-0000187428 00000 n 
-0000187680 00000 n 
-0000187841 00000 n 
-0000188089 00000 n 
-0000188250 00000 n 
-0000188498 00000 n 
-0000188659 00000 n 
-0000188907 00000 n 
-0000189068 00000 n 
-0000189316 00000 n 
-0000189477 00000 n 
-0000189723 00000 n 
-0000189884 00000 n 
-0000190132 00000 n 
-0000190293 00000 n 
-0000190541 00000 n 
-0000190702 00000 n 
+0000108904 00000 n 
+0000109042 00000 n 
+0000109180 00000 n 
+0000109320 00000 n 
+0000109460 00000 n 
+0000109617 00000 n 
+0000109749 00000 n 
+0000109881 00000 n 
+0000110013 00000 n 
+0000110144 00000 n 
+0000110275 00000 n 
+0000110406 00000 n 
+0000110546 00000 n 
+0000110686 00000 n 
+0000110826 00000 n 
+0000110974 00000 n 
+0000111122 00000 n 
+0000111270 00000 n 
+0000111410 00000 n 
+0000111550 00000 n 
+0000111690 00000 n 
+0000111830 00000 n 
+0000111970 00000 n 
+0000112110 00000 n 
+0000112250 00000 n 
+0000112390 00000 n 
+0000112530 00000 n 
+0000112662 00000 n 
+0000112794 00000 n 
+0000112951 00000 n 
+0000113100 00000 n 
+0000113239 00000 n 
+0000113378 00000 n 
+0000113515 00000 n 
+0000113652 00000 n 
+0000113792 00000 n 
+0000113932 00000 n 
+0000114089 00000 n 
+0000114228 00000 n 
+0000114367 00000 n 
+0000114506 00000 n 
+0000114663 00000 n 
+0000114812 00000 n 
+0000114961 00000 n 
+0000115110 00000 n 
+0000115259 00000 n 
+0000115408 00000 n 
+0000115557 00000 n 
+0000115706 00000 n 
+0000115855 00000 n 
+0000116003 00000 n 
+0000116151 00000 n 
+0000116299 00000 n 
+0000116447 00000 n 
+0000116595 00000 n 
+0000116743 00000 n 
+0000116891 00000 n 
+0000117039 00000 n 
+0000117171 00000 n 
+0000117361 00000 n 
+0000117966 00000 n 
+0000118161 00000 n 
+0000118734 00000 n 
+0000118923 00000 n 
+0000119217 00000 n 
+0000119410 00000 n 
+0000120006 00000 n 
+0000131251 00000 n 
+0000140899 00000 n 
+0000146803 00000 n 
+0000157279 00000 n 
+0000157565 00000 n 
+0000157866 00000 n 
+0000158158 00000 n 
+0000158457 00000 n 
+0000158759 00000 n 
+0000159023 00000 n 
+0000159310 00000 n 
+0000159690 00000 n 
+0000160117 00000 n 
+0000160503 00000 n 
+0000160873 00000 n 
+0000161220 00000 n 
+0000161499 00000 n 
+0000161766 00000 n 
+0000162058 00000 n 
+0000162324 00000 n 
+0000162600 00000 n 
+0000162867 00000 n 
+0000163257 00000 n 
+0000163672 00000 n 
+0000164065 00000 n 
+0000164345 00000 n 
+0000164636 00000 n 
+0000164926 00000 n 
+0000165231 00000 n 
+0000165591 00000 n 
+0000165901 00000 n 
+0000166213 00000 n 
+0000166557 00000 n 
+0000166858 00000 n 
+0000167180 00000 n 
+0000167521 00000 n 
+0000167841 00000 n 
+0000168108 00000 n 
+0000168587 00000 n 
+0000169029 00000 n 
+0000169296 00000 n 
+0000169675 00000 n 
+0000170050 00000 n 
+0000170425 00000 n 
+0000170842 00000 n 
+0000171210 00000 n 
+0000171576 00000 n 
+0000171737 00000 n 
+0000171831 00000 n 
+0000172077 00000 n 
+0000172239 00000 n 
+0000172485 00000 n 
+0000172645 00000 n 
+0000172892 00000 n 
+0000173053 00000 n 
+0000173301 00000 n 
+0000173461 00000 n 
+0000173708 00000 n 
+0000173870 00000 n 
+0000174124 00000 n 
+0000174285 00000 n 
+0000174535 00000 n 
+0000174696 00000 n 
+0000174939 00000 n 
+0000175100 00000 n 
+0000175346 00000 n 
+0000175507 00000 n 
+0000175753 00000 n 
+0000175912 00000 n 
+0000176153 00000 n 
+0000176312 00000 n 
+0000176556 00000 n 
+0000176716 00000 n 
+0000176966 00000 n 
+0000177127 00000 n 
+0000177370 00000 n 
+0000177532 00000 n 
+0000177784 00000 n 
+0000177945 00000 n 
+0000178193 00000 n 
+0000178354 00000 n 
+0000178602 00000 n 
+0000178762 00000 n 
+0000179012 00000 n 
+0000179171 00000 n 
+0000179417 00000 n 
+0000179576 00000 n 
+0000179817 00000 n 
+0000179976 00000 n 
+0000180220 00000 n 
+0000180381 00000 n 
+0000180624 00000 n 
+0000180785 00000 n 
+0000181031 00000 n 
+0000181192 00000 n 
+0000181438 00000 n 
+0000181599 00000 n 
+0000181847 00000 n 
+0000182009 00000 n 
+0000182261 00000 n 
+0000182423 00000 n 
+0000182675 00000 n 
+0000182837 00000 n 
+0000183089 00000 n 
+0000183250 00000 n 
+0000183498 00000 n 
+0000183659 00000 n 
+0000183907 00000 n 
+0000184066 00000 n 
+0000184312 00000 n 
+0000184473 00000 n 
+0000184721 00000 n 
+0000184882 00000 n 
+0000185128 00000 n 
+0000185289 00000 n 
+0000185535 00000 n 
+0000185696 00000 n 
+0000185942 00000 n 
+0000186103 00000 n 
+0000186349 00000 n 
+0000186511 00000 n 
+0000186763 00000 n 
+0000186925 00000 n 
+0000187177 00000 n 
+0000187338 00000 n 
+0000187586 00000 n 
+0000187747 00000 n 
+0000187995 00000 n 
+0000188156 00000 n 
+0000188404 00000 n 
+0000188565 00000 n 
+0000188813 00000 n 
+0000188974 00000 n 
+0000189220 00000 n 
+0000189381 00000 n 
+0000189629 00000 n 
+0000189790 00000 n 
+0000190038 00000 n 
+0000190199 00000 n 
 
 trailer
-<</Size 714/Info 2 0 R/Root 1 0 R/ID[<E7E6A03A959C3B70B40F35E2D89FE238><038D94D28397D43B117B8095958CBC02>]>>
+<</Size 714/Info 2 0 R/Root 1 0 R/ID[<E7E6A03A959C3B70B40F35E2D89FE238><A102510518894A1FECBA0806F2A9B3D4>]>>
 startxref
-190950
+190447
 %%EOF
