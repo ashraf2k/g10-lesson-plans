@@ -104,14 +104,20 @@ header.top{grid-template-columns:1fr auto;align-items:center;gap:16px}
 .tools{display:flex;flex-wrap:wrap;gap:8px}
 .btn{font:600 13px var(--f-body);border:1px solid var(--navy);background:var(--navy);color:var(--surface);border-radius:8px;padding:6px 12px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;line-height:1.2}
 .btn.ghost{background:transparent;color:var(--navy)}
-.btn:focus-visible,.done-toggle input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.btn:focus-visible,.cls input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .plan-head{flex-direction:column;align-items:stretch}
 .ph-title{display:flex;flex-wrap:wrap;gap:4px 18px;align-items:baseline;justify-content:space-between}
 .ph-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .plan-head .btn{background:var(--surface);color:var(--navy);border-color:var(--surface)}
 .plan-head .btn.ghost{background:transparent;color:var(--surface);border-color:var(--surface)}
-.done-toggle{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;margin-right:auto;cursor:pointer;background:rgba(255,255,255,.12);padding:5px 10px;border-radius:8px}
-.done-toggle input{width:18px;height:18px;accent-color:var(--accent)}
+.classes{border:0;margin:0 auto 0 0;padding:4px 8px;display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px;background:rgba(255,255,255,.12);border-radius:8px}
+.classes legend{float:left;font-size:12px;font-weight:600;margin-right:4px;padding:0}
+.cls{display:inline-flex;align-items:center;gap:4px;font:600 13px var(--f-mono);cursor:pointer;padding:2px 6px;border-radius:6px}
+.cls input{width:17px;height:17px;margin:0;accent-color:var(--accent)}
+.cls:has(input:checked){background:rgba(255,255,255,.22)}
+.plan{scroll-margin-top:130px}
+@media (max-width:640px){.rail{position:static}.plan{scroll-margin-top:8px}}
+.cls-count{font:600 12px var(--f-mono);margin-left:4px;opacity:.9}
 .plan.is-done .plan-head{background:var(--accent)}
 @media print{
   @page{size:A4 landscape;margin:10mm}
@@ -155,7 +161,7 @@ header.top{grid-template-columns:1fr auto;align-items:center;gap:16px}
     <div class="top-text">
       <div class="eyebrow">Computer Studies · Grade 10 · Classes 10/1 to 10/6</div>
       <h1>Term 1 lesson plans, Weeks 7 to 14</h1>
-      <p class="sub">DigiChamps Level 10, Units 2 to 4. Two 50-minute periods a week, 16 lessons from 4 Oct 2026. Pick a week, tick each lesson when it is taught.</p>
+      <p class="sub">DigiChamps Level 10, Units 2 to 4. Two 50-minute periods a week, 16 lessons from 4 Oct 2026. Pick a week and tick each class (10/1 to 10/6) once the lesson is taught there.</p>
     </div>
     <div class="ring-box" aria-live="polite">
       <svg class="ring" viewBox="0 0 120 120" role="img" aria-labelledby="ringLabel">
@@ -164,7 +170,7 @@ header.top{grid-template-columns:1fr auto;align-items:center;gap:16px}
         <text x="60" y="58" text-anchor="middle" class="ring-pct" id="ringPct">0%</text>
         <text x="60" y="78" text-anchor="middle" class="ring-sub">complete</text>
       </svg>
-      <div class="ring-cap"><b id="ringLabel">0 of 16 lessons taught</b><span>Scheme of work, Term 1</span></div>
+      <div class="ring-cap"><b id="ringLabel">0 of 96 class lessons taught</b><span id="ringNote">0 of 16 lessons done in all 6 classes</span></div>
     </div>
   </header>
   <nav class="rail" aria-label="Choose week">
@@ -172,7 +178,7 @@ header.top{grid-template-columns:1fr auto;align-items:center;gap:16px}
     <div class="toolbar"><div class="jump" id="jump"></div><div class="tools" id="weekTools"></div></div>
   </nav>
   <main id="plans" class="wrap" style="padding:0"></main>
-  <footer>Built on the MRISB 4-Step Lesson Design (UbD × ETEC v1.5). Week dates assume Sunday-to-Thursday school weeks, Week 7 starting 4 Oct 2026. Lesson ticks are saved in this browser.</footer>
+  <footer>Built on the MRISB 4-Step Lesson Design (UbD × ETEC v1.5). Week dates assume Sunday-to-Thursday school weeks, Week 7 starting 4 Oct 2026. Class ticks are saved in this browser.</footer>
 </div>
 
 <script>
@@ -200,7 +206,7 @@ function plan(p){
   return `<article class="plan${isDone(p)?" is-done":""}" id="p${p.per}" data-per="${p.per}">
    <div class="plan-head"><div class="ph-title"><h2>Period ${p.per}: ${esc(p.Unit_Topic)}</h2><span class="meta">${esc(p.Date_Period)}</span></div>
      <div class="ph-actions no-print">
-       <label class="done-toggle" for="done-${key(p)}"><input type="checkbox" id="done-${key(p)}" data-key="${key(p)}" ${isDone(p)?"checked":""}> Lesson completed</label>
+       <fieldset class="classes"><legend>Taught in class</legend>${CLASSES.map(c=>`<label class="cls" for="c-${key(p)}-${c}"><input type="checkbox" id="c-${key(p)}-${c}" data-key="${key(p)}" data-cls="${c}" ${hasCls(p,c)?"checked":""}><span>10/${c}</span></label>`).join("")}<span class="cls-count" data-count="${key(p)}">${countCls(p)}/6</span></fieldset>
        <button type="button" class="btn" data-print="${p.per}">Print / Save as PDF</button>
        <a class="btn ghost" href="${encodeURI(p.pdf)}" download target="_blank" rel="noopener">Download PDF form</a>
      </div></div>
@@ -226,20 +232,26 @@ function plan(p){
 
 const weeks=Object.keys(DATA.weeks).map(Number);
 const key=p=>`W${p.wk}P${p.per}`;
-let done={};
-try{done=JSON.parse(localStorage.getItem("g10done-w7")||"{}")||{}}catch(e){done={}}
-const isDone=p=>!!done[key(p)];
-function saveDone(){try{localStorage.setItem("g10done-w7",JSON.stringify(done))}catch(e){}}
+const CLASSES=[1,2,3,4,5,6];
+let taught={};
+try{taught=JSON.parse(localStorage.getItem("g10classes-w7")||"{}")||{}}catch(e){taught={}}
+try{const old=JSON.parse(localStorage.getItem("g10done-w7")||"{}")||{};for(const k in old){if(old[k]&&!taught[k])taught[k]=CLASSES.slice()}}catch(e){}
+const hasCls=(p,c)=>(taught[key(p)]||[]).includes(c);
+const countCls=p=>(taught[key(p)]||[]).length;
+const isDone=p=>countCls(p)===CLASSES.length;
+function saveDone(){try{localStorage.setItem("g10classes-w7",JSON.stringify(taught))}catch(e){}}
 function updateRing(){
-  const total=DATA.plans.length, n=DATA.plans.filter(isDone).length, pct=Math.round(n/total*100);
+  const total=DATA.plans.length*CLASSES.length, n=DATA.plans.reduce((a,p)=>a+countCls(p),0), pct=Math.round(n/total*100);
+  const full=DATA.plans.filter(isDone).length;
   const c=2*Math.PI*50, el=document.getElementById("ringFill");
   el.style.strokeDasharray=c; el.style.strokeDashoffset=c*(1-n/total);
   document.getElementById("ringPct").textContent=pct+"%";
-  document.getElementById("ringLabel").textContent=`${n} of ${total} lessons taught`;
+  document.getElementById("ringLabel").textContent=`${n} of ${total} class lessons taught`;
+  document.getElementById("ringNote").textContent=`${full} of ${DATA.plans.length} lessons done in all 6 classes`;
   document.querySelectorAll(".wk").forEach(b=>{
-    const ps=DATA.plans.filter(p=>p.wk===+b.dataset.w), d=ps.filter(isDone).length;
-    b.dataset.state=d===0?"none":d===ps.length?"all":"some";
-    b.querySelector("i").textContent=d===ps.length?"✓ done":d?`${d}/${ps.length} done`:"";
+    const ps=DATA.plans.filter(p=>p.wk===+b.dataset.w), d=ps.reduce((a,p)=>a+countCls(p),0), max=ps.length*CLASSES.length;
+    b.dataset.state=d===0?"none":d===max?"all":"some";
+    b.querySelector("i").textContent=d===max?"✓ done":d?`${d}/${max} taught`:"";
   });
 }
 let currentWeek=null;
@@ -267,9 +279,12 @@ function defaultWeek(){
   return Math.min(14,Math.max(7,d));
 }
 document.getElementById("weeks").innerHTML=weeks.map(w=>`<button class="wk" id="wk${w}" data-w="${w}" aria-pressed="false"><b>Week ${w}</b><span>${DATA.weeks[w]}</span><i></i></button>`).join("");
-document.addEventListener("change",e=>{const k=e.target.dataset&&e.target.dataset.key;if(!k)return;
-  if(e.target.checked)done[k]=true;else delete done[k];saveDone();
-  e.target.closest(".plan").classList.toggle("is-done",e.target.checked);updateRing();});
+document.addEventListener("change",e=>{const k=e.target.dataset&&e.target.dataset.key, c=+(e.target.dataset&&e.target.dataset.cls);if(!k||!c)return;
+  const set=new Set(taught[k]||[]); e.target.checked?set.add(c):set.delete(c);
+  if(set.size)taught[k]=[...set].sort();else delete taught[k]; saveDone();
+  const n=(taught[k]||[]).length, art=e.target.closest(".plan");
+  art.classList.toggle("is-done",n===CLASSES.length);
+  art.querySelector(`[data-count="${k}"]`).textContent=`${n}/6`; updateRing();});
 document.addEventListener("click",e=>{const b=e.target.closest("[data-print]");if(b)doPrint(b.dataset.print);});
 document.getElementById("weeks").addEventListener("click",e=>{const b=e.target.closest(".wk");if(b){show(+b.dataset.w);window.scrollTo({top:0})}});
 show(defaultWeek());
