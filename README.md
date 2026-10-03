@@ -1,10 +1,12 @@
-# Grade 10 Computer Studies – Term 1 Lesson Plans (Weeks 7–14)
+# Grade 10 Lesson Plans – Term 1 (2026-27)
 
-Live site (after enabling GitHub Pages): https://ashraf2k.github.io/g10-lesson-plans/
+Live site: https://ashraf2k.github.io/g10-lesson-plans/
 
-16 lessons, Week 7 (4 Oct 2026) to Week 14, for Grade 10 Computer Studies, classes 10/1–10/6, based on DigiChamps Level 10 (Units 2–4) and the MRISB 4-Step Lesson Design (UbD × ETEC).
+Open the site and choose a group from the main menu:
 
-- `index.html` – pick a week; tick lessons as completed (saved in your browser); progress circle for the whole scheme; print / save one period or both; download the filled PDF forms.
-- `W##_P#_*.pdf` – filled, editable form for each lesson.
-- `W##_both_periods.pdf` – both periods of a week in one file.
-- `G10_Computer_Lesson_Plans_Term1_W7-W14.pdf` – all 16 plans.
+- **G10AM** – Computer Studies (DigiChamps Level 10, Units 2–4), classes 10/1–10/6, Weeks 7–13 (14 lessons). PDFs in `am/`.
+- **G10BR** – Computer Science (Cambridge IGCSE 0478, Topic 8 Programming), classes 10BR1–10BR3, Weeks 7–15 (16 lessons). PDFs in `br/`.
+
+Week 7 starts 4 Oct 2026. Week 14 (22–26 Nov) is the MOE autumn break, so no lessons are planned that week.
+
+Each lesson has class checkboxes (saved in your browser), print / save one or both periods, and filled, editable PDF forms.
