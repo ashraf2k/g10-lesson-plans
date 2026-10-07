@@ -1,0 +1,1564 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>10BR Live Lessons</title>
+<meta name="description" content="Timed 40-minute interactive lesson screens for Grade 10BR, IGCSE 0478 Topic 8 Programming, Weeks 7 to 15.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: projector console. Timer bar on top, coloured stage strip, one big stage screen, controls at the bottom.
+   One deliberate light look (projectors wash out dark slides); each lesson stage owns a colour. */
+:root{
+  color-scheme:light;
+  --paper:#f6f7fc; --card:#ffffff; --ink:#1b1d3a; --muted:#565b7c; --line:#d9dcec;
+  --alert:#d8322a; --good:#11845f; --bad:#c2352b; --amber:#c98a00;
+  --codebg:#1f2245; --codefg:#f1f0ff;
+  --c:#8fd3ff; --cd:#0b6aa8;
+  --f-display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --f-body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
+  --f-code:"JetBrains Mono",ui-monospace,Consolas,monospace;
+  --base:clamp(15px,0.9vw + 8px,25px);
+}
+html,body{height:100%}
+[hidden]{display:none!important}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:var(--base);line-height:1.45;margin:0}
+*{box-sizing:border-box}
+button,select,input{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--cd);outline-offset:2px}
+
+.app{height:100%;display:grid;grid-template-rows:auto auto 1fr auto;padding-inline:16px;gap:10px;padding-block:10px}
+
+/* ---- top bar ---- */
+.top{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;justify-content:space-between}
+.brand{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;min-width:0}
+.brand b{font-family:var(--f-display);font-weight:800;font-size:1.1em;letter-spacing:-.01em}
+.brand .sub{color:var(--muted);font-size:.8em}
+.seg{display:inline-flex;border:2px solid var(--ink);border-radius:999px;overflow:hidden;max-width:100%}
+.seg button{border:0;background:transparent;padding:.2em .8em;font-weight:700;font-size:.8em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:14em}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+select{border:2px solid var(--ink);border-radius:999px;background:var(--card);padding:.15em .6em;font-weight:700;font-size:.8em;max-width:100%}
+.clocks{display:flex;align-items:stretch;gap:10px;flex-wrap:wrap}
+.clock{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:.25em .8em;display:flex;flex-direction:column;justify-content:center;min-width:0}
+.clock .lab{font-size:.62em;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.clock .num{font-family:var(--f-code);font-weight:700;font-variant-numeric:tabular-nums;line-height:1.05}
+.clock.stage{border-color:var(--cd);background:var(--c)}
+.clock.stage .lab{color:var(--ink)}
+.clock.stage .num{font-size:2.6em}
+.clock.lesson .num{font-size:1.6em}
+.clock .pace{font-size:.66em;font-weight:700;color:var(--muted)}
+.clock.over{background:var(--alert);border-color:var(--alert);color:#fff;animation:pulse 1s ease-in-out infinite}
+.clock.over .lab{color:#fff}
+@keyframes pulse{50%{transform:scale(1.04)}}
+.play{border:0;border-radius:14px;background:var(--ink);color:var(--paper);font-weight:800;padding:0 1.1em;font-size:1em;min-height:2.6em}
+.play.running{background:var(--card);color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+
+/* ---- stage strip ---- */
+.strip{display:flex;gap:4px;overflow-x:auto;scrollbar-width:thin}
+.strip button{position:relative;flex:var(--grow) 1 0;min-width:4.5em;border:2px solid transparent;border-radius:10px;background:color-mix(in srgb,var(--sc) 35%,var(--card));padding:.3em .5em;text-align:left;overflow:hidden;font-size:.7em;line-height:1.2}
+.strip button .t{font-weight:700;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:relative}
+.strip button .m{color:var(--muted);position:relative;font-variant-numeric:tabular-nums}
+.strip button .fill{position:absolute;inset:0 auto 0 0;width:0;background:var(--sc);transition:width .4s linear}
+.strip button[aria-current="step"]{border-color:var(--ink)}
+
+/* ---- stage screen ---- */
+.screen{position:relative;min-height:0;overflow:hidden;border-radius:22px;background:var(--card);border:2px solid var(--line)}
+.slide{position:absolute;inset:0;overflow:auto;display:flex;flex-direction:column}
+.slide.in-next{animation:inNext .45s cubic-bezier(.2,.8,.2,1)}
+.slide.in-prev{animation:inPrev .45s cubic-bezier(.2,.8,.2,1)}
+@keyframes inNext{from{transform:translateX(6%);opacity:.2}}
+@keyframes inPrev{from{transform:translateX(-6%);opacity:.2}}
+.band{background:var(--c);padding:clamp(14px,2vw,30px) clamp(16px,3vw,44px);display:flex;flex-wrap:wrap;gap:8px 24px;align-items:flex-end;justify-content:space-between}
+.band .eyebrow{font-size:.72em;text-transform:uppercase;letter-spacing:.1em;font-weight:700}
+.band h2{font-family:var(--f-display);font-weight:800;font-size:clamp(1.7em,3.4vw,3.1em);line-height:1.02;margin:.1em 0 0;letter-spacing:-.02em;text-wrap:balance}
+.band .who{font-size:.8em;font-weight:700;background:var(--card);border-radius:999px;padding:.25em .8em}
+.body{padding:clamp(14px,2vw,30px) clamp(16px,3vw,44px);display:grid;gap:clamp(14px,1.6vw,26px);align-content:start;flex:1}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17em),1fr));gap:clamp(14px,1.6vw,26px);align-items:start}
+.cols>*{min-width:0}
+.lead{font-size:1.2em;max-width:44em;margin:0;text-wrap:pretty}
+h3{font-family:var(--f-display);font-weight:800;font-size:1.15em;margin:0 0 .35em;color:var(--cd)}
+ul.plain{margin:0;padding-left:1.1em;display:grid;gap:.3em}
+p{margin:0}
+.panel{border:2px solid var(--line);border-radius:16px;padding:.8em 1em;min-width:0}
+.panel.tint{background:color-mix(in srgb,var(--c) 22%,var(--card));border-color:color-mix(in srgb,var(--c) 60%,var(--card))}
+.stack{display:grid;gap:.6em;align-content:start}
+
+pre.code{font-family:var(--f-code);font-size:1em;background:var(--codebg);color:var(--codefg);border-radius:14px;padding:.8em 1em;margin:0;overflow-x:auto;line-height:1.5}
+pre.code .k{color:#ffcf6b}
+pre.code .s{color:#8fe8c9}
+pre.code .c{color:#a6a9d6;font-style:italic}
+.codehead{font-size:.7em;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:.3em}
+code{font-family:var(--f-code);font-size:.92em;background:color-mix(in srgb,var(--c) 30%,var(--card));padding:0 .25em;border-radius:5px}
+
+/* phases */
+.phases{display:flex;gap:6px;flex-wrap:wrap}
+.phase{border:2px solid var(--cd);border-radius:999px;padding:.25em .9em;font-weight:700;font-size:.85em;color:var(--cd);background:var(--card);font-variant-numeric:tabular-nums}
+.phase.now{background:var(--cd);color:#fff}
+.phase.past{opacity:.45;text-decoration:line-through}
+
+/* reveal */
+.reveal{border:2px dashed var(--cd);background:transparent;border-radius:12px;padding:.3em .9em;font-weight:700;color:var(--cd)}
+.ans{background:color-mix(in srgb,var(--c) 30%,var(--card));border-radius:12px;padding:.5em .8em;font-weight:700}
+.q{display:grid;gap:.45em;justify-items:start;min-width:0}
+.q>*{max-width:100%;min-width:0}
+.ans{overflow-x:auto}
+
+/* key words */
+.terms{display:flex;flex-wrap:wrap;gap:8px}
+.term{border-radius:12px;background:color-mix(in srgb,var(--c) 28%,var(--card));padding:.35em .8em;display:flex;flex-direction:column}
+.term span{font-size:.78em;color:var(--muted)}
+
+/* tick lists */
+.ticks{list-style:none;margin:0;padding:0;display:grid;gap:.4em}
+.ticks button{display:flex;gap:.6em;align-items:flex-start;text-align:left;border:2px solid var(--line);background:var(--card);border-radius:12px;padding:.45em .7em;width:100%}
+.ticks button::before{content:"";flex:0 0 1.1em;height:1.1em;border:2px solid var(--cd);border-radius:6px;margin-top:.15em}
+.ticks button[aria-pressed="true"]{border-color:var(--cd);background:color-mix(in srgb,var(--c) 25%,var(--card))}
+.ticks button[aria-pressed="true"]::before{background:var(--cd);box-shadow:inset 0 0 0 3px var(--card)}
+
+/* flip cards */
+.grid-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,var(--cw,10.5em)),1fr));gap:10px}
+.qcard{border:2px solid var(--line);background:var(--card);border-radius:14px;padding:.6em .7em;text-align:left;display:flex;flex-direction:column;gap:.25em;min-height:4.6em;min-width:0}
+.qcard .face{font-weight:700;font-size:1.02em;overflow-wrap:anywhere}
+.qcard .face.mono{font-family:var(--f-code);font-size:.95em;white-space:pre-wrap}
+.qcard .back{font-size:.82em}
+.qcard.is-good{border-color:var(--good);background:color-mix(in srgb,var(--good) 12%,var(--card))}
+.qcard.is-bad{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 10%,var(--card))}
+.qcard .verdict{font-weight:800;text-transform:uppercase;font-size:.75em;letter-spacing:.06em}
+.is-good .verdict{color:var(--good)}
+.is-bad .verdict{color:var(--bad)}
+
+/* sorter */
+.tag{display:inline-block;border-radius:999px;padding:.12em .7em;font-family:var(--f-code);font-weight:700;font-size:.8em;color:#fff}
+.g0{background:#2958c9}.g1{background:#0e8a6a}.g2{background:#b4560a}.g3{background:#8b2fb8}.g4{background:#c22d5d}.g5{background:#3d6b00}
+.sort{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,var(--cw,10em)),1fr));gap:8px}
+.sc{border:2px solid var(--line);border-radius:12px;background:var(--card);padding:.4em .6em;text-align:left;display:flex;flex-direction:column;gap:.2em;min-width:0}
+.sc b{overflow-wrap:anywhere}
+.sc .ex{font-size:.75em;color:var(--muted);font-family:var(--f-code);overflow-wrap:anywhere}
+.sc .pick{align-self:flex-start}
+.sc .pick:empty::before{content:"tap to choose";font-size:.75em;color:var(--muted)}
+.sc.right{border-color:var(--good);box-shadow:inset 0 0 0 2px var(--good)}
+.sc.wrong{border-color:var(--bad);box-shadow:inset 0 0 0 2px var(--bad)}
+.sc .fix{font-size:.72em;font-weight:700;color:var(--bad)}
+
+/* parsons */
+.parsons{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:ln}
+.parsons button{width:100%;text-align:left;font-family:var(--f-code);font-size:.92em;border:2px solid var(--line);background:var(--card);border-radius:10px;padding:.35em .7em;display:flex;gap:.8em;white-space:pre;overflow-x:auto}
+.parsons button::before{counter-increment:ln;content:counter(ln);color:var(--muted);min-width:1.2em}
+.parsons button.sel{border-color:var(--cd);background:color-mix(in srgb,var(--c) 35%,var(--card))}
+.parsons button.right{border-color:var(--good)}
+.parsons button.wrong{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 8%,var(--card))}
+
+/* tables */
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:24em}
+th,td{border-bottom:2px solid var(--line);padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-size:.72em;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
+td code{white-space:nowrap}
+.trace td{font-family:var(--f-code);font-variant-numeric:tabular-nums}
+.cell{border:2px dashed var(--cd);background:transparent;border-radius:8px;padding:.1em .6em;font-weight:700;color:var(--cd);min-width:2.2em;text-align:left}
+.cell.open{border-style:solid;background:color-mix(in srgb,var(--c) 30%,var(--card));color:var(--ink)}
+
+/* counters */
+.score{display:flex;flex-wrap:wrap;gap:10px}
+.team{display:flex;align-items:center;gap:.5em;border:2px solid var(--cd);border-radius:14px;padding:.3em .6em;background:var(--card)}
+.team b{min-width:4.5em}
+.team .n{font-family:var(--f-code);font-size:1.6em;font-weight:700;min-width:1.6em;text-align:center;font-variant-numeric:tabular-nums}
+.team button{border:2px solid var(--ink);background:var(--card);border-radius:10px;width:1.9em;height:1.9em;font-weight:800;line-height:1}
+
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.btn{border:2px solid var(--ink);background:var(--card);border-radius:12px;padding:.3em .9em;font-weight:700}
+.btn.solid{background:var(--ink);color:var(--paper)}
+.note{font-size:.82em;color:var(--muted)}
+.big{font-family:var(--f-display);font-weight:800;font-size:1.6em;line-height:1.1;text-wrap:balance;margin:0}
+.ok{color:var(--good);font-weight:800}
+.no{color:var(--bad);font-weight:800}
+
+/* special widgets */
+.phone{display:grid;grid-template-columns:repeat(3,minmax(0,3.2em));gap:8px}
+.phone button{aspect-ratio:1;max-width:100%;border-radius:50%;border:2px solid var(--ink);background:var(--card);font-weight:800;font-size:1.2em}
+.screenout{font-family:var(--f-code);background:var(--codebg);color:#8fe8c9;border-radius:12px;padding:.6em .9em;min-height:2.6em}
+.stars{font-family:var(--f-code);font-size:1.3em;line-height:1.2;color:var(--cd);white-space:pre;overflow-x:auto;margin:0}
+.num-in{width:4em;border:2px solid var(--ink);border-radius:10px;padding:.15em .4em;font-weight:700;background:var(--card)}
+.dice{font-family:var(--f-display);font-size:3.4em;font-weight:800;width:1.6em;height:1.6em;display:grid;place-items:center;border:3px solid var(--ink);border-radius:18px;background:var(--card)}
+.bars{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;align-items:end;height:6em}
+.bars div{background:var(--cd);border-radius:6px 6px 0 0;min-height:2px;position:relative}
+.bars span{position:absolute;top:-1.3em;left:0;right:0;text-align:center;font-size:.7em;font-weight:700;color:var(--ink)}
+.barlab{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;text-align:center;font-size:.75em;font-weight:700}
+.ruler{display:flex;gap:3px;flex-wrap:wrap}
+.ruler div{display:grid;grid-template-rows:auto auto auto;text-align:center;min-width:2.1em}
+.ruler .ch{font-family:var(--f-code);font-weight:700;font-size:1.3em;border:2px solid var(--ink);border-radius:8px;background:var(--card);padding:.1em 0}
+.ruler .i1{font-size:.7em;color:var(--cd);font-weight:700}
+.ruler .i0{font-size:.7em;color:var(--bad);font-weight:700}
+.rag{display:flex;flex-wrap:wrap;gap:8px}
+.rag button{border:2px solid var(--line);background:var(--card);border-radius:999px;padding:.3em .9em;font-weight:700}
+.rag button[data-s="1"]{background:#ffd9d4;border-color:var(--bad)}
+.rag button[data-s="2"]{background:#ffeab0;border-color:var(--amber)}
+.rag button[data-s="3"]{background:#cdeedd;border-color:var(--good)}
+.flow{display:grid;justify-items:center;gap:6px;font-weight:700;text-align:center}
+.flow .box{border:2px solid var(--ink);border-radius:10px;padding:.3em .9em;background:var(--card)}
+.flow .dia{border:2px solid var(--cd);background:color-mix(in srgb,var(--c) 30%,var(--card));padding:.6em 1.2em;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);min-width:12em}
+.flow .split{display:flex;gap:2em;flex-wrap:wrap;justify-content:center}
+.flow .arrow{color:var(--muted)}
+.scope{border:3px solid var(--cd);border-radius:16px;padding:.6em .8em;display:grid;gap:.5em;background:color-mix(in srgb,var(--c) 15%,var(--card))}
+.scope .inner{border:3px dashed var(--bad);border-radius:12px;padding:.5em .7em;background:var(--card)}
+.scope .lbl{font-size:.7em;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+
+/* ---- bottom controls ---- */
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
+.controls .grp{display:flex;flex-wrap:wrap;gap:8px}
+.nav{border:0;background:var(--ink);color:var(--paper);border-radius:12px;padding:.4em 1.1em;font-weight:800}
+.nav:disabled{opacity:.3;cursor:default}
+.ghost{border:2px solid var(--line);background:var(--card);border-radius:12px;padding:.3em .8em;font-weight:700;font-size:.8em}
+.ghost[aria-pressed="true"]{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+.ghost.tool{border-color:var(--cd);color:var(--cd)}
+
+/* ---- overlays ---- */
+.notes{position:fixed;top:calc(10px + env(safe-area-inset-top,0px));right:10px;bottom:calc(10px + env(safe-area-inset-bottom,0px));width:min(26em,calc(100vw - 20px));background:var(--ink);color:var(--paper);border-radius:18px;padding:1em 1.1em;overflow:auto;z-index:5;font-size:.8em;display:grid;gap:.8em;align-content:start;box-shadow:0 20px 50px rgba(20,22,60,.35)}
+.notes h4{margin:0;font-family:var(--f-display);font-size:1.2em}
+.notes .k{font-size:.72em;text-transform:uppercase;letter-spacing:.09em;opacity:.7;font-weight:700}
+.notes .close,.pop .close{justify-self:end;border:2px solid currentColor;background:transparent;border-radius:10px;padding:.15em .7em;font-weight:700}
+.pop{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:7;background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:1em 1.3em;width:min(30em,calc(100vw - 32px));max-height:calc(100vh - 32px);overflow:auto;display:grid;gap:.8em;box-shadow:0 30px 80px rgba(20,22,60,.4)}
+.pop h4{margin:0;font-family:var(--f-display);font-size:1.4em}
+.picked{font-family:var(--f-display);font-weight:800;font-size:5em;line-height:1;text-align:center;color:var(--cd)}
+.countdown{position:fixed;inset:0;z-index:8;display:grid;place-items:center;background:color-mix(in srgb,var(--c) 85%,transparent);font-family:var(--f-display);font-weight:800;font-size:min(40vw,40vh);color:var(--ink);pointer-events:none}
+.toast{position:fixed;left:50%;bottom:calc(80px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--alert);color:#fff;font-weight:800;padding:.6em 1.2em;border-radius:14px;z-index:9;font-size:1.05em;max-width:calc(100vw - 32px);text-align:center}
+
+@media (prefers-reduced-motion:reduce){.slide.in-next,.slide.in-prev,.clock.over{animation:none}.strip button .fill{transition:none}}
+@media (max-width:700px){
+  .app{height:auto;min-height:100%}
+  .screen{min-height:70vh}
+  .slide{position:relative;inset:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="app" id="app">
+  <header class="top">
+    <div class="brand">
+      <b>G10BR</b>
+      <label class="sub" for="wk">Week</label>
+      <select id="wk"></select>
+      <div class="seg" role="group" aria-label="Lesson" id="perSeg">
+        <button type="button" id="pP1" data-period="1">P1</button>
+        <button type="button" id="pP2" data-period="2">P2</button>
+      </div>
+      <label class="sub" for="cls">Class</label>
+      <select id="cls"><option>10BR1</option><option>10BR2</option><option>10BR3</option></select>
+    </div>
+    <div class="clocks">
+      <div class="clock stage" id="stageClock"><span class="lab" id="stageLab">This part</span><span class="num" id="stageNum">0:00</span></div>
+      <div class="clock lesson"><span class="lab">Lesson left</span><span class="num" id="lessonNum">40:00</span><span class="pace" id="pace">Ready</span></div>
+      <button type="button" class="play" id="play" aria-label="Start timer">▶ Start</button>
+    </div>
+  </header>
+
+  <nav class="strip" id="strip" aria-label="Lesson stages"></nav>
+
+  <main class="screen" id="screen" aria-live="polite"></main>
+
+  <footer class="controls">
+    <div class="grp">
+      <button type="button" class="nav" id="prev">◀ Back</button>
+      <button type="button" class="nav" id="next">Next ▶</button>
+      <button type="button" class="ghost tool" id="pickBtn">Pick a student</button>
+      <button type="button" class="ghost tool" id="teamsBtn">Team scores</button>
+      <button type="button" class="ghost tool" id="showBtn">Show me 3-2-1</button>
+    </div>
+    <div class="grp">
+      <button type="button" class="ghost" id="plus">+1 min</button>
+      <button type="button" class="ghost" id="resetStage">Restart part</button>
+      <button type="button" class="ghost" id="notesBtn" aria-pressed="false">Teacher notes</button>
+      <button type="button" class="ghost" id="soundBtn" aria-pressed="false">Chime off</button>
+      <button type="button" class="ghost" id="fsBtn">Full screen</button>
+      <button type="button" class="ghost" id="resetAll">New class</button>
+    </div>
+  </footer>
+</div>
+
+<aside class="notes" id="notes" hidden aria-label="Teacher notes"></aside>
+
+<div class="pop" id="pickPop" hidden role="dialog" aria-label="Pick a student">
+  <button type="button" class="close" data-close="pickPop">Close</button>
+  <h4>Pick a student</h4>
+  <div class="row"><label for="pickN">Students in class</label><input class="num-in" id="pickN" type="number" min="2" max="40" value="28"></div>
+  <div class="picked" id="picked">?</div>
+  <div class="row"><button type="button" class="btn solid" id="pickGo">Pick a number</button><button type="button" class="btn" id="pickReset">Start again</button><span class="note" id="pickLeft"></span></div>
+  <p class="note">Each number is picked once until you start again. Match it to your register.</p>
+</div>
+
+<div class="pop" id="teamsPop" hidden role="dialog" aria-label="Team scores">
+  <button type="button" class="close" data-close="teamsPop">Close</button>
+  <h4>Team scores</h4>
+  <div class="score" id="teamsBox"></div>
+  <div class="row"><button type="button" class="btn" id="teamsReset">Reset scores</button><span class="note">Scores last for this lesson.</span></div>
+</div>
+
+<div class="countdown" id="countdown" hidden></div>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+/* ================= helpers for writing lesson content ================= */
+const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+const PCK = new Set("DECLARE CONSTANT INPUT OUTPUT IF THEN ELSE ENDIF CASE OF OTHERWISE ENDCASE FOR TO STEP NEXT WHILE DO ENDWHILE REPEAT UNTIL PROCEDURE ENDPROCEDURE FUNCTION RETURNS RETURN ENDFUNCTION CALL AND OR NOT MOD DIV INTEGER REAL CHAR STRING BOOLEAN TRUE FALSE LENGTH SUBSTRING UCASE LCASE ROUND RANDOM".split(" "));
+const PYK = new Set("print input int float str if elif else for in range while True False None break def return match case and or not len global import from round random randint lower upper".split(" "));
+function hl(src, lang){
+  const K = lang === "py" ? PYK : PCK, cm = lang === "py" ? "#" : "//";
+  return src.split("\n").map(line => {
+    let out = "", i = 0, m; const re = /("[^"]*"|'[^']*'|#.*$|\/\/.*$|[A-Za-z_]\w*)/g;
+    while ((m = re.exec(line))){
+      out += esc(line.slice(i, m.index)); const t = m[0];
+      if (t[0] === '"' || t[0] === "'") out += `<span class="s">${esc(t)}</span>`;
+      else if (t.startsWith(cm)) out += `<span class="c">${esc(t)}</span>`;
+      else if (K.has(t)) out += `<span class="k">${t}</span>`;
+      else out += esc(t);
+      i = m.index + t.length;
+    }
+    return out + esc(line.slice(i));
+  }).join("\n");
+}
+const c = s => `<code>${esc(s)}</code>`;
+const code = (src, head, lang="pc") => `<div style="min-width:0">${head ? `<div class="codehead">${head}</div>` : ""}<pre class="code">${hl(src.replace(/^\n/,""), lang)}</pre></div>`;
+const pc = (src, head="Pseudocode") => code(src, head, "pc");
+const py = (src, head="Python") => code(src, head, "py");
+const rv = (label, ans) => `<div class="q"><button type="button" class="reveal" data-reveal>${label}</button><div class="ans" hidden>${ans}</div></div>`;
+const cols = (...a) => `<div class="cols">${a.join("")}</div>`;
+const panel = (title, html, tint) => `<div class="panel${tint ? " tint" : ""}">${title ? `<h3>${title}</h3>` : ""}${html}</div>`;
+const ul = a => `<ul class="plain">${a.map(x => `<li>${x}</li>`).join("")}</ul>`;
+const ticks = a => `<ul class="ticks">${a.map(x => `<li><button type="button" aria-pressed="false">${x}</button></li>`).join("")}</ul>`;
+const lead = s => `<p class="lead">${s}</p>`;
+const h3 = s => `<h3>${s}</h3>`;
+const cell = v => `<button type="button" class="cell" data-cell><span>?</span><span hidden>${v}</span></button>`;
+const showme = (s="Show me in 3, 2, 1") => `<button type="button" class="btn solid" data-showme>${s}</button>`;
+const counters = names => `<div class="score" data-counters="${names.join("|")}"></div>`;
+/* flips: [face, verdict, back, good(1/0), mono(1/0)] */
+const flips = (items, cw) => `<div class="grid-cards"${cw ? ` style="--cw:${cw}"` : ""}>${items.map(([f,v,b,g=1,m=0]) =>
+  `<button type="button" class="qcard" data-flip data-good="${g}"><span class="face${m ? " mono" : ""}">${m ? esc(f) : f}</span><span class="verdict" hidden>${v}</span>${b ? `<span class="back" hidden>${b}</span>` : ""}</button>`).join("")}</div>`;
+/* sorter: cats [..], items [name, example, catIndexOrName] */
+const sorter = (cats, items, cw) => `<div class="stack" data-sorter="${esc(cats.join("|"))}">
+  <div class="row">${cats.map((k,i) => `<span class="tag g${i}">${esc(k)}</span>`).join("")}<span class="note">Tap a card to change its group, then check.</span></div>
+  <div class="sort"${cw ? ` style="--cw:${cw}"` : ""}>${items.map(([n,e,a]) => `<button type="button" class="sc" data-ans="${typeof a === "number" ? a : cats.indexOf(a)}"><b>${n}</b>${e ? `<span class="ex">${esc(e)}</span>` : ""}<span class="pick"></span></button>`).join("")}</div>
+  <div class="row"><button type="button" class="btn solid" data-check>Check answers</button><button type="button" class="btn" data-clear>Clear</button><span class="lead" data-result></span></div></div>`;
+/* parsons: lines in the correct order */
+const parsons = (lines, head) => `<div class="stack" data-parsons>${head ? `<div class="codehead">${head}</div>` : ""}
+  <ol class="parsons">${lines.map((l,i) => `<li><button type="button" data-i="${i}">${esc(l)}</button></li>`).join("")}</ol>
+  <div class="row"><button type="button" class="btn solid" data-pcheck>Check order</button><button type="button" class="btn" data-psolve>Show solution</button><button type="button" class="btn" data-pshuffle>Shuffle</button><span class="lead" data-presult></span></div>
+  <p class="note">Tap one line, then tap another to swap them.</p></div>`;
+/* predict: rows [code, answer, why], lang */
+const predict = (rows, lang="py", heads=["Type this","Your prediction","Result"]) => `<div class="tablewrap"><table><thead><tr>${heads.map(h => `<th>${h}</th>`).join("")}</tr></thead><tbody>
+  ${rows.map(([q,a,w]) => `<tr><td><code>${esc(q)}</code></td><td class="note">on your whiteboard</td><td>${rv("Show", `${a}${w ? ` · <span style="font-weight:400">${w}</span>` : ""}`)}</td></tr>`).join("")}</tbody></table></div>`;
+/* trace: heads, rows (arrays), revealed row by row */
+const trace = (heads, rows) => `<div class="stack" data-trace><div class="tablewrap"><table class="trace"><thead><tr>${heads.map(h => `<th>${esc(h)}</th>`).join("")}</tr></thead><tbody>
+  ${rows.map(r => `<tr hidden>${r.map(v => `<td>${esc(v)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>
+  <div class="row"><button type="button" class="btn solid" data-tnext>Next row</button><button type="button" class="btn" data-tall>Show all</button><button type="button" class="btn" data-thide>Hide all</button></div></div>`;
+const T = s => `<span class="tag g${["INTEGER","REAL","CHAR","STRING","BOOLEAN"].indexOf(s)}">${s}</span>`;
+const terms = a => `<div class="terms">${a.map(([w,d]) => `<div class="term"><b>${w}</b><span>${d}</span></div>`).join("")}</div>`;
+const outcomesSlide = (title, outs, sc, words, ref) => ({k:"outcomes",min:2,label:"Outcomes",eyebrow:"Today's goal",title,
+  html:`${cols(`<div>${h3("By the end of this lesson you will")}${ul(outs)}</div>`, `<div>${h3("Success criteria")}${ticks(sc)}</div>`)}<div>${h3("Key words")}${terms(words)}</div>`});
+
+/* ================= lesson content: Weeks 7–15 ================= */
+const WEEKS = {7:"4–8 Oct",8:"11–15 Oct",9:"18–22 Oct",10:"25–29 Oct",11:"1–5 Nov",12:"8–12 Nov",13:"15–19 Nov",14:"22–26 Nov",15:"29 Nov–3 Dec"};
+const WEEK_START = {7:"2026-10-04",8:"2026-10-11",9:"2026-10-18",10:"2026-10-25",11:"2026-11-01",12:"2026-11-08",13:"2026-11-15",14:"2026-11-22",15:"2026-11-29"};
+const L = {};
+
+/* ---------- Week 7 P1 ---------- */
+L["7-1"] = {short:"Variables", title:"Variables and constants", ref:"0478 8.1.1 · AO1, AO2",
+ follow:{"10BR2":"Check Thonny is installed before class: 3 PCs were missing it last time.","10BR3":"4 students still mix up assignment and equality. Recent arrivals need the bilingual key-term card again."},
+ stages:[
+ outcomesSlide("Variables and constants",
+  ["declare and use <b>variables</b> and <b>constants</b>","choose meaningful <b>identifiers</b> (names)","turn Cambridge pseudocode into your first Python program and run it"],
+  ["I can explain variable vs constant.",`I can write ${c("DECLARE")} and ${c("CONSTANT")} statements in pseudocode.`,"I can translate them into Python and run the program without errors."],
+  [["variable","named memory location that can change"],["constant","stays fixed while the program runs"],["identifier","the name you give it"],["assignment","storing a value: ←"],["declare","say its name and type first"]]),
+ {k:"warm",min:6,label:"Warm-up",eyebrow:"Warm-up · Think, pair, share",title:"What does this program output?",phases:[["Think alone",2],["Pair",2],["Share",2]],
+  html:cols(pc(`Score ← 5
+Score ← Score + 2
+OUTPUT Score`), `<div class="q">${lead("Write your prediction on your mini-whiteboard. Compare with your partner.")}${showme()}${rv("Reveal the output","<span class='big'>7</span><br>Line 2 takes the old value 5, adds 2 and stores 7 back in Score.")}</div>`)
+  + panel("", `<div class="q">${lead(`Now add ${c("CONSTANT HourlyRate ← 50")}. Could a later line say ${c("HourlyRate ← 60")}? Why did Score change but HourlyRate cannot?`)}${rv("Reveal","No. A constant is fixed while the program runs. Score is a variable, so it can be given a new value.")}</div>`, 1),
+  notes:{"Evidence":"Mini-whiteboards. Scan for answers of 5 or 52.","Support":"Key-term card with the 'labelled boxes' picture for variables.","Stretch":"Explain why constants make code easier to update."}},
+ {k:"hook",min:5,label:"Model it",eyebrow:"Hook and teacher model",title:"Your phone's contact list",
+  html:cols(panel("Ahmed's contact card", `<div class="stack"><div class="row" style="justify-content:space-between"><span>Name: <b>Ahmed</b></span><span class="ok">stays the same</span></div><div class="row" style="justify-content:space-between"><span>Number: <b>050 123 4567</b></span><span class="no">may change</span></div><p class="note">A program stores values the same way: some stay fixed, some change.</p></div>`),
+   `<div>${h3("Same idea, two languages")}${cols(pc(`DECLARE Price : REAL
+CONSTANT VAT_RATE ← 0.15`,"Cambridge pseudocode"), py(`price = 2.50
+VAT_RATE = 0.15`))}</div>`)
+  + cols(panel("← and = both mean “store”", `<p>In pseudocode ${c("←")} stores a value. In Python a single ${c("=")} stores a value. Neither one means “is equal to”.</p>`,1),
+     panel("Good identifiers", `<p>No spaces, do not start with a digit, say what is stored: ${c("TotalCost")}, ${c("VAT_RATE")}. In Python, capitals are a promise never to change a constant.</p>`,1)),
+  notes:{"Model":"Think aloud while choosing identifiers. Open Thonny: run, read the error message, fix it.","Watch for":"'A constant is just a variable in capitals.' Ask: what stops it changing?"}},
+ {k:"main",min:15,label:"Code it",eyebrow:"Worked example · Code in Thonny",title:"School canteen order",phases:[["Plan in pseudocode",4],["Code in Thonny",8],["Run, fix, share",3]],
+  html:cols(pc(`CONSTANT VAT_RATE ← 0.15
+DECLARE Price : REAL
+DECLARE Quantity : INTEGER
+DECLARE Total : REAL
+Price ← 2.50
+Quantity ← 4
+Total ← Price * Quantity * (1 + VAT_RATE)
+OUTPUT "Total: ", Total`,"1 · Pseudocode"), py(`VAT_RATE = 0.15
+price = 2.50
+quantity = 4
+total = price * quantity * (1 + VAT_RATE)
+print("Total:", total)
+# Output → Total: 11.5`,"2 · Python (canteen.py)"))
+  + cols(`<div>${h3("Steps")}${ticks(["Open the starter file canteen.py","Write the constant first","Add the variables","Calculate and print the total","Run it (F5) and read any error"])}</div>`,
+     panel("Debug corner", ul([`${c("Total Cost")} has a space. Use ${c("TotalCost")}.`,`Pseudocode uses ${c("←")}, not ${c("=")}, to store.`,`Text needs quotes: ${c('"Total:"')}`,`<b>NameError</b>? Check spelling and capitals: ${c("Price")} ≠ ${c("price")}.`])),
+     panel("Finished?", `<p>Add a second constant, e.g. ${c("DISCOUNT = 0.10")}, and print the total to 2 decimal places: ${c('f"{total:.2f}"')}</p>`,1)),
+  notes:{"Evidence":"Practical task: program runs. Aim for every class to run it by minute 30.","Resources":"Coursebook 8.1 (CUP 9781108915144), Python 3 + Thonny, starter file canteen.py.","Support":"Starter file with comments showing where each line goes.","Watch for":"Spaces in identifiers, = in pseudocode, missing quotes, NameError from typos, students copying without running."}},
+ {k:"game",min:6,label:"Quick-fire",eyebrow:"Game · Teams",title:"Variable or constant? Good or bad name?",
+  html:`<div class="row">${counters(["Team A","Team B"])}<span class="note">Running the Quizizz? Use this board as the backup.</span></div>
+   <div>${h3("Round 1 · Variable or constant?")}${flips([["VAT rate 15%","Constant","fixed while the program runs"],["A player's score","Variable","changes during the game"],["Days in a week","Constant","always 7"],["Your bank balance","Variable","goes up and down"],["Pi 3.14159","Constant","never changes"],["Today's temperature","Variable","changes all day"]])}</div>
+   <div>${h3("Round 2 · Good or bad identifier?")}${flips([["x","Bad","says nothing about the data",0,1],["TotalCost","Good","clear and readable",1,1],["2ndName","Bad","cannot start with a digit",0,1],["VAT_RATE","Good","capitals show a constant",1,1],["Total Cost","Bad","spaces are not allowed",0,1],["studentAge","Good","meaningful name",1,1]])}</div>`,
+  notes:{"Support":"Read every card aloud. Picture prompts for EAL learners.","Stretch":"Bonus point: rewrite the 3 bad identifiers correctly."}},
+ {k:"close",min:6,label:"Exit ticket",eyebrow:"Exit ticket · Check your learning",title:"Show what you know",
+  html:cols(`<div class="q">${lead("<b>1.</b> What is a constant?")}${rv("Answer","A named value that stays fixed while the program runs.")}</div>`,
+     `<div class="q">${lead(`<b>2.</b> Fix this line: ${c("DECLARE Total Cost = INTEGER")}`)}${rv("Answer",`${c("DECLARE TotalCost : INTEGER")} (no space, use a colon)`)}</div>`,
+     `<div class="q">${lead("<b>3.</b> Give one benefit of meaningful identifiers.")}${rv("Answer","The code is easier to read, check and update.")}</div>`)
+  + cols(`<div>${h3("Tick what you can do now")}${ticks(["I can explain variable vs constant.","I can write DECLARE and CONSTANT in pseudocode.","I ran my Python program without errors."])}</div>`,
+     panel("Homework · Teams / Madrasati", ul(["Coursebook 8.1, questions 1 to 3.","Write pseudocode and Python for a <b>bus fare</b> program with one constant."]),1)),
+  notes:{"Exit ticket":"Microsoft Forms, 3 questions.","Next lesson":"Data types. Start with a 3-minute warm-up on ← vs =."}}
+]};
+
+/* ---------- Week 7 P2 ---------- */
+L["7-2"] = {short:"Data types", title:"Data types", ref:"0478 8.1.2 · AO1, AO2",
+ follow:{"10BR1":"3 students unsure about CHAR vs STRING. One SEN student needs the type-colour poster at the desk."},
+ stages:[
+ outcomesSlide("Data types",
+  [`identify and use ${T("INTEGER")} ${T("REAL")} ${T("CHAR")} ${T("STRING")} ${T("BOOLEAN")}`,"choose a suitable type for given data",`convert types in Python with ${c("int()")}, ${c("float()")}, ${c("str()")}`],
+  ["I can choose the correct data type for 8 data items and justify it.",`I can explain why ${c("input()")} needs converting before arithmetic.`,"My program converts and calculates correctly."],
+  [["INTEGER","whole number: 15"],["REAL","decimal: 1.62"],["CHAR","one character: 'B'"],["STRING","text: \"Layla\""],["BOOLEAN","TRUE or FALSE"]]),
+ {k:"warm",min:3,label:"Warm-up",eyebrow:"Warm-up · Store or compare?",title:"Does it store a value or compare?",
+  html:flips([["Total ← 10","Stores","Pseudocode ← puts 10 into Total.",1,1],["IF Total = 10 THEN","Compares","In pseudocode, = inside a condition checks equality.",1,1],["total = total + 1","Stores (Python)","Python = stores. Python compares with ==.",1,1]],"15em")
+   + `<div class="row">${lead("Show 1 finger for <b>store</b>, 2 fingers for <b>compare</b>.")}${showme()}</div>`,
+  notes:{"Watch for":"Students who say all three compare. Re-model ← once more."}},
+ {k:"hook",min:4,label:"Hook",eyebrow:"Hook · Teacher model",title:"What kind of data is each answer?",
+  html:cols(`<div>${h3("School trip sign-up form")}${flips([["Name: Layla Hassan",T("STRING")],["Age: 15",T("INTEGER")],["Height (m): 1.62",T("REAL")],["Grade letter: B",T("CHAR")],["Paid? Yes",T("BOOLEAN")]],"12em")}</div>`,
+   `<div>${py(`>>> type(15)
+<class 'int'>
+>>> type(1.62)
+<class 'float'>
+>>> age = input("Age? ")
+Age? 15
+>>> type(age)
+<class 'str'>   # input() always gives a string!
+>>> age = int(input("Age? "))`,"Python shell")}<p class="note" style="margin-top:.5em">Python has no CHAR type, but Cambridge exams still use it.</p></div>`),
+  notes:{"Model":"Show DECLARE with each type, then type() in the shell, then input() returning a string and int(input()).","Watch for":"'Python has no CHAR' — explain that the exam still uses it."}},
+ {k:"main",min:8,label:"Card sort",eyebrow:"Card sort · Groups of 3",title:"Sort the data into types",
+  html:sorter(["INTEGER","REAL","CHAR","STRING","BOOLEAN"],[["Age","15","INTEGER"],["Price","4.75","REAL"],["Grade letter","'A'","CHAR"],["Passport number","A1234567","STRING"],["isRegistered","TRUE","BOOLEAN"],["First name","\"Omar\"","STRING"],["Height in m","1.68","REAL"],["Number of siblings","3","INTEGER"],["Blood group","\"O+\"","STRING"],["Temperature °C","36.6","REAL"],["hasPaid","FALSE","BOOLEAN"],["House number","\"12B\"","STRING"],["Pages in a book","240","INTEGER"],["Exam percentage","87.5","REAL"],["isAbsent","TRUE","BOOLEAN"],["Middle initial","'S'","CHAR"]]),
+  notes:{"Evidence":"Observation checklist while groups sort.","Support":"Mixed-language groups; examples on each type header.","Stretch":"Find 2 items that could fit 2 types and argue the best choice."}},
+ {k:"game",min:13,label:"Investigate",eyebrow:"Investigation · Python",title:"Predict, then test in Python",phases:[["Predict",4],["Test in Thonny",5],["Fix average.py",4]],
+  html:predict([["type('5')",c("<class 'str'>"),"Quotes make it a string."],["'5' + '5'",c("'55'"),"+ joins strings."],["int('5') + 5",c("10"),"int() converts first."],["float('2.5')",c("2.5"),"Now it is a REAL."],["int('2.5')",`<span class="no">ValueError</span>`,"int() cannot read a decimal point."]])
+   + cols(py(`mark1 = input("Mark 1: ")
+mark2 = input("Mark 2: ")
+average = (mark1 + mark2) / 2
+print("Average:", average)`,"average.py (broken)"),
+     `<div class="q">${lead("Run it with 80 and 70. What goes wrong, and how do you fix it?")}${rv("Show the error",`<span class="no">TypeError: unsupported operand type(s) for /: 'str' and 'int'</span><br>mark1 + mark2 gives "8070", a string.`)}${rv("Show the fix",`${c('mark1 = float(input("Mark 1: "))')} and the same for mark2 → Average: 75.0`)}</div>`),
+  notes:{"Evidence":"Investigation sheet (portfolio). Give it on paper.","Support":"Sheet with the first 2 rows done.","Stretch":"Explain the error from int('2.5') and avoid it with int(float('2.5'))."}},
+ {k:"debate",min:5,label:"Debate",eyebrow:"Debate · Two teams",title:"Should a phone number be stored as an INTEGER?",phases:[["Prepare",1],["Team FOR",1.5],["Team AGAINST",1.5],["Vote",1]],
+  html:cols(panel("Evidence", ul([`${c("0501234567")} as an integer becomes ${c("501234567")}`,`${c("+966 50 123 4567")} has a + and spaces`,"Would you ever add or multiply two phone numbers?"])),
+     panel("Sentence starters", ul(["“I think it should be … because …”","“The problem with that is …”","“For example, …”"]),1))
+   + `<div class="row">${counters(["Votes FOR","Votes AGAINST"])}</div>` + rv("Reveal the exam answer","Store it as a STRING: it can start with 0 or +, and you never do arithmetic on it."),
+  notes:{"Evidence":"Oral questioning.","Stretch":"Link the answer to validation from Chapter 7."}},
+ {k:"close",min:5,label:"Exit check",eyebrow:"Exit check",title:"Choose the data type",
+  html:flips([["Number of students in the class",T("INTEGER")],["Price of a book: 39.95",T("REAL")],["Is the library open?",T("BOOLEAN")],["First letter of your surname",T("CHAR")],["Email address",T("STRING")]])
+   + cols(`<div class="q">${lead(`Predict the output: ${c("print('3' * 2)")}`)}${rv("Answer",`${c("33")} · a string repeated twice, not 6.`)}</div>`,
+     panel("Homework", ul(["Coursebook 8.2 activity questions.","Data dictionary for a school library system: identifier, type, example."]),1)),
+  notes:{"Exit check":"Choose the type for 5 new items and explain one."}}
+]};
+
+/* ---------- Week 8 P1 ---------- */
+L["8-1"] = {short:"Input & output", title:"Input and output: Task 8.1", ref:"0478 8.1.1–8.1.3 · AO2, AO3",
+ follow:{"10BR2":"4 students did not finish coding last time; offer extra lab time. Gifted students: currency extension."},
+ stages:[
+ outcomesSlide("Input, process, output",
+  [`use ${c("INPUT")} and ${c("OUTPUT")} with clear prompts and messages`,"plan a program with an IPO table","complete Programming task 8.1 using variables, constants and data types"],
+  ["My program asks clear prompts.","It converts inputs to the right type and outputs a readable message.","My pseudocode matches my Python code, and I tested it."],
+  [["input","data going into the program"],["process","the calculation"],["output","the result shown to the user"],["prompt","a message telling the user what to type"],["test data","values used to check a program"]]),
+ {k:"warm",min:5,label:"Warm-up",eyebrow:"Discussion · Which is better?",title:"A ticket machine that says nothing",
+  html:cols(`<div class="stack">${h3("Program A")}<div class="screenout">&gt; <br>&gt; <br>5.825</div></div>`,
+     `<div class="stack">${h3("Program B")}<div class="screenout">Distance in km: 120<br>Fuel price per litre (SAR): 2.33<br>Number of passengers: 4<br>Cost per person: 5.83 SAR</div></div>`)
+   + `<div class="row">${counters(["Vote A","Vote B"])}</div>`
+   + cols(`<div class="q">${lead("What makes output clear for <b>any</b> user?")}${rv("Ideas","Prompts that say what to type and in which units; a labelled answer; rounding; plain words for EAL users.")}</div>`),
+  notes:{"Support":"Picture of the input-process-output diagram.","Stretch":"Suggest an accessibility improvement (larger text, units, examples in the prompt)."}},
+ {k:"hook",min:5,label:"Plan it",eyebrow:"Teacher model · IPO table",title:"Travel cost calculator",
+  html:sorter(["INPUT","PROCESS","OUTPUT"],[["Distance","REAL, km","INPUT"],["Fuel price","REAL, SAR per litre","INPUT"],["Passengers","INTEGER","INPUT"],["Litres used","Distance / KM_PER_LITRE","PROCESS"],["Trip cost","Litres × FuelPrice","PROCESS"],["Cost per person","Cost / Passengers","PROCESS"],["“Cost per person: 5.83 SAR”","message","OUTPUT"]],"11em"),
+  notes:{"Model":"Fill the IPO table aloud, then show the pseudocode on the next screen. Share success criteria."}},
+ {k:"main",min:16,label:"Task 8.1",eyebrow:"Programming task 8.1 · Plan, code, test",title:"Build the travel cost calculator",phases:[["Pseudocode",4],["Code in Python",8],["Test 3 data sets",4]],
+  html:cols(pc(`CONSTANT KM_PER_LITRE ← 12
+OUTPUT "Distance in km: "
+INPUT Distance
+OUTPUT "Fuel price per litre: "
+INPUT FuelPrice
+OUTPUT "Number of passengers: "
+INPUT Passengers
+Cost ← Distance / KM_PER_LITRE * FuelPrice
+OUTPUT "Cost per person: ", Cost / Passengers`), py(`KM_PER_LITRE = 12
+distance = float(input("Distance in km: "))
+fuel_price = float(input("Fuel price per litre: "))
+passengers = int(input("Number of passengers: "))
+cost = distance / KM_PER_LITRE * fuel_price
+per_person = cost / passengers
+print(f"Cost per person: {per_person:.2f} SAR")`))
+  + cols(`<div>${h3("Test table")}<div class="tablewrap"><table><thead><tr><th>Type</th><th>Distance, price, passengers</th><th>Expected</th></tr></thead><tbody>
+     <tr><td>Normal</td><td>${c("120, 2.33, 4")}</td><td>${cell("5.83 SAR")}</td></tr>
+     <tr><td>Extreme</td><td>${c("300, 2.33, 1")}</td><td>${cell("58.25 SAR")}</td></tr>
+     <tr><td>Abnormal</td><td>${c("120, 2.33, 0")}</td><td>${cell("<span class='no'>ZeroDivisionError</span>")}</td></tr></tbody></table></div></div>`,
+     panel("Debug corner", ul([`Forgot ${c("float()")}? You get a TypeError.`,`Joining text and a number with ${c("+")} fails. Use a comma or an f-string.`,"Every input needs a prompt."]))),
+  notes:{"Resources":"Coursebook Programming task 8.1; IPO table template; test table.","Support":"IPO table pre-filled for inputs; code skeleton.","Stretch":"Add currency choice (SAR/USD) with a constant exchange rate: USD_RATE = 3.75.","Watch for":"No type conversion; prompts missing; + joining text and numbers; 0 passengers. Push for test data, not 'it works with my numbers'."}},
+ {k:"game",min:6,label:"Test swap",eyebrow:"Pair test swap",title:"Normal, extreme or abnormal?",
+  html:lead("Passengers must be 1 to 8. Sort these test values, then run your partner's program with them.")
+   + sorter(["Normal","Extreme","Abnormal"],[["4","",0],["3","",0],["1","smallest allowed",1],["8","largest allowed",1],["0","",2],["9","just over the limit",2],["-3","",2],["\"five\"","text",2]],"8em")
+   + panel("Give your partner one improvement", `<p>“Your program could … because when I typed … it …”</p>`,1),
+  notes:{"Support":"Test data given.","Stretch":"Suggest validation to stop silly data (preview of Chapter 7 range checks).","Note":"8 and 9 together are the boundary pair."}},
+ {k:"close",min:6,label:"Exit ticket",eyebrow:"Exit ticket",title:"Input a name, output a greeting",
+  html:cols(`<div class="q">${lead("Write two pseudocode lines: input a name, then greet the user.")}${showme()}${rv("Answer",`<pre class="code">${hl(`INPUT Name
+OUTPUT "Hello ", Name`,"pc")}</pre>`)}</div>`,
+   `<div class="q">${lead("Name one test you ran today and its type.")}${rv("Example","Abnormal: 0 passengers crashed my program with ZeroDivisionError.")}</div>`)
+   + panel("Homework", ul(["Finish task 8.1 and upload code + test table.","Read coursebook 8.4 arithmetic operators."]),1),
+  notes:{"Exit ticket":"Write the INPUT/OUTPUT lines; name one test. Learners' questions."}}
+]};
+
+/* ---------- Week 8 P2 ---------- */
+L["8-2"] = {short:"Operators", title:"Arithmetic operators and sequence", ref:"0478 8.1.4(a)(f) · AO1, AO2",
+ follow:{"10BR3":"3 students still treat MOD as division; give extra counters practice. 2 uploads missing: inform parents."},
+ stages:[
+ outcomesSlide("Operators and sequence",
+  [`use ${c("+ - * / ^ MOD DIV")} in pseudocode and ${c("** // %")} in Python`,"apply operator precedence","explain why the order of statements matters"],
+  ["I can evaluate expressions with MOD and DIV.","I can convert pseudocode operators into Python.","I can reorder jumbled statements into a correct sequence and explain why."],
+  [["DIV","whole-number quotient"],["MOD","remainder"],["^","power"],["precedence","which operator goes first"],["sequence","statements run in order"]]),
+ {k:"warm",min:6,label:"Warm-up",eyebrow:"Problem solving · No calculators",title:"125 seconds is how many minutes?",
+  html:cols(`<div class="q">${lead("A stopwatch shows <b>125 seconds</b>. How many minutes and seconds?")}${showme()}${rv("Answer","<span class='big'>2 min 5 s</span><br>125 DIV 60 = 2 and 125 MOD 60 = 5")}</div>`,
+     predict([["17 DIV 5","3","5 goes into 17 three times"],["17 MOD 5","2","remainder, not 3.4"],["2 ^ 3","8","2 × 2 × 2"],["10 - 4 / 2","8","divide first"]],"pc",["Expression","Your answer","Answer"])),
+  notes:{"Support":"Number line and counters for DIV/MOD.","Stretch":"Write an expression to check if a number is even.","Watch for":"'17 MOD 5 = 3.4'."}},
+ {k:"hook",min:4,label:"Model it",eyebrow:"Teacher model · Pseudocode to Python",title:"Same operators, different symbols",
+  html:flips([["DIV",c("//"),"17 // 5 → 3"],["MOD",c("%"),"17 % 5 → 2"],["^",c("**"),"2 ** 3 → 8"],["/",c("/"),"always gives a REAL: 10 / 2 → 5.0"]],"11em")
+   + cols(panel("Watch out!", `<p>In Python ${c("2 ^ 3")} gives <b>1</b>, not 8. ${c("^")} means something else in Python. Always use ${c("**")}.</p>`,1),
+     panel("Precedence", `<p><b>Brackets</b> → <b>^</b> → <b>* /</b> → <b>+ −</b></p><p class="note">${c("10 - 4 / 2")} = 8, but ${c("(10 - 4) / 2")} = 3</p>`,1)),
+  notes:{"Model":"Model DIV and MOD with the stopwatch, then Python // and %. Explain jigsaw roles and timing.","Watch for":"^ typed in Python (bitwise XOR)."}},
+ {k:"main",min:15,label:"Jigsaw",eyebrow:"Jigsaw · Expert groups",title:"Become the expert, then teach",phases:[["Expert groups",7],["Teach your group",6],["Check",2]],
+  html:cols(panel("Expert A · Time converter", `<p>Seconds → minutes and seconds.</p>${rv("Pseudocode",`<pre class="code">${hl(`INPUT Seconds
+Minutes ← Seconds DIV 60
+Remaining ← Seconds MOD 60
+OUTPUT Minutes, " min ", Remaining, " s"`,"pc")}</pre>`)}${rv("Python",`<pre class="code">${hl(`seconds = int(input("Seconds: "))
+print(seconds // 60, "min", seconds % 60, "s")`,"py")}</pre>`)}`),
+     panel("Expert B · Change-giver", `<p>How many 50s, 10s, 5s and 1s make 87 SAR?</p>${rv("Pseudocode",`<pre class="code">${hl(`INPUT Amount
+Fifties ← Amount DIV 50
+Amount ← Amount MOD 50
+Tens ← Amount DIV 10
+Amount ← Amount MOD 10
+Fives ← Amount DIV 5
+Ones ← Amount MOD 5`,"pc")}</pre>`)}${rv("Answer for 87","1 × 50, 3 × 10, 1 × 5, 2 × 1")}`),
+     panel("Expert C · Even or odd?", `<p>Use MOD to decide.</p>${rv("Pseudocode",`<pre class="code">${hl(`INPUT Number
+IF Number MOD 2 = 0
+  THEN
+    OUTPUT "Even"
+  ELSE
+    OUTPUT "Odd"
+ENDIF`,"pc")}</pre>`)}${rv("Python",`<pre class="code">${hl(`number = int(input("Number: "))
+if number % 2 == 0:
+    print("Even")
+else:
+    print("Odd")`,"py")}</pre>`)}`)),
+  notes:{"Resources":"Coursebook 8.4–8.5; expert cards; Python.","Support":"Expert card with partially written pseudocode.","Stretch":"Change-giver for SAR notes 500/100/50/10/5/1."}},
+ {k:"game",min:7,label:"Parsons race",eyebrow:"Game · Parsons puzzle race",title:"Put the shopping program in order",
+  html:cols(parsons(['CONSTANT VAT_RATE ← 0.15','OUTPUT "Item price?"','INPUT Price','OUTPUT "How many?"','INPUT Quantity','SubTotal ← Price * Quantity','Total ← SubTotal * (1 + VAT_RATE)','OUTPUT "Total: ", Total'],"Pseudocode"),
+     `<div class="stack">${counters(["Team A","Team B","Team C"])}${panel("Justify one move","<p>“This line must come before … because …”</p>",1)}${rv("Stretch answer","Lines 2–3 can swap with lines 4–5: the two inputs can come in either order.")}</div>`),
+  notes:{"Support":"Use the paper strips; give weaker pairs 5 lines.","Stretch":"Find the lines that can move without changing the output."}},
+ {k:"close",min:6,label:"Exit ticket",eyebrow:"Exit ticket",title:"DIV, MOD and order",
+  html:flips([["29 DIV 4","7"],["29 MOD 4","1"],["2 ** 4 in Python","16"],["7 // 2 in Python","3"]],"10em")
+   + parsons(["INPUT Minutes","Hours ← Minutes DIV 60","Left ← Minutes MOD 60","OUTPUT Hours, Left"],"Reorder these 4 lines")
+   + panel("Homework", ul(["Coursebook 8.4 questions.","Program: convert minutes to hours and minutes using DIV and MOD."]),1),
+  notes:{"Exit ticket":"Evaluate 29 DIV 4 and 29 MOD 4; reorder 4 lines; one question for the teacher."}}
+]};
+
+/* ---------- Week 9 P1 ---------- */
+L["9-1"] = {short:"IF", title:"Selection: IF statements", ref:"0478 8.1.4(b)(f) · AO2, AO3",
+ follow:{"10BR1":"About 3 students still mix = and ==; quick retrieval starter.","10BR3":"About 3 students still mix = and ==; boundary choices weak."},
+ stages:[
+ outcomesSlide("IF statements",
+  [`use relational operators ${c("= < <= > >= <>")}`,`write ${c("IF … THEN … ELSE … ENDIF")} in pseudocode`,`code decisions in Python with ${c("if / elif / else")}`],
+  ["I can write a correct IF statement with ELSE in Cambridge pseudocode.","I can code it in Python with correct indentation.","I test both branches and the boundaries."],
+  [["selection","choosing a path"],["condition","a TRUE/FALSE test"],["<>","not equal (Python !=)"],["boundary","the value where the answer changes"],["indentation","spaces that show a block"]]),
+ {k:"warm",min:5,label:"Warm-up",eyebrow:"Story · Turn it into a flowchart",title:"Late for school?",
+  html:cols(`<div class="stack">${lead("Sara reaches the school gate. <b>If</b> she arrives before 7:15 she is on time, <b>otherwise</b> she gets a late slip.")}
+   <div class="flow"><div class="box">Arrive at gate</div><div class="arrow">↓</div><div class="dia">Time &lt; 7:15?</div><div class="split"><div><div class="arrow">Yes ↓</div><div class="box">“On time”</div></div><div><div class="arrow">No ↓</div><div class="box">“Late slip”</div></div></div></div></div>`,
+   `<div class="stack">${h3("What happens?")}${flips([["7:05","On time"],["7:15","Late slip","“before 7:15” means 7:15 is late",0],["7:20","Late slip","",0]],"7em")}${rv("Stretch: add a third outcome","IF Time ≥ 7:45 → “Very late: see the office”")}</div>`),
+  notes:{"Support":"Flowchart with the decision box drawn.","Stretch":"Add a third outcome (very late)."}},
+ {k:"hook",min:6,label:"Model it",eyebrow:"Teacher model",title:"IF … THEN … ELSE … ENDIF",
+  html:flips([["=","equal","Python ==",1,1],["<>","not equal","Python !=",1,1],["<","less than","",1,1],["<=","less than or equal","",1,1],[">","greater than","",1,1],[">=","greater than or equal","",1,1]],"8em")
+   + cols(pc(`IF Light = "Green"
+  THEN
+    OUTPUT "Go"
+  ELSE
+    OUTPUT "Stop"
+ENDIF`), py(`if light == "Green":
+    print("Go")
+else:
+    print("Stop")`)),
+  notes:{"Model":"Traffic light hook. Use the syllabus 2-space layout. Think aloud on testing boundaries (69, 70, 71).","Watch for":"Using = in Python conditions; missing colon or indentation."}},
+ {k:"main",min:14,label:"Grade calculator",eyebrow:"Worked example · Code it · Test it",title:"Mark → grade",phases:[["Model",4],["Code",7],["Test boundaries",3]],
+  html:cols(pc(`INPUT Mark
+IF Mark >= 90
+  THEN
+    Grade ← "A*"
+  ELSE
+    IF Mark >= 80
+      THEN
+        Grade ← "A"
+      ELSE
+        IF Mark >= 70
+          THEN
+            Grade ← "B"
+          ELSE
+            Grade ← "U"
+        ENDIF
+    ENDIF
+ENDIF`), `<div class="stack">${py(`mark = int(input("Mark: "))
+if mark >= 90:
+    grade = "A*"
+elif mark >= 80:
+    grade = "A"
+elif mark >= 70:
+    grade = "B"
+elif mark >= 60:
+    grade = "C"
+else:
+    grade = "U"
+print("Grade:", grade)`)}${rv("Bug hunt: why is everyone a C?",`If ${c("mark >= 60")} is tested <b>first</b>, 95 is caught there. Test the highest grade first.`)}</div>`)
+  + `<div>${h3("Boundary test table")}<div class="tablewrap"><table><thead><tr><th>Mark</th><th>59</th><th>60</th><th>69</th><th>70</th><th>89</th><th>90</th></tr></thead><tbody><tr><td>Grade</td><td>${cell("U")}</td><td>${cell("C")}</td><td>${cell("C")}</td><td>${cell("B")}</td><td>${cell("A")}</td><td>${cell("A*")}</td></tr></tbody></table></div></div>`,
+  notes:{"Resources":"Coursebook 8.6; Python; boundary test table on paper.","Support":"Template with the first two branches written.","Stretch":"Validate that the mark is 0–100 before grading.","Watch for":"Wrong boundary (> vs >=); elif order so A* is never reached."}},
+ {k:"game",min:7,label:"Spot the error",eyebrow:"Think, pair, share · Spot the error",title:"Find and fix the bug",phases:[["Think",2],["Pair",3],["Share",2]],
+  html:flips([[`IF Age > 17 THEN OUTPUT "Adult"`,"Missing ENDIF","Every IF needs ENDIF.",0,1],[`if score = 10:`,"Use ==","= stores; == compares.",0,1],[`IF Mark > 50 THEN OUTPUT "Pass"`,"Wrong boundary","A mark of 50 should pass: use >=.",0,1],[`if x > 3:\nprint("Big")`,"No indentation","The block under if must be indented.",0,1]],"14em")
+   + `<div class="row">${counters(["Team A","Team B"])}</div>`,
+  notes:{"Support":"Errors highlighted; students explain the fix.","Stretch":"Write one buggy snippet for another pair."}},
+ {k:"close",min:6,label:"Exit ticket",eyebrow:"Exit ticket",title:"Adult or minor?",
+  html:cols(`<div class="q">${lead("Write the IF in pseudocode: age 18 or over → “Adult”, else “Minor”.")}${rv("Answer",`<pre class="code">${hl(`IF Age >= 18
+  THEN
+    OUTPUT "Adult"
+  ELSE
+    OUTPUT "Minor"
+ENDIF`,"pc")}</pre>`)}</div>`,
+   `<div class="q">${lead("Give 3 boundary test values.")}${showme()}${rv("Answer","17, 18 and 19")}</div>`)
+   + panel("Homework", ul(["Coursebook 8.6 IF questions.","Program: input a temperature, output “Hot”, “Warm” or “Cold”."]),1),
+  notes:{"Exit ticket":"IF for age >= 18; 3 boundary test values."}}
+]};
+
+/* ---------- Week 9 P2 ---------- */
+L["9-2"] = {short:"CASE", title:"Selection: CASE statements", ref:"0478 8.1.4(b) · AO2, AO3",
+ follow:{"10BR1":"About 2 students missed the IF lesson: give the worked example sheet.","10BR2":"About 2 students missed the IF lesson: give the worked example sheet.","10BR3":"Boundary choices were weak; about 2 students missed the IF lesson."},
+ stages:[
+ outcomesSlide("CASE statements",
+  [`write ${c("CASE OF … OTHERWISE … ENDCASE")}`,`code it in Python with ${c("match")} or ${c("if/elif")}`,"choose when CASE is clearer than IF"],
+  ["I can write a CASE statement with an OTHERWISE clause.","I can code it in Python.","I can explain when CASE is clearer than nested IF."],
+  [["CASE","one branch chosen from many values"],["OTHERWISE","the default; must be last"],["match","Python 3.10+ version of CASE"],["branch","one possible path"]]),
+ {k:"warm",min:3,label:"Retrieval",eyebrow:"Retrieval · = or ==?",title:"Python: store or compare?",
+  html:flips([["x = 5","Store","",1,1],["if x == 5:","Compare","",1,1],["if x = 5:","Error!","= cannot compare in Python",0,1],["x == 5","Compare (no effect alone)","",1,1]],"11em") + `<div class="row">${showme()}</div>`,
+  notes:{"Note":"Quick retrieval for students mixing = and ==."}},
+ {k:"debate",min:6,label:"Role play",eyebrow:"Role play · Customer service menu",title:"Press 1 for balance…",
+  html:cols(`<div class="stack">${lead("One student is the menu. Others call in and press a key. The class records each branch.")}
+   <div class="phone" data-menu='{"1":"Your balance is 45 SAR","2":"Top-up: enter amount","3":"Help: call 920000000","*":"Invalid choice"}'>${["1","2","3","4","5","6","7","8","9"].map(n=>`<button type="button" data-key="${n}">${n}</button>`).join("")}</div></div>`,
+   `<div class="stack">${h3("Menu says")}<div class="screenout" data-menuout>Welcome. Press 1, 2 or 3.</div>${rv("Which branch handled 4–9?","OTHERWISE: every value that is not listed.")}</div>`),
+  notes:{"Support":"Role card with a script.","Stretch":"Add a hidden option and discuss why OTHERWISE is needed."}},
+ {k:"hook",min:5,label:"Model it",eyebrow:"Teacher model",title:"CASE OF … ENDCASE",
+  html:cols(pc(`CASE OF Choice
+  1 : OUTPUT "Balance"
+  2 : OUTPUT "Top-up"
+  3 : OUTPUT "Help"
+  OTHERWISE OUTPUT "Invalid"
+ENDCASE`), py(`match choice:
+    case 1:
+        print("Balance")
+    case 2:
+        print("Top-up")
+    case 3:
+        print("Help")
+    case _:
+        print("Invalid")`,"Python 3.10+"), py(`if choice == 1:
+    print("Balance")
+elif choice == 2:
+    print("Top-up")
+elif choice == 3:
+    print("Help")
+else:
+    print("Invalid")`,"Any Python version")),
+  notes:{"Model":"Use the syllabus layout. Check the lab Python version: 2 PCs were below 3.10 last time, so teach the if/elif fallback too.","Watch for":"OTHERWISE not last; ranges in CASE; missing default."}},
+ {k:"main",min:13,label:"Canteen menu",eyebrow:"Worked example · Code it",title:"Canteen menu by item code",phases:[["Rewrite day-of-week",4],["Code canteen menu",7],["Test",2]],
+  html:cols(`<div class="stack">${h3("1 · Rewrite as CASE")}${pc(`IF Day = 1 THEN OUTPUT "Sunday"
+ELSE IF Day = 2 THEN OUTPUT "Monday"
+ELSE IF Day = 3 THEN OUTPUT "Tuesday"
+...`,"Nested IF (long!)")}${rv("CASE version",`<pre class="code">${hl(`CASE OF Day
+  1 : OUTPUT "Sunday"
+  2 : OUTPUT "Monday"
+  3 : OUTPUT "Tuesday"
+  OTHERWISE OUTPUT "Invalid day"
+ENDCASE`,"pc")}</pre>`)}</div>`,
+   `<div class="stack">${h3("2 · Canteen menu")}${ul([`${c("1")} Sandwich 8 SAR`,`${c("2")} Juice 4 SAR`,`${c("3")} Salad 10 SAR`,"anything else → “Not on the menu”"])}${rv("Python solution",`<pre class="code">${hl(`code = int(input("Item code: "))
+match code:
+    case 1:
+        print("Sandwich: 8 SAR")
+    case 2:
+        print("Juice: 4 SAR")
+    case 3:
+        print("Salad: 10 SAR")
+    case _:
+        print("Not on the menu")`,"py")}</pre>`)}</div>`),
+  notes:{"Resources":"Coursebook 8.6 CASE; syllabus pseudocode guide p.44; Python 3.10+.","Support":"Side-by-side IF vs CASE template.","Stretch":"Menu repeats until 'Q' (preview of loops)."}},
+ {k:"game",min:6,label:"IF or CASE?",eyebrow:"Pairs · Decide and justify",title:"IF or CASE?",
+  html:sorter(["IF","CASE"],[["Grade boundaries","mark ≥ 90, ≥ 80 …","IF"],["Menu choice","1, 2, 3","CASE"],["Password check","Password = stored","IF"],["Month number","1 to 12","CASE"],["Shipping zones","zone A, B, C, D","CASE"],["Temperature warning","above 45 °C","IF"]],"10em")
+   + rv("Stretch: why do ranges suit IF?","CASE matches exact values. A range like 80–89 needs a comparison (>=), which is what IF does."),
+  notes:{"Support":"Scenarios with picture hints.","Stretch":"Explain why ranges suit IF better."}},
+ {k:"close",min:5,label:"Exit check",eyebrow:"Exit check",title:"Write a 4-branch CASE",
+  html:cols(`<div class="q">${lead("Write a CASE for a traffic light colour with 3 colours and OTHERWISE.")}${rv("Example",`<pre class="code">${hl(`CASE OF Colour
+  "Red" : OUTPUT "Stop"
+  "Amber" : OUTPUT "Get ready"
+  "Green" : OUTPUT "Go"
+  OTHERWISE OUTPUT "Broken light"
+ENDCASE`,"pc")}</pre>`)}</div>`,
+   `<div class="q">${lead("One sentence: when is CASE better than IF?")}${rv("Example","When one variable is compared with many exact values.")}</div>`)
+   + panel("Homework", ul(["Coursebook 8.6 CASE questions.","Program: input a month number 1–12, output the season (handle invalid)."]),1),
+  notes:{"Exit check":"4-branch CASE; one sentence on CASE vs IF."}}
+]};
+
+/* ---------- Week 10 P1 ---------- */
+L["10-1"] = {short:"AND OR NOT", title:"Boolean operators: Task 8.2", ref:"0478 8.1.4(f) · links to Topic 10 · AO2, AO3",
+ follow:{"10BR2":"3 students need help planning before coding; pair them with confident coders."},
+ stages:[
+ outcomesSlide("AND, OR, NOT",
+  [`use ${c("AND")}, ${c("OR")} and ${c("NOT")} in conditions`,"evaluate conditions with truth tables","complete Programming task 8.2"],
+  ["I can evaluate compound conditions.","I can write conditions with AND/OR/NOT in pseudocode and Python.","My task 8.2 program handles all cases."],
+  [["AND","both must be TRUE"],["OR","at least one is TRUE"],["NOT","reverses TRUE/FALSE"],["truth table","every input combination"]]),
+ {k:"warm",min:6,label:"Stand up if TRUE",eyebrow:"Game · Stand up if TRUE",title:"Stand up if it's TRUE for you",
+  html:lead("Teacher reads a condition. Stand if it is TRUE for you, sit if FALSE.")
+   + flips([["Wears glasses AND born in October","Both must be TRUE"],["Has a sister OR has a brother","One is enough"],["NOT in 10BR2","Reverses it"],["Walked to school AND has a pen","Both must be TRUE"]],"13em")
+   + cols(`<div>${h3("AND")}<div class="tablewrap"><table><thead><tr><th>A</th><th>B</th><th>A AND B</th></tr></thead><tbody>${[["T","T","TRUE"],["T","F","FALSE"],["F","T","FALSE"],["F","F","FALSE"]].map(([a,b,r])=>`<tr><td>${a}</td><td>${b}</td><td>${cell(r)}</td></tr>`).join("")}</tbody></table></div></div>`,
+     `<div>${h3("OR")}<div class="tablewrap"><table><thead><tr><th>A</th><th>B</th><th>A OR B</th></tr></thead><tbody>${[["T","T","TRUE"],["T","F","TRUE"],["F","T","TRUE"],["F","F","FALSE"]].map(([a,b,r])=>`<tr><td>${a}</td><td>${b}</td><td>${cell(r)}</td></tr>`).join("")}</tbody></table></div></div>`),
+  notes:{"Support":"Truth table with 2 rows filled.","Stretch":"Write a condition that is TRUE for exactly 3 students.","Note":"Keep the game to 6 minutes; extend testing time instead."}},
+ {k:"hook",min:4,label:"Model it",eyebrow:"Teacher model · Theme park",title:"Can you ride the roller coaster?",
+  html:cols(pc(`IF Age >= 10 AND Height >= 140
+  THEN
+    OUTPUT "Enjoy the ride"
+  ELSE
+    OUTPUT "Sorry"
+ENDIF`), py(`if age >= 10 and height >= 140:
+    print("Enjoy the ride")
+else:
+    print("Sorry")`))
+   + cols(panel("Incomplete condition", `<p>${c("Age > 5 AND < 10")} is <span class="no">wrong</span>.</p>${rv("Fix it",c("Age > 5 AND Age < 10"))}`,1),
+     panel("Link to Topic 10", "<p>AND, OR and NOT are the same logic as the gates you will meet in logic circuits.</p>",1)),
+  notes:{"Watch for":"Incomplete conditions; OR used instead of AND; brackets with NOT. Pre-teach the incomplete condition error."}},
+ {k:"main",min:16,label:"Task 8.2",eyebrow:"Programming task 8.2 · Plan, code, test",title:"Ticket pricing",phases:[["Plan",4],["Code",8],["Test table",4]],
+  html:cols(panel("Rules", ul(["Under 12 → <b>20 SAR</b>","Student <b>and</b> under 25 → <b>30 SAR</b>","60 or over → <b>30 SAR</b>","Everyone else → <b>50 SAR</b>"]),1),
+     py(`age = int(input("Age: "))
+is_student = input("Student? (y/n) ") == "y"
+if age < 12:
+    price = 20
+elif (is_student and age < 25) or age >= 60:
+    price = 30
+else:
+    price = 50
+print("Ticket:", price, "SAR")`))
+  + `<div>${h3("Test table · predict, then run")}<div class="tablewrap"><table><thead><tr><th>Age</th><th>Student?</th><th>Expected</th></tr></thead><tbody>${[["11","n","20"],["12","n","50"],["24","y","30"],["25","y","50"],["60","n","30"],["59","n","50"]].map(([a,s,r])=>`<tr><td>${a}</td><td>${s}</td><td>${cell(r+" SAR")}</td></tr>`).join("")}</tbody></table></div></div>`,
+  notes:{"Resources":"Coursebook Programming task 8.2; test table.","Support":"Pseudocode skeleton with conditions to complete.","Stretch":"Add NOT and explain an equivalent condition without it."}},
+ {k:"game",min:6,label:"Peer check",eyebrow:"Cooperative · Swap test tables",title:"Check your partner's tests",
+  html:cols(`<div>${h3("Peer checklist")}${ticks(["Every rule has at least one test","Boundary ages tested (11/12, 24/25, 59/60)","Expected result written before running","Actual result matches expected"])}</div>`,
+   `<div class="stack">${h3("Quick-fire: X = 7")}${flips([["X > 5 AND X < 10","TRUE"],["X < 5 OR X = 7","TRUE"],["NOT (X > 3)","FALSE","",0],["X > 7 OR X < 0","FALSE","",0]],"11em")}</div>`),
+  notes:{"Support":"Checklist with an example.","Stretch":"Write the missing test case."}},
+ {k:"close",min:6,label:"Exit ticket",eyebrow:"Exit ticket",title:"Evaluate and fix",
+  html:lead("Mark = 65") + flips([["Mark > 50 AND Mark < 70","TRUE"],["Mark < 40 OR Mark > 60","TRUE"],["NOT (Mark >= 50)","FALSE","",0]],"13em")
+   + cols(`<div class="q">${lead(`Fix: ${c("Mark > 50 AND < 70")}`)}${rv("Answer",c("Mark > 50 AND Mark < 70"))}</div>`,
+     panel("Homework", ul(["Finish task 8.2 and upload code + test table.","Read coursebook 8.7 iteration (count-controlled)."]),1)),
+  notes:{"Exit ticket":"Evaluate 3 compound conditions; fix the incomplete condition."}}
+]};
+
+/* ---------- Week 10 P2 ---------- */
+L["10-2"] = {short:"FOR loops", title:"Count-controlled loops", ref:"0478 8.1.4(c) · AO2",
+ follow:{"10BR1":"2 students were absent: send the loop worksheet. Gifted students are ready for nested loops."},
+ stages:[
+ outcomesSlide("FOR loops",
+  [`write ${c("FOR … TO … STEP … NEXT")} loops`,`match them to Python ${c("for … in range()")}`,"trace a loop in a trace table"],
+  ["I can write a FOR loop with and without STEP.",`I can match it to Python ${c("range()")} correctly (end value!).`,"I can trace a loop in a trace table."],
+  [["iteration","repeating code"],["count-controlled","a fixed number of repeats"],["STEP","how much the counter changes"],["range(a, b)","a up to b − 1"]]),
+ {k:"warm",min:5,label:"Brainstorm",eyebrow:"Brainstorm · Start, end, step",title:"Things we repeat a known number of times",
+  html:flips([["5 daily prayers","1 TO 5, STEP 1"],["10 push-ups","1 TO 10, STEP 1"],["30 students' marks","1 TO 30, STEP 1"],["Countdown 10 → 1","10 TO 1, STEP −1"],["Even numbers 2 → 20","2 TO 20, STEP 2"],["Keep guessing until right","Unknown! Not a FOR loop","",0]],"11em")
+   + `<div class="row">${showme("Your own idea: 3, 2, 1")}</div>`,
+  notes:{"Support":"Picture prompts.","Stretch":"Find a task repeated an unknown number of times (next week: WHILE)."}},
+ {k:"hook",min:5,label:"Model it",eyebrow:"Teacher model",title:"Write it 100 times… or loop",
+  html:cols(pc(`FOR Count ← 1 TO 10
+  OUTPUT Count
+NEXT Count`), py(`for count in range(1, 11):
+    print(count)`))
+   + `<div>${h3("range(1, 11) on a number line")}<div class="ruler">${Array.from({length:11},(_, i)=>`<div><span class="ch" style="${i===10?"opacity:.35;text-decoration:line-through":""}">${i+1}</span></div>`).join("")}</div><p class="note" style="margin-top:.4em">The end value 11 is <b>not</b> included.</p></div>`,
+  notes:{"Model":"Use Thonny's step debugger to watch the counter change.","Watch for":"Off-by-one with range(); 'my loop runs 9 times'."}},
+ {k:"main",min:14,label:"Code along",eyebrow:"Code along · Three loops",title:"Times table, countdown, sum",phases:[["Times table",4],["Countdown",4],["Sum 1 to N",6]],
+  html:cols(`<div class="stack">${pc(`FOR I ← 1 TO 12
+  OUTPUT I, " x 7 = ", I * 7
+NEXT I`,"1 · Times table")}${rv("Python",`<pre class="code">${hl(`for i in range(1, 13):
+    print(i, "x 7 =", i * 7)`,"py")}</pre>`)}</div>`,
+   `<div class="stack">${pc(`FOR N ← 10 TO 1 STEP -1
+  OUTPUT N
+NEXT N
+OUTPUT "Lift off!"`,"2 · Countdown")}${rv("Python",`<pre class="code">${hl(`for n in range(10, 0, -1):
+    print(n)
+print("Lift off!")`,"py")}</pre>`)}</div>`,
+   `<div class="stack">${pc(`INPUT N
+Total ← 0
+FOR I ← 1 TO N
+  Total ← Total + I
+NEXT I
+OUTPUT Total`,"3 · Sum 1 to N")}${rv("Python",`<pre class="code">${hl(`n = int(input("N: "))
+total = 0
+for i in range(1, n + 1):
+    total = total + i
+print(total)`,"py")}</pre>`)}</div>`)
+  + predict([["range(1, 10)","1 to 9",""],["range(0, 5)","0 to 4",""],["range(10, 0, -1)","10 down to 1",""],["range(2, 21, 2)","2, 4 … 20",""]],"py",["range","Your prediction","Numbers"]),
+  notes:{"Resources":"Coursebook 8.7; syllabus pseudocode guide p.45; Python.","Support":"Templates with range() hints.","Stretch":"Multiplication grid with a loop inside a loop."}},
+ {k:"game",min:8,label:"Trace it",eyebrow:"Problem solving · Trace table challenge",title:"Trace the loop",
+  html:cols(pc(`Total ← 0
+FOR Count ← 1 TO 9 STEP 2
+  Total ← Total + Count
+NEXT Count
+OUTPUT Total`), `<div class="stack">${lead("Fill your trace table, then reveal row by row.")}${trace(["Count","Total","Output"],[["–","0",""],["1","1",""],["3","4",""],["5","9",""],["7","16",""],["9","25",""],["","","25"]])}</div>`)
+   + rv("Stretch: what if it runs FOR Count ← 9 TO 1 STEP -2?","Same total, 25: it adds 9, 7, 5, 3, 1."),
+  notes:{"Resources":"Trace table sheet; Thonny debugger to check.","Support":"Partially completed trace table."}},
+ {k:"close",min:6,label:"Exit ticket",eyebrow:"Exit ticket",title:"5, 10, 15 … 50",
+  html:cols(`<div class="q">${lead("Write a FOR loop that outputs 5, 10, … 50.")}${rv("Answer",`<pre class="code">${hl(`FOR N ← 5 TO 50 STEP 5
+  OUTPUT N
+NEXT N`,"pc")}</pre>`)}</div>`,
+   `<div class="q">${lead("Which range() gives 1 to 20?")}${showme()}${rv("Answer",c("range(1, 21)"))}</div>`)
+   + panel("Homework", ul(["Coursebook 8.7 count-controlled questions.","Program: output the sum of the first N odd numbers."]),1),
+  notes:{"Exit ticket":"FOR loop with STEP 5; range() for 1–20."}}
+]};
+
+/* ---------- Week 11 P1 ---------- */
+L["11-1"] = {short:"WHILE loops", title:"Pre-condition loops", ref:"0478 8.1.4(c) · AO2, AO3",
+ follow:{"10BR3":"3 students struggle to initialise counters; small-group support."},
+ stages:[
+ outcomesSlide("WHILE loops",
+  [`write ${c("WHILE … DO … ENDWHILE")} loops`,`code them with Python ${c("while")}`,"choose between FOR and WHILE"],
+  ["I can write a WHILE loop that ends correctly.","I can explain why it may run zero times.","I can choose FOR or WHILE for a scenario."],
+  [["pre-condition","tested before each repeat"],["infinite loop","never stops"],["initialise","give a starting value"],["condition","the TRUE/FALSE test"]]),
+ {k:"warm",min:7,label:"Predict & run",eyebrow:"Investigation · Predict, then run",title:"Normal, never, forever",
+  html:cols(`<div class="stack">${pc(`N ← 1
+WHILE N < 20 DO
+  N ← N * 2
+ENDWHILE
+OUTPUT N`,"A")}${rv("Output","32")}</div>`,
+   `<div class="stack">${pc(`Count ← 10
+WHILE Count < 5 DO
+  OUTPUT Count
+  Count ← Count + 1
+ENDWHILE`,"B")}${rv("Output","Nothing! The condition is FALSE at the start, so it runs zero times.")}</div>`,
+   `<div class="stack">${pc(`X ← 1
+WHILE X > 0 DO
+  X ← X + 1
+ENDWHILE`,"C")}${rv("Output","It never stops: X is always above 0. Press Thonny's red Stop button (Ctrl+F2).")}</div>`),
+  notes:{"Support":"Annotated snippets.","Stretch":"Rewrite C so it ends.","Note":"Teach stopping infinite loops before practice: 4 students lost work last time."}},
+ {k:"hook",min:4,label:"Model it",eyebrow:"Teacher model",title:"Keep stirring WHILE the tea is too hot",
+  html:cols(pc(`Total ← 0
+Months ← 0
+WHILE Total < Goal DO
+  Total ← Total + Monthly
+  Months ← Months + 1
+ENDWHILE`), py(`total = 0
+months = 0
+while total < goal:
+    total = total + monthly
+    months = months + 1`))
+   + panel("Three rules", ul(["Give the variable a value <b>before</b> the loop.","Change it <b>inside</b> the loop.","The condition must become FALSE one day."]),1),
+  notes:{"Watch for":"Condition never changes; initialising inside the loop."}},
+ {k:"main",min:15,label:"Problem solving",eyebrow:"Problem solving · Two programs",title:"Savings tracker and guessing game",phases:[["Savings tracker",8],["Guessing game",7]],
+  html:cols(`<div class="stack">${h3("1 · Savings tracker")}${lead("Goal 1000 SAR, saving 150 SAR a month. How many months?")}${showme()}${rv("Answer","7 months (total 1050 SAR)")}${rv("Python",`<pre class="code">${hl(`goal = 1000
+monthly = 150
+total = 0
+months = 0
+while total < goal:
+    total = total + monthly
+    months = months + 1
+print(months, "months")`,"py")}</pre>`)}</div>`,
+   `<div class="stack">${h3("2 · Guessing game")}${py(`secret = 7
+guess = int(input("Guess: "))
+while guess != secret:
+    print("Try again")
+    guess = int(input("Guess: "))
+print("Correct!")`)}${rv("Stretch",`${c("import random")} then ${c("secret = random.randint(1, 10)")} and limit the guesses to 5.`)}</div>`),
+  notes:{"Resources":"Coursebook 8.7; Python.","Support":"Flowchart of the savings loop.","Stretch":"Random target and limited guesses."}},
+ {k:"debate",min:6,label:"FOR or WHILE?",eyebrow:"Debate · Teams",title:"FOR or WHILE?",
+  html:sorter(["FOR","WHILE"],[["Reading 30 marks","known: 30","FOR"],["Password entry","until correct","WHILE"],["Game loop","until the player quits","WHILE"],["Countdown 10 to 1","known: 10","FOR"],["Doubling money","until it reaches a target","WHILE"]],"10em")
+   + `<div class="row">${counters(["Team FOR","Team WHILE"])}</div>`,
+  notes:{"Support":"Sentence starters.","Stretch":"Name a scenario where both work, and say which is clearer."}},
+ {k:"close",min:6,label:"Exit check",eyebrow:"Exit check",title:"Halve it until it's below 1",
+  html:cols(`<div class="q">${lead("Write a WHILE loop that halves Number until it is below 1.")}${rv("Answer",`<pre class="code">${hl(`WHILE Number >= 1 DO
+  Number ← Number / 2
+ENDWHILE`,"pc")}</pre>`)}</div>`,
+   `<div class="q">${lead("When does this loop run zero times?")}${rv("Answer","When Number is already below 1 at the start.")}</div>`)
+   + panel("Homework", ul(["Coursebook 8.7 pre-condition questions.","Program: how many years to double money at 5% interest?"]),1),
+  notes:{"Exit check":"Halving loop; explain the zero-run case."}}
+]};
+
+/* ---------- Week 11 P2 ---------- */
+L["11-2"] = {short:"REPEAT loops", title:"Post-condition loops", ref:"0478 8.1.4(c) · AO2, AO3",
+ follow:{"10BR1":"About 3 students found station C hard: give the WHILE-to-REPEAT conversion sheet.","10BR2":"About 3 students found station C hard: give the conversion sheet.","10BR3":"Counter initialisation weak; about 3 students need the conversion sheet."},
+ stages:[
+ outcomesSlide("REPEAT … UNTIL",
+  [`write ${c("REPEAT … UNTIL")} loops for validation`,`code them in Python with ${c("while True")} and ${c("break")}`,"compare all three loop types"],
+  ["I can write REPEAT…UNTIL for a validation loop.","I can explain it runs at least once.","I can code it in Python and compare it with WHILE."],
+  [["post-condition","tested after the body"],["validation","checking input is sensible"],["UNTIL","stops when TRUE"],["break","leaves a Python loop"]]),
+ {k:"warm",min:4,label:"Warm-up",eyebrow:"Warm-up · The ATM",title:"The ATM always asks at least once",
+  html:lead("How many times does each loop run <b>at least</b>?") + flips([["FOR Count ← 1 TO 5","Exactly 5"],["WHILE … DO","0 times possible"],["REPEAT … UNTIL","At least once"]],"12em") + `<div class="row">${showme()}</div>`,
+  notes:{"Note":"Teach the UNTIL inversion with a stop-sign visual before stations."}},
+ {k:"hook",min:6,label:"Model it",eyebrow:"Worked example · Syllabus",title:"Password entry",
+  html:cols(pc(`REPEAT
+  INPUT Password
+UNTIL Password = "Secret"`), py(`while True:
+    password = input("Password: ")
+    if password == "Secret":
+        break`))
+   + cols(panel("WHILE vs UNTIL", "<p><b>WHILE</b> keeps going while the condition is TRUE.<br><b>UNTIL</b> stops as soon as the condition is TRUE.</p>",1),
+     `<div class="q">${lead(`Convert: ${c("WHILE Mark < 0 OR Mark > 100")}`)}${rv("UNTIL version",c("UNTIL Mark >= 0 AND Mark <= 100"))}</div>`),
+  notes:{"Support":"Side-by-side pseudocode/Python card.","Stretch":"Add an attempts counter that locks after 3 tries.","Watch for":"Inverted condition errors; break in the wrong block."}},
+ {k:"main",min:15,label:"Stations",eyebrow:"Stations · Rotate every 5 minutes",title:"Three loop stations",phases:[["Station 1",5],["Station 2",5],["Station 3",5]],
+  html:cols(panel("A · Range check", `<p>Ask for a mark until it is 0–100.</p>${rv("Skeleton",`<pre class="code">${hl(`REPEAT
+  OUTPUT "Mark (0-100): "
+  INPUT Mark
+UNTIL Mark >= 0 AND Mark <= 100`,"pc")}</pre>`)}`),
+   panel("B · Repeating menu", `<p>Show a menu until the user types Q.</p>${rv("Skeleton",`<pre class="code">${hl(`while True:
+    choice = input("A, B or Q: ")
+    if choice == "Q":
+        break
+    print("You chose", choice)`,"py")}</pre>`)}`),
+   panel("C · WHILE → REPEAT", `<pre class="code">${hl(`INPUT Age
+WHILE Age < 11 OR Age > 18 DO
+  INPUT Age
+ENDWHILE`,"pc")}</pre>${rv("REPEAT version",`<pre class="code">${hl(`REPEAT
+  INPUT Age
+UNTIL Age >= 11 AND Age <= 18`,"pc")}</pre>Only one INPUT is needed because REPEAT runs at least once.`)}`))
+   + `<div class="row">${counters(["Group 1","Group 2","Group 3"])}</div>`,
+  notes:{"Resources":"Station cards; Python.","Support":"Station cards with code skeletons.","Stretch":"At C, prove with a test where WHILE and REPEAT give different results."}},
+ {k:"game",min:7,label:"Compare loops",eyebrow:"Cooperative · Comparison table",title:"FOR vs WHILE vs REPEAT",
+  html:`<div class="tablewrap"><table><thead><tr><th></th><th>FOR</th><th>WHILE</th><th>REPEAT</th></tr></thead><tbody>
+   <tr><td><b>Tested</b></td><td>${cell("count fixed at start")}</td><td>${cell("before the body")}</td><td>${cell("after the body")}</td></tr>
+   <tr><td><b>Minimum runs</b></td><td>${cell("the set number")}</td><td>${cell("0")}</td><td>${cell("1")}</td></tr>
+   <tr><td><b>Best for</b></td><td>${cell("known repeats")}</td><td>${cell("unknown, may be none")}</td><td>${cell("input validation")}</td></tr>
+   <tr><td><b>Python</b></td><td>${cell("for … in range()")}</td><td>${cell("while condition:")}</td><td>${cell("while True + break")}</td></tr></tbody></table></div>`,
+  notes:{"Support":"Table with examples to sort.","Stretch":"Add an example program for each column."}},
+ {k:"close",min:6,label:"Exit ticket",eyebrow:"Exit ticket",title:"Age 11 to 18",
+  html:cols(`<div class="q">${lead("Write REPEAT…UNTIL to accept an age from 11 to 18.")}${rv("Answer",`<pre class="code">${hl(`REPEAT
+  INPUT Age
+UNTIL Age >= 11 AND Age <= 18`,"pc")}</pre>`)}</div>`,
+   `<div>${h3("Minimum runs?")}${flips([["FOR 1 TO 4","4"],["WHILE","0"],["REPEAT","1"]],"7em")}</div>`)
+   + panel("Homework", ul(["Coursebook 8.7 post-condition questions.","Complete the loop comparison table in your notebook."]),1),
+  notes:{"Exit ticket":"REPEAT for the 11–18 range check; minimum runs for each loop type."}}
+]};
+
+/* ---------- Week 12 P1 ---------- */
+L["12-1"] = {short:"Totals & counts", title:"Totalling and counting", ref:"0478 8.1.4(d) · AO2, AO3",
+ follow:{"10BR2":"3 students reset totals inside loops; quick re-teach with a trace table."},
+ stages:[
+ outcomesSlide("Totalling and counting",
+  [`total values with ${c("Total ← Total + Value")}`,`count with ${c("Count ← Count + 1")}`,"calculate an average"],
+  ["I initialise totals and counters to 0 before the loop.","I update them correctly inside the loop.","I output an accurate total, count and average."],
+  [["totalling","adding values up"],["counting","adding 1 each time"],["initialise","start at 0 before the loop"],["sentinel","a stop value, like 0"]]),
+ {k:"warm",min:6,label:"Warm-up",eyebrow:"Problem solving · By hand",title:"Riyadh temperatures this fortnight",
+  html:`<div class="ruler">${[31,28,35,29,33,30,27,36,32,29].map(t=>`<div><span class="ch" style="padding:.1em .3em">${t}</span></div>`).join("")}</div>`
+   + cols(`<div class="q">${lead("How many days were <b>above</b> 30 °C?")}${rv("Answer","5 (31, 35, 33, 36, 32)")}</div>`,
+     `<div class="q">${lead("What is the total? The average?")}${showme()}${rv("Answer","Total 310, average 31.0 °C")}</div>`),
+  notes:{"Support":"Calculator allowed for the warm-up only.","Stretch":"Explain why the average must be REAL."}},
+ {k:"hook",min:5,label:"Model it",eyebrow:"Teacher model · Where does each line go?",title:"The school charity sale",
+  html:sorter(["Before the loop","Inside the loop","After the loop"],[["Total ← 0","",0],["Count ← 0","",0],["Total ← Total + Price","",1],["Count ← Count + 1","",1],["OUTPUT Total","",2],["Average ← Total / Count","",2]],"12em"),
+  notes:{"Watch for":"'My total is always the last value' = reset inside the loop."}},
+ {k:"main",min:14,label:"Charity sale",eyebrow:"Project task · Pseudocode then Python",title:"Charity sale program",phases:[["Pseudocode",5],["Python",7],["Test",2]],
+  html:cols(pc(`Total ← 0
+Count ← 0
+Over20 ← 0
+INPUT Price
+WHILE Price <> 0 DO
+  Total ← Total + Price
+  Count ← Count + 1
+  IF Price > 20
+    THEN
+      Over20 ← Over20 + 1
+  ENDIF
+  INPUT Price
+ENDWHILE
+OUTPUT Total, Count, Over20
+IF Count > 0
+  THEN
+    OUTPUT Total / Count
+ENDIF`), `<div class="stack">${rv("Python",`<pre class="code">${hl(`total = 0
+count = 0
+over20 = 0
+price = float(input("Price (0 to stop): "))
+while price != 0:
+    total = total + price
+    count = count + 1
+    if price > 20:
+        over20 = over20 + 1
+    price = float(input("Price (0 to stop): "))
+print("Total:", total, "Items:", count, "Over 20:", over20)
+if count > 0:
+    print("Average:", total / count)`,"py")}</pre>`)}${panel("Debug corner", ul(["Counted the 0? The sentinel must not be counted.","Dividing by 0 when nothing was sold: check Count first.","Use REAL for the average."]))}</div>`),
+  notes:{"Resources":"Coursebook 8.8–8.9; Python.","Support":"Skeleton with loop and comments.","Stretch":"Track the most expensive item (finding the maximum).","Note":"Show the sentinel bug live: several students counted the 0 last time."}},
+ {k:"game",min:7,label:"Trace it",eyebrow:"Think, pair, share · Trace table",title:"Inputs: 12, 25, 8, 30, 0",phases:[["Think",3],["Pair",2],["Share",2]],
+  html:trace(["Price","Total","Count","Over20"],[["–","0","0","0"],["12","12","1","0"],["25","37","2","1"],["8","45","3","1"],["30","75","4","2"],["0","stop","",""]])
+   + rv("What is the average?","75 / 4 = 18.75"),
+  notes:{"Support":"Trace table with columns labelled.","Stretch":"Add a column for a running average."}},
+ {k:"close",min:6,label:"Exit check",eyebrow:"Exit check",title:"Two lines that matter",
+  html:cols(`<div class="q">${lead("Write the line that totals and the line that counts.")}${rv("Answer",`${c("Total ← Total + Value")}<br>${c("Count ← Count + 1")}`)}</div>`,
+   `<div class="q">${lead("Where does initialisation belong?")}${showme()}${rv("Answer","Before the loop.")}</div>`)
+   + panel("Homework", ul(["Coursebook 8.8–8.9 questions.","Program: input 10 marks, output the total, the passes (≥ 50) and the average."]),1),
+  notes:{"Exit check":"Total and count lines; where initialisation belongs."}}
+]};
+
+/* ---------- Week 12 P2 ---------- */
+L["12-2"] = {short:"Strings", title:"String handling", ref:"0478 8.1.4(e) · AO1, AO2",
+ follow:{"10BR1":"3 students confused about the slicing end index; extra practice sheet."},
+ stages:[
+ outcomesSlide("String handling",
+  [`use ${c("LENGTH")}, ${c("SUBSTRING")}, ${c("UCASE")}, ${c("LCASE")}`,`use Python ${c("len()")}, slicing, ${c(".upper()")}, ${c(".lower()")}`,"remember: position 1 in pseudocode, index 0 in Python"],
+  ["I can predict LENGTH, SUBSTRING, UCASE and LCASE results.","I can convert SUBSTRING(s, start, length) into Python slicing.","My username generator works."],
+  [["string","a sequence of characters"],["SUBSTRING","part of a string"],["slice","Python s[start:end]"],["index","a character's position"]]),
+ {k:"hook",min:4,label:"Hook",eyebrow:"Hook · Teacher model",title:"How are school usernames made?",
+  html:lead(`${c('"Happy Days"')}: blue = pseudocode position, red = Python index`)
+   + `<div class="ruler">${"Happy Days".split("").map((ch,i)=>`<div><span class="i1">${i+1}</span><span class="ch">${ch === " " ? "␣" : esc(ch)}</span><span class="i0">${i}</span></div>`).join("")}</div>`
+   + cols(pc(`LENGTH("Happy Days")         // 10
+SUBSTRING("Happy Days", 1, 5) // "Happy"
+UCASE("Happy")                // "HAPPY"`,"Pseudocode"), py(`len("Happy Days")   # 10
+"Happy Days"[0:5]   # 'Happy'
+"Happy".upper()     # 'HAPPY'`)),
+  notes:{"Note":"Teach 1-based vs 0-based indexing with this ruler before coding.","Watch for":"'SUBSTRING(1,5) = [1:5]'."}},
+ {k:"warm",min:9,label:"Investigate",eyebrow:"Investigation · Python shell",title:"Predict, then test",
+  html:predict([['len("Happy Days")',"10","the space counts"],['"Happy Days"[0:5]',c("'Happy'"),"index 0 to 4"],['"Happy Days"[6:]',c("'Days'"),"from index 6 to the end"],['"Happy Days"[-3:]',c("'ays'"),"last 3 characters"],['"Riyadh".upper()',c("'RIYADH'"),""],['"IGCSE".lower()',c("'igcse'"),""]])
+   + rv("Rule: SUBSTRING(s, start, length) in Python is…",c("s[start - 1 : start - 1 + length]")),
+  notes:{"Support":"Sheet with examples completed.","Stretch":"Get the last 3 characters in 2 ways (s[-3:] and s[len(s)-3:]).","Note":"Use students' own names only with consent."}},
+ {k:"main",min:14,label:"Usernames",eyebrow:"Problem solving",title:"Username generator",phases:[["Pseudocode",5],["Python",6],["Test",3]],
+  html:lead("First 3 letters of surname + first letter of first name + last 2 digits of birth year, all lowercase.")
+   + cols(pc(`INPUT Surname
+INPUT FirstName
+INPUT Year
+User ← SUBSTRING(Surname, 1, 3) & SUBSTRING(FirstName, 1, 1) & SUBSTRING(Year, 3, 2)
+OUTPUT LCASE(User)`), py(`surname = input("Surname: ")
+first = input("First name: ")
+year = input("Birth year: ")
+user = surname[0:3] + first[0] + year[2:4]
+print(user.lower())`))
+   + `<div class="tablewrap"><table><thead><tr><th>Surname</th><th>First name</th><th>Year</th><th>Username</th></tr></thead><tbody>${[["Alharbi","Omar","2010","alho10"],["Khan","Sara","2009","khas09"],["Li","Mona","2010","lim10 ⚠ short surname"]].map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td>${cell(r[3])}</td></tr>`).join("")}</tbody></table></div>`,
+  notes:{"Resources":"Coursebook 8.10; syllabus string functions p.42.","Support":"Worked SUBSTRING-to-slice conversion card.","Stretch":"Handle names shorter than 3 letters; add validation.","Note":"& joins strings in Cambridge pseudocode."}},
+ {k:"game",min:7,label:"String surgeon",eyebrow:"Game · String surgeon",title:"Predict the output",
+  html:`<div class="row">${counters(["Team A","Team B","Team C"])}</div>`
+   + flips([['UCASE("riyadh")',"RIYADH","",1,1],['LENGTH("IGCSE 0478")',"10","the space counts",1,1],['SUBSTRING("Computer", 4, 3)','"put"',"",1,1],['"Computer"[3:6]',"'put'","same as above",1,1],['len("")',"0","empty string",1,1],['"Jeddah"[-1]',"'h'","last character",1,1],['SUBSTRING("Saudi", 2, 3)','"aud"',"",1,1],['"Python".lower()',"'python'","",1,1]],"12em"),
+  notes:{"Resources":"Kahoot 'String surgeon' if ready; this board is the backup.","Stretch":"Bonus: write the expression for a given output."}},
+ {k:"close",min:4,label:"Exit ticket",eyebrow:"Exit ticket",title:"Convert and predict",
+  html:cols(`<div class="q">${lead(`Convert ${c("SUBSTRING(Word, 2, 3)")} into Python.`)}${rv("Answer",c("Word[1:4]"))}</div>`,
+   `<div class="q">${lead(`Predict ${c('UCASE("riyadh")')}`)}${rv("Answer",c('"RIYADH"'))}</div>`)
+   + panel("Homework", ul(["Coursebook 8.10 questions.","Program: count the vowels in a sentence (loop + string handling)."]),1),
+  notes:{"Exit ticket":"SUBSTRING to slice; UCASE prediction."}}
+]};
+
+/* ---------- Week 13 P1 ---------- */
+L["13-1"] = {short:"Nesting", title:"Nested statements", ref:"0478 8.1.5 · AO2, AO3",
+ follow:{"10BR1":"About 3 students below expectations on loops: prepare a revision pack for the break.","10BR2":"About 3 students below expectations on loops: revision pack.","10BR3":"About 3 students below expectations on loops: revision pack."},
+ stages:[
+ outcomesSlide("Nested statements",
+  ["write a loop with an IF inside it","write a loop inside a loop","trace nested statements (up to 3 levels)"],
+  ["I can trace a nested loop.","I can write a loop with an IF inside it.","My nested program is correctly indented with ENDIF/NEXT in the right places."],
+  [["nesting","a statement inside another"],["outer loop","runs the slow way"],["inner loop","runs fully each outer turn"],["level","how deep the nesting goes (exam max 3)"]]),
+ {k:"hook",min:4,label:"Hook",eyebrow:"Hook · A clock",title:"Minutes inside hours",
+  html:cols(pc(`FOR Hour ← 0 TO 23
+  FOR Minute ← 0 TO 59
+    OUTPUT Hour, ":", Minute
+  NEXT Minute
+NEXT Hour`), `<div class="q">${lead("How many times does OUTPUT run in one day?")}${showme()}${rv("Answer","24 × 60 = <b>1440</b> times")}</div>`),
+  notes:{"Model":"Colour-code the levels on the board."}},
+ {k:"warm",min:9,label:"Pattern lab",eyebrow:"Experiment · Nested loop lab",title:"Change the ranges, watch the pattern",
+  html:cols(`<div class="stack" data-stars>${py(`for row in range(1, ROWS + 1):
+    for col in range(1, COLS + 1):
+        print("*", end="")
+    print()`,"pattern.py")}
+   <div class="row"><label>Rows <input class="num-in" type="number" min="1" max="10" value="3" data-rows></label><label>Columns <input class="num-in" type="number" min="1" max="20" value="4" data-cols></label><label class="row"><input type="checkbox" data-tri> Triangle: <code>range(1, row + 1)</code></label></div>
+   <p class="lead" data-count></p></div>`, `<pre class="stars" data-starsout></pre>`)
+   + rv("Rule","Total stars = outer repeats × inner repeats (for the rectangle)."),
+  notes:{"Resources":"Pattern programs in Python.","Support":"Lab sheet with prediction boxes.","Stretch":"Predict total iterations for the triangle: 1 + 2 + … + rows."}},
+ {k:"main",min:14,label:"Results analyser",eyebrow:"Worked example · Build it",title:"Exam results analyser",phases:[["Model",4],["Build",8],["Test",2]],
+  html:cols(pc(`Pass ← 0
+Fail ← 0
+FOR Student ← 1 TO 5
+  Total ← 0
+  FOR Subject ← 1 TO 3
+    INPUT Mark
+    Total ← Total + Mark
+  NEXT Subject
+  IF Total / 3 >= 50
+    THEN
+      Pass ← Pass + 1
+    ELSE
+      Fail ← Fail + 1
+  ENDIF
+NEXT Student
+OUTPUT Pass, Fail`), `<div class="stack">${panel("Nesting levels", ul(["Level 1: FOR Student","Level 2: FOR Subject, and the IF","Total ← 0 goes <b>inside</b> the student loop, before the subject loop. Why?"]),1)}${rv("Why?","Each student needs their own total. If it is set to 0 only once, the marks keep adding up across students.")}${rv("Python",`<pre class="code">${hl(`passed = 0
+failed = 0
+for student in range(1, 6):
+    total = 0
+    for subject in range(1, 4):
+        total = total + int(input("Mark: "))
+    if total / 3 >= 50:
+        passed = passed + 1
+    else:
+        failed = failed + 1
+print(passed, failed)`,"py")}</pre>`)}</div>`),
+  notes:{"Resources":"Coursebook 8.11; Python.","Support":"Structure diagram showing nesting levels.","Stretch":"Add a third level: CASE for the grade letter.","Watch for":"Inner counter not reset; ENDIF after NEXT; mis-indented blocks."}},
+ {k:"game",min:6,label:"Trace jigsaw",eyebrow:"Jigsaw · Trace, then explain",title:"Trace the nested loop",
+  html:cols(pc(`FOR I ← 1 TO 3
+  FOR J ← 1 TO 2
+    OUTPUT I * J
+  NEXT J
+NEXT I`), trace(["I","J","Output"],[["1","1","1"],["1","2","2"],["2","1","2"],["2","2","4"],["3","1","3"],["3","2","6"]]))
+   + parsons(["FOR I ← 1 TO 3","  IF I MOD 2 = 0","    THEN","      OUTPUT I","  ENDIF","NEXT I"],"Put ENDIF and NEXT in the right order"),
+  notes:{"Support":"Trace tables with columns set up.","Stretch":"Find the line that makes an algorithm inefficient."}},
+ {k:"close",min:5,label:"Exit check",eyebrow:"Exit check",title:"Count the outputs",
+  html:cols(`<div class="q">${lead("A 4 × 3 nested loop has OUTPUT in the inner loop. How many outputs?")}${showme()}${rv("Answer","12")}</div>`,
+   `<div class="q">${py(`for i in range(3):
+for j in range(2):
+    print(i, j)`,"Fix the indentation")}${rv("Answer",`<pre class="code">${hl(`for i in range(3):
+    for j in range(2):
+        print(i, j)`,"py")}</pre>`)}</div>`)
+   + panel("Homework", ul(["Coursebook 8.11 questions.","Before the break: revise loops and selection with the comparison table."]),1),
+  notes:{"Exit check":"Iterations in a 4 × 3 loop; correct an indentation error."}}
+]};
+
+/* ---------- Week 13 P2 ---------- */
+L["13-2"] = {short:"Subroutines", title:"Procedures and functions", ref:"0478 8.1.6(a)(b) · AO1, AO2",
+ follow:{"10BR1":"Students who missed lessons this week: share code notes on Teams before the break.","10BR2":"Share code notes on Teams before the break.","10BR3":"Share code notes on Teams before the break."},
+ stages:[
+ outcomesSlide("Procedures and functions",
+  [`define and ${c("CALL")} procedures`,`define functions that ${c("RETURN")} a value`,`code both with Python ${c("def")} and ${c("return")}`],
+  ["I can explain procedure vs function.","I can write and call a procedure with CALL.","I can write a function that RETURNS a value and use it in an expression."],
+  [["subroutine","a named block of code"],["procedure","does a job, no value back"],["function","returns a value"],["parameter","a value passed in"],["CALL","runs a procedure"]]),
+ {k:"warm",min:5,label:"Discuss",eyebrow:"Discussion · Spot the repeats",title:"Why write it three times?",
+  html:cols(py(`print("-" * 30)
+print("Report for Omar")
+print("-" * 30)
+print("Maths: 78")
+print("-" * 30)
+print("Report for Sara")
+print("-" * 30)
+print("Maths: 91")
+print("-" * 30)`,"report.py"), `<div class="stack">${lead("What could become a subroutine? Why?")}${rv("Ideas","The line of dashes → a procedure DrawLine(30). One report → a procedure PrintReport(Name, Mark). Less repetition, easier to fix and test, and team members can share work.")}${rv("Stretch: a real app feature that is a function","Calculating a delivery fee or checking a password's strength: both return a value.")}</div>`),
+  notes:{"Support":"Highlighted repeated blocks.","Stretch":"Name a real app feature that would be a function."}},
+ {k:"hook",min:6,label:"Model it",eyebrow:"Teacher model · Recipe: “make the sauce (see page 12)”",title:"Procedure vs function",
+  html:cols(`<div class="stack">${pc(`PROCEDURE Line(Size : INTEGER)
+  FOR Count ← 1 TO Size
+    OUTPUT "-"
+  NEXT Count
+ENDPROCEDURE
+
+CALL Line(60)`,"Procedure")}${py(`def line(size):
+    print("-" * size)
+
+line(60)`)}</div>`,
+   `<div class="stack">${pc(`FUNCTION Area(Length : REAL, Width : REAL) RETURNS REAL
+  RETURN Length * Width
+ENDFUNCTION
+
+RoomArea ← Area(4, 5)`,"Function")}${py(`def area(length, width):
+    return length * width
+
+room_area = area(4, 5)`)}</div>`)
+   + panel("Remember", "<p>A function is <b>not</b> called with CALL. Use it inside an expression or assignment.</p>",1),
+  notes:{"Watch for":"print instead of return; CALL used with functions; defining after use in Python."}},
+ {k:"main",min:14,label:"Code along",eyebrow:"Code along · Refactor",title:"Return, don't print",phases:[["DrawLine + Area",6],["Refactor analyser",8]],
+  html:cols(`<div class="stack">${py(`def double(n):
+    print(n * 2)
+
+x = double(4)
+print(x)`,"Predict the output")}${rv("Output",`${c("8")} then ${c("None")}. The function printed but did not return anything.`)}${rv("Fix",`<pre class="code">${hl(`def double(n):
+    return n * 2`,"py")}</pre>`)}</div>`,
+   `<div class="stack">${h3("Refactor the results analyser")}${ticks(["Write PROCEDURE DrawLine(Size)","Write FUNCTION Average(A, B, C) RETURNS REAL","Replace repeated code with calls","Test: output is the same as before"])}${rv("Stretch",`${c("FUNCTION IsValidMark(Mark : INTEGER) RETURNS BOOLEAN")}`)}</div>`),
+  notes:{"Resources":"Coursebook 8.12; syllabus pseudocode p.46–47; Python.","Support":"Templates with the def lines provided.","Stretch":"IsValidMark(Mark) RETURNS BOOLEAN."}},
+ {k:"game",min:7,label:"Procedure or function?",eyebrow:"Think, pair, share",title:"Procedure or function?",phases:[["Think",2],["Pair",3],["Share",2]],
+  html:sorter(["Procedure","Function"],[["DrawLine(Size)","outputs dashes","Procedure"],["Area(L, W)","gives back the area","Function"],["ShowMenu()","prints the menu","Procedure"],["IsValidMark(Mark)","TRUE or FALSE","Function"],["Greet(Name)","outputs a greeting","Procedure"],["Max(A, B)","gives back the larger","Function"]],"11em"),
+  notes:{"Support":"Examples with keyword hints.","Stretch":"Write the CALL or expression that uses each."}},
+ {k:"close",min:6,label:"Exit ticket",eyebrow:"Exit ticket · Last lesson before the break",title:"The larger of two numbers",
+  html:cols(`<div class="q">${lead("Write the header of a function that returns the larger of two integers.")}${rv("Answer",c("FUNCTION Larger(A : INTEGER, B : INTEGER) RETURNS INTEGER"))}</div>`,
+   `<div class="q">${lead("One difference from a procedure?")}${rv("Answer","A function returns a value; a procedure is run with CALL and returns nothing.")}</div>`)
+   + panel("Over the autumn break (optional)", ul(["Coursebook 8.12 questions 1–3.","Refactor one earlier program with a subroutine."]),1),
+  notes:{"Exit ticket":"Function header; one difference from a procedure."}}
+]};
+
+/* ---------- Week 15 P1 ---------- */
+L["15-1"] = {short:"Scope", title:"Parameters and scope", ref:"0478 8.1.6(b)(c) · AO1, AO2",
+ follow:{"10BR1":"Students below 50% on the retrieval quiz (about 3): targeted revision session.","10BR2":"Students below 50% on the retrieval quiz: targeted revision.","10BR3":"Students below 50% on the retrieval quiz: targeted revision."},
+ stages:[
+ outcomesSlide("Parameters and scope",
+  ["pass up to three parameters to a subroutine","tell local variables from global variables","explain why local variables are safer"],
+  ["I can pass up to three parameters to a subroutine.","I can predict which variables are local or global.","I can explain why local variables are safer."],
+  [["parameter","a value passed in"],["local","exists only inside the subroutine"],["global","can be used everywhere"],["scope","where a variable can be used"]]),
+ {k:"warm",min:7,label:"Retrieval quiz",eyebrow:"Welcome back · Retrieval quiz",title:"What do you remember?",
+  html:`<div class="row">${counters(["Team A","Team B","Team C","Team D"])}</div>`
+   + flips([["range(1, 6) gives…","1, 2, 3, 4, 5"],["Loop that always runs at least once","REPEAT … UNTIL"],["17 MOD 5","2"],["Python for “not equal”","!="],["Which loop for unknown repeats?","WHILE"],["Function or procedure: returns a value?","Function"],["Where do you set Total ← 0?","Before the loop"],["SUBSTRING(\"Jeddah\", 1, 3)","\"Jed\""]],"12em"),
+  notes:{"Resources":"Quizizz if ready; this board is the backup.","Support":"Read-aloud mode.","Stretch":"Explain the reason for 2 answers.","Note":"Allow time for re-settling after the break."}},
+ {k:"hook",min:5,label:"Model it",eyebrow:"Teacher model · Scope diagram",title:"Boxes inside boxes",
+  html:cols(`<div class="scope"><span class="lbl" style="color:var(--cd)">Global: the whole program</span><code>Score ← 0</code><div class="inner"><span class="lbl" style="color:var(--bad)">Local: inside AddBonus only</span><br><code>Bonus ← 5</code><br><code>RETURN Points + Bonus</code></div><code>Score ← AddBonus(10)</code></div>`,
+   `<div class="stack">${py(`score = 0                 # global
+
+def add_bonus(points):    # parameter
+    bonus = 5             # local
+    return points + bonus
+
+score = add_bonus(10)
+print(score)              # 15
+print(bonus)              # ?`)}${rv("print(bonus)?",`<span class="no">NameError</span>: bonus only existed inside the function.`)}</div>`),
+  notes:{"Model":"Show the local variable 'disappearing' after return."}},
+ {k:"main",min:14,label:"Investigate",eyebrow:"Investigation · Predict, run, explain",title:"Who can see which variable?",phases:[["Predict & run",8],["Discount function",6]],
+  html:cols(`<div class="stack">${py(`x = 10
+def change():
+    x = 5
+change()
+print(x)`,"1")}${rv("Output","10: the function made its own local x.")}</div>`,
+   `<div class="stack">${py(`def f():
+    y = 3
+f()
+print(y)`,"2")}${rv("Output",`<span class="no">NameError</span>: y is local to f.`)}</div>`,
+   `<div class="stack">${py(`total = 0
+def add(n):
+    return total + n
+print(add(5))`,"3")}${rv("Output","5: reading a global is allowed.")}</div>`,
+   `<div class="stack">${py(`count = 0
+def inc():
+    count = count + 1
+inc()`,"4")}${rv("Output",`<span class="no">UnboundLocalError</span>: assigning makes count local, so it has no value yet.`)}</div>`)
+   + cols(`<div class="stack">${h3("Now write it: 3 parameters")}${py(`def discount(price, percent, is_member):
+    if is_member:
+        percent = percent + 5
+    return price * (1 - percent / 100)`)}</div>`,
+     `<div class="tablewrap"><table><thead><tr><th>Call</th><th>Returns</th></tr></thead><tbody><tr><td>${c("discount(100, 10, False)")}</td><td>${cell("90.0")}</td></tr><tr><td>${c("discount(100, 10, True)")}</td><td>${cell("85.0")}</td></tr></tbody></table></div>`),
+  notes:{"Resources":"Coursebook 8.12; scope programs; Python.","Support":"Scope diagram (boxes inside boxes).","Stretch":"Use the global keyword and explain why it is discouraged.","Watch for":"Expecting local changes to affect globals; wrong order of arguments."}},
+ {k:"debate",min:6,label:"Debate",eyebrow:"Debate · Short version",title:"Global variables should be banned",phases:[["Prepare",1],["FOR",2],["AGAINST",2],["Vote",1]],
+  html:cols(panel("Evidence", ul(["Any subroutine can change a global, so bugs are hard to find.","Local variables let you test one subroutine on its own.","Global <b>constants</b> such as VAT_RATE never change."])),
+   panel("Sentence starters", ul(["“Banning them would help because …”","“But sometimes a global is needed when …”"]),1))
+   + `<div class="row">${counters(["Votes FOR","Votes AGAINST"])}</div>` + rv("A balanced answer","Avoid global variables; pass parameters instead. Global constants are acceptable."),
+  notes:{"Support":"Sentence starters.","Stretch":"Give a case where a global constant is acceptable."}},
+ {k:"close",min:6,label:"Exit ticket",eyebrow:"Exit ticket",title:"Local or global?",
+  html:sorter(["Local","Global"],[["Rate","set at the top of the program","Global"],["Temp","set inside a procedure","Local"],["Count","the FOR counter inside a function","Local"],["MAX_SIZE","constant at the top","Global"]],"11em")
+   + cols(`<div class="q">${lead("Write a 3-parameter procedure header.")}${rv("Example",c("PROCEDURE PrintReceipt(Name : STRING, Total : REAL, Paid : BOOLEAN)"))}</div>`,
+     panel("Homework", ul(["Coursebook 8.12 scope questions.","Program: a function that returns the average of three parameters."]),1)),
+  notes:{"Exit ticket":"Local vs global; a 3-parameter header."}}
+]};
+
+/* ---------- Week 15 P2 ---------- */
+L["15-2"] = {short:"Library & tidy code", title:"Library routines and maintainability", ref:"0478 8.1.7–8.1.8 · AO2, AO3",
+ follow:{"10BR1":"Low self-assessment confidence (about 3 students): revision clinic before Semester 1 exams.","10BR2":"Revision clinic for students with low confidence.","10BR3":"Revision clinic for students with low confidence."},
+ stages:[
+ outcomesSlide("Library routines and tidy code",
+  [`use ${c("MOD")}, ${c("DIV")}, ${c("ROUND")} and ${c("RANDOM")}`,"make programs maintainable","review all of Chapter 8"],
+  ["I can use ROUND and RANDOM correctly in pseudocode and Python.","I can improve an unreadable program with names, comments and a subroutine.","I can explain each improvement."],
+  [["library routine","pre-written code you can use"],["ROUND","round to a number of places"],["RANDOM","a random number from 0 to 1"],["maintainable","easy for others to read and update"],["comment","a note for humans"]]),
+ {k:"warm",min:4,label:"Hook",eyebrow:"Hook · Vote",title:"Which would you rather fix at 2 a.m.?",
+  html:cols(py(`a=float(input())
+b=float(input())
+c=(a+b)/2
+print(c)`,"Version A"), py(`# Average of two test marks
+mark1 = float(input("Mark 1: "))
+mark2 = float(input("Mark 2: "))
+average = (mark1 + mark2) / 2
+print("Average:", average)`,"Version B"))
+   + `<div class="row">${counters(["Vote A","Vote B"])}</div>`,
+  notes:{"Watch for":"'Comments are only for the teacher.'"}},
+ {k:"hook",min:7,label:"Dice",eyebrow:"Worked example · Dice simulator",title:"Roll the dice",
+  html:cols(`<div class="stack">${pc(`Value ← ROUND(RANDOM() * 5, 0) + 1`,"Syllabus style")}${py(`import random
+value = random.randint(1, 6)`)}${flips([["ROUND(3.14159, 2)","3.14","",1,1],["17 DIV 5","3","",1,1],["17 MOD 5","2","",1,1],["RANDOM()","0 to 1","a REAL, not a whole number",1,1]],"9em")}</div>`,
+   `<div class="stack" data-dice><div class="row"><div class="dice" data-face>?</div><div class="stack"><button type="button" class="btn solid" data-roll="1">Roll once</button><button type="button" class="btn" data-roll="100">Roll 100 times</button><button type="button" class="btn" data-roll="0">Reset</button></div></div><div class="bars" data-bars></div><div class="barlab">${[1,2,3,4,5,6].map(n=>`<span>${n}</span>`).join("")}</div><p class="note" data-total>0 rolls</p></div>`),
+  notes:{"Resources":"Syllabus p.42; Python random module.","Support":"Formula card for random ranges.","Stretch":"Simulate 100 rolls and count each face (links to counting)."}},
+ {k:"main",min:15,label:"Makeover",eyebrow:"Problem solving · Maintainability makeover",title:"Make this program readable",phases:[["Read & plan",3],["Refactor",9],["Test & mark",3]],
+  html:cols(py(`a=float(input())
+b=float(input())
+c=float(input())
+d=(a+b+c)/3
+print(d)
+if d>=50:
+ print("P")
+else:
+ print("F")`,"messy.py"), `<div class="stack">${h3("Must-do checklist")}${ticks(["Meaningful identifiers","A comment explaining the purpose","A constant for the pass mark","One subroutine (e.g. a function for the average)","Still gives the same results"])}</div>`)
+   + rv("One possible makeover",`<pre class="code">${hl(`# Works out a student's average of 3 marks and whether they pass
+PASS_MARK = 50
+
+def average(mark1, mark2, mark3):
+    return (mark1 + mark2 + mark3) / 3
+
+maths = float(input("Maths mark: "))
+science = float(input("Science mark: "))
+english = float(input("English mark: "))
+result = average(maths, science, english)
+print("Average:", round(result, 1))
+if result >= PASS_MARK:
+    print("Pass")
+else:
+    print("Fail")`,"py")}</pre>`),
+  notes:{"Resources":"Coursebook 8.13–8.14; messy program file; rubric.","Support":"Checklist of 4 must-do improvements.","Stretch":"Add a function and a constant; justify each change.","Watch for":"Refactoring that breaks the program: test after each change."}},
+ {k:"game",min:7,label:"Mind map",eyebrow:"Cooperative · Revision mind map",title:"Chapter 8: how confident are you?",
+  html:lead("Tap each topic: red = not yet, amber = getting there, green = confident.")
+   + `<div class="rag" data-rag>${["Variables & constants","Data types","Input & output","Operators","IF","CASE","AND / OR / NOT","FOR loops","WHILE loops","REPEAT loops","Totalling & counting","Strings","Nesting","Procedures & functions","Scope","Library routines","Maintainability"].map(t=>`<button type="button" data-s="0">${t}</button>`).join("")}</div>`
+   + panel("Group task", "<p>Build the mind map on the template and share it on Teams. Link each branch to a past-paper question type.</p>",1),
+  notes:{"Resources":"Mind map template; Teams.","Support":"Template with branch names.","Stretch":"Link each branch to a past-paper question type."}},
+ {k:"close",min:5,label:"Self-assessment",eyebrow:"End of Term 1",title:"Your target for Term 2",
+  html:cols(`<div class="q">${lead("Complete the self-assessment form: confidence for each Chapter 8 topic and one target.")}${rv("Coming in Term 2","Arrays and file handling.")}</div>`,
+   panel("Homework · Revision", ul(["Past-paper Paper 2 questions on Topic 8.1 (selected).","Upload your refactored program with comments."]),1)),
+  notes:{"Exit":"Self-assessment (Forms) + one target for Term 2. Learners' questions."}}
+]};
+
+/* ================= engine ================= */
+const COL = {outcomes:["#8fd3ff","#0b5f96"],warm:["#ffc95c","#8a5000"],hook:["#ff9f8f","#a8341f"],main:["#78e2c8","#0a6f59"],game:["#c9adff","#5630ad"],debate:["#ff9fd0","#9c1f62"],close:["#cdeb73","#4a6400"]};
+const $ = id => document.getElementById(id);
+const store = {get(k){try{return localStorage.getItem(k)}catch(e){return null}}, set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+const TOTAL = 40*60;
+let key, idx = 0, running = false, last = 0, soundOn = false, audio = null, wake = null;
+const elapsed = {}, alerted = {}, teamScores = {};
+const lesson = () => L[key];
+const el = () => (elapsed[key] ||= []);
+const al = () => (alerted[key] ||= []);
+
+function weekFromDate(){
+  const now = new Date(); let w = 7;
+  for (const k of Object.keys(WEEK_START)) if (now >= new Date(WEEK_START[k]+"T00:00:00")) w = +k;
+  return w === 14 ? 15 : w;
+}
+const cls = $("cls");
+const savedCls = store.get("br.class"); if (savedCls) cls.value = savedCls;
+$("wk").innerHTML = Object.keys(WEEKS).map(w => `<option value="${w}"${w==="14"?" disabled":""}>${w==="14" ? "Week 14 · break" : `Week ${w} · ${WEEKS[w]}`}</option>`).join("");
+
+function fmt(s){ const neg = s < 0; s = Math.abs(Math.round(s)); return (neg ? "+" : "") + Math.floor(s/60) + ":" + String(s%60).padStart(2,"0"); }
+
+function renderStrip(){
+  $("strip").innerHTML = lesson().stages.map((s,i) => `<button type="button" style="--grow:${s.min};--sc:${COL[s.k][0]}" data-go="${i}"><span class="fill"></span><span class="t">${s.label}</span><span class="m">${s.min} min</span></button>`).join("");
+}
+function renderSlide(dir){
+  const s = lesson().stages[idx], [c1,c2] = COL[s.k];
+  document.documentElement.style.setProperty("--c",c1); document.documentElement.style.setProperty("--cd",c2);
+  const sec = document.createElement("section");
+  sec.className = "slide" + (dir ? (dir > 0 ? " in-next" : " in-prev") : "");
+  sec.innerHTML = `<div class="band"><div><div class="eyebrow">${s.eyebrow} · ${s.min} min</div><h2>${s.title}</h2></div><span class="who">Week ${key.split("-")[0]} · ${lesson().title} · ${cls.value}</span></div>
+    <div class="body">${s.phases ? `<div class="phases">${s.phases.map(p => `<span class="phase">${p[0]} · ${p[1]}′</span>`).join("")}</div>` : ""}${s.html}</div>`;
+  $("screen").replaceChildren(sec);
+  wire(sec); renderNotes();
+  $("prev").disabled = idx === 0; $("next").disabled = idx === lesson().stages.length - 1;
+  tick();
+}
+function renderNotes(){
+  const s = lesson().stages[idx], f = lesson().follow[cls.value];
+  $("notes").innerHTML = `<button type="button" class="close" data-closenotes>Close</button><h4>${s.label} · ${s.min} min</h4><div style="opacity:.8">${lesson().title} · ${lesson().ref}</div>`
+    + Object.entries(s.notes || {}).map(([k,v]) => `<div><div class="k">${k}</div>${esc(v)}</div>`).join("")
+    + (f ? `<div><div class="k">${cls.value} follow-up</div>${esc(f)}</div>` : "")
+    + `<div><div class="k">Keys</div>← → move · Space start/pause · N notes · F full screen · S show-me countdown</div>`;
+}
+
+/* ---- widgets ---- */
+function wire(root){
+  root.querySelectorAll("[data-reveal]").forEach(b => { b.dataset.l = b.textContent; b.onclick = () => { const a = b.nextElementSibling; a.hidden = !a.hidden; b.textContent = a.hidden ? b.dataset.l : "Hide"; }; });
+  root.querySelectorAll(".ticks button").forEach(b => b.onclick = () => b.setAttribute("aria-pressed", b.getAttribute("aria-pressed") !== "true"));
+  root.querySelectorAll("[data-flip]").forEach(b => b.onclick = () => {
+    const open = b.querySelector(".verdict").hidden;
+    b.querySelectorAll(".verdict,.back").forEach(x => x.hidden = !open);
+    b.classList.toggle(b.dataset.good === "1" ? "is-good" : "is-bad", open);
+  });
+  root.querySelectorAll("[data-cell]").forEach(b => b.onclick = () => { const [q,v] = b.children; q.hidden = !q.hidden; v.hidden = !v.hidden; b.classList.toggle("open", !v.hidden); });
+  root.querySelectorAll("[data-showme]").forEach(b => b.onclick = showMe);
+  root.querySelectorAll("[data-counters]").forEach(box => wireCounters(box, box.dataset.counters.split("|")));
+  root.querySelectorAll("[data-sorter]").forEach(wireSorter);
+  root.querySelectorAll("[data-parsons]").forEach(wireParsons);
+  root.querySelectorAll("[data-trace]").forEach(wireTrace);
+  root.querySelectorAll("[data-menu]").forEach(wireMenu);
+  root.querySelectorAll("[data-stars]").forEach(wireStars);
+  root.querySelectorAll("[data-dice]").forEach(wireDice);
+  root.querySelectorAll("[data-rag] button").forEach(b => b.onclick = () => b.dataset.s = (+b.dataset.s + 1) % 4);
+}
+function wireCounters(box, names){
+  box.innerHTML = names.map(n => `<div class="team"><b>${esc(n)}</b><button type="button" aria-label="${esc(n)} minus one">−</button><span class="n">0</span><button type="button" aria-label="${esc(n)} plus one">+</button></div>`).join("");
+  box.querySelectorAll(".team").forEach(t => { const [m,p] = t.querySelectorAll("button"), n = t.querySelector(".n");
+    m.onclick = () => n.textContent = Math.max(0, +n.textContent - 1); p.onclick = () => n.textContent = +n.textContent + 1; });
+}
+function wireSorter(box){
+  const cats = box.dataset.sorter.split("|"), res = box.querySelector("[data-result]"), cards = box.querySelectorAll(".sc");
+  const tag = i => `<span class="tag g${i}">${esc(cats[i])}</span>`;
+  cards.forEach(c => c.onclick = () => {
+    const nx = c.dataset.pick === undefined ? 0 : (+c.dataset.pick + 1) % cats.length;
+    c.dataset.pick = nx; c.querySelector(".pick").innerHTML = tag(nx); c.classList.remove("right","wrong"); c.querySelector(".fix")?.remove(); res.textContent = "";
+  });
+  box.querySelector("[data-check]").onclick = () => {
+    let ok = 0; cards.forEach(c => { c.querySelector(".fix")?.remove();
+      const r = c.dataset.pick === c.dataset.ans; ok += r; c.classList.toggle("right", r); c.classList.toggle("wrong", !r);
+      if (!r){ const f = document.createElement("span"); f.className = "fix"; f.textContent = "→ " + cats[+c.dataset.ans]; c.append(f); } });
+    res.textContent = `${ok} of ${cards.length} correct`;
+  };
+  box.querySelector("[data-clear]").onclick = () => { cards.forEach(c => { delete c.dataset.pick; c.querySelector(".pick").innerHTML = ""; c.classList.remove("right","wrong"); c.querySelector(".fix")?.remove(); }); res.textContent = ""; };
+}
+function wireParsons(box){
+  const ol = box.querySelector(".parsons"), res = box.querySelector("[data-presult]");
+  const items = () => [...ol.querySelectorAll("button")];
+  const shuffle = () => {
+    const lis = [...ol.children]; let order;
+    do { order = lis.map(l => [Math.random(), l]).sort((a,b) => a[0]-b[0]).map(x => x[1]); } while (lis.length > 1 && order.every((l,i) => l === lis[i]));
+    ol.replaceChildren(...order); items().forEach(b => b.classList.remove("right","wrong","sel")); res.textContent = "";
+  };
+  shuffle();
+  let sel = null;
+  ol.onclick = e => {
+    const b = e.target.closest("button"); if (!b) return;
+    items().forEach(x => x.classList.remove("right","wrong")); res.textContent = "";
+    if (!sel){ sel = b; b.classList.add("sel"); return; }
+    if (sel !== b){ const a = sel.parentNode, c = b.parentNode, tmp = document.createElement("li"); ol.replaceChild(tmp, a); ol.replaceChild(a, c); ol.replaceChild(c, tmp); }
+    sel.classList.remove("sel"); sel = null;
+  };
+  box.querySelector("[data-pcheck]").onclick = () => {
+    let ok = 0; items().forEach((b,i) => { const r = +b.dataset.i === i; ok += r; b.classList.toggle("right", r); b.classList.toggle("wrong", !r); });
+    res.textContent = ok === items().length ? "All in order!" : `${ok} of ${items().length} in the right place`;
+  };
+  box.querySelector("[data-psolve]").onclick = () => { const lis = [...ol.children].sort((a,b) => a.firstChild.dataset.i - b.firstChild.dataset.i); ol.replaceChildren(...lis); items().forEach(b => { b.classList.remove("wrong","sel"); b.classList.add("right"); }); sel = null; res.textContent = "Solution shown"; };
+  box.querySelector("[data-pshuffle]").onclick = () => { sel = null; shuffle(); };
+}
+function wireTrace(box){
+  const rows = [...box.querySelectorAll("tbody tr")];
+  box.querySelector("[data-tnext]").onclick = () => { const r = rows.find(r => r.hidden); if (r) r.hidden = false; };
+  box.querySelector("[data-tall]").onclick = () => rows.forEach(r => r.hidden = false);
+  box.querySelector("[data-thide]").onclick = () => rows.forEach(r => r.hidden = true);
+}
+function wireMenu(pad){
+  const map = JSON.parse(pad.dataset.menu), out = pad.closest(".cols").querySelector("[data-menuout]");
+  pad.querySelectorAll("button").forEach(b => b.onclick = () => { const k = b.dataset.key; out.textContent = `Pressed ${k} → ${map[k] || map["*"]}`; });
+}
+function wireStars(box){
+  const out = box.closest(".cols").querySelector("[data-starsout]"), r = box.querySelector("[data-rows]"), c = box.querySelector("[data-cols]"), t = box.querySelector("[data-tri]"), cnt = box.querySelector("[data-count]");
+  const draw = () => {
+    const R = Math.max(1, Math.min(10, +r.value || 1)), C = Math.max(1, Math.min(20, +c.value || 1));
+    let lines = [], n = 0;
+    for (let i = 1; i <= R; i++){ const w = t.checked ? i : C; lines.push("*".repeat(w)); n += w; }
+    out.textContent = lines.join("\n");
+    cnt.innerHTML = `Inner loop ran <b>${n}</b> times in total.`;
+  };
+  [r,c,t].forEach(x => x.oninput = draw); draw();
+}
+function wireDice(box){
+  const face = box.querySelector("[data-face]"), bars = box.querySelector("[data-bars]"), tot = box.querySelector("[data-total]");
+  let counts = [0,0,0,0,0,0];
+  const draw = () => { const n = counts.reduce((a,b) => a+b, 0), mx = Math.max(1, ...counts);
+    bars.innerHTML = counts.map(v => `<div style="height:${v/mx*100}%"><span>${v}</span></div>`).join(""); tot.textContent = `${n} rolls`; };
+  box.querySelectorAll("[data-roll]").forEach(b => b.onclick = () => {
+    const k = +b.dataset.roll; if (!k){ counts = [0,0,0,0,0,0]; face.textContent = "?"; return draw(); }
+    let v; for (let i = 0; i < k; i++){ v = 1 + Math.floor(Math.random()*6); counts[v-1]++; }
+    face.textContent = v; draw();
+  });
+  draw();
+}
+
+/* ---- timer ---- */
+const stageSecs = i => lesson().stages[i].min * 60;
+function tick(){
+  const now = performance.now(), E = el();
+  if (running && last) E[idx] = (E[idx] || 0) + (now - last)/1000;
+  last = running ? now : 0;
+  const st = lesson().stages, used = st.reduce((a,_,i) => a + (E[i] || 0), 0), left = stageSecs(idx) - (E[idx] || 0);
+  $("stageNum").textContent = fmt(left);
+  $("stageLab").textContent = left >= 0 ? st[idx].label + " · left" : "Time's up · over by";
+  $("stageClock").classList.toggle("over", left < 0);
+  $("lessonNum").textContent = fmt(Math.max(0, TOTAL - used));
+  const planEnd = st.slice(0, idx+1).reduce((a,s) => a + s.min*60, 0), behind = used - planEnd + Math.max(0, left);
+  $("pace").textContent = !used ? "Ready" : (Math.abs(behind) < 30 ? "On pace" : behind > 0 ? fmt(behind) .replace("+","") + " behind plan" : fmt(-behind).replace("+","") + " ahead");
+  $("strip").querySelectorAll("button").forEach((b,i) => {
+    b.querySelector(".fill").style.width = Math.min(100, (E[i] || 0)/stageSecs(i)*100) + "%";
+    if (i === idx) b.setAttribute("aria-current","step"); else b.removeAttribute("aria-current");
+  });
+  const s = st[idx];
+  if (s.phases){ const t = E[idx] || 0; let acc = 0;
+    document.querySelectorAll(".phase").forEach((p,i) => { const len = s.phases[i][1]*60, lastP = i === s.phases.length-1;
+      p.classList.toggle("past", t >= acc + len && !lastP); p.classList.toggle("now", t >= acc && (t < acc + len || lastP)); acc += len; }); }
+  if (left < 0 && !al()[idx]){ al()[idx] = true; timeUp(); }
+}
+function chime(){ if (!soundOn || !audio) return; try{ [0,.25,.5].forEach((d,i) => { const o = audio.createOscillator(), g = audio.createGain(); o.frequency.value = [660,880,990][i];
+  g.gain.setValueAtTime(.0001, audio.currentTime+d); g.gain.exponentialRampToValueAtTime(.3, audio.currentTime+d+.02); g.gain.exponentialRampToValueAtTime(.0001, audio.currentTime+d+.22);
+  o.connect(g).connect(audio.destination); o.start(audio.currentTime+d); o.stop(audio.currentTime+d+.25); }); }catch(e){} }
+function timeUp(){ const nx = lesson().stages[idx+1]; toast(nx ? `Time's up! Next: ${nx.label}` : "Time's up! Lesson complete."); chime(); }
+let toastT;
+function toast(msg){ const t = $("toast"); t.textContent = msg; t.hidden = false; clearTimeout(toastT); toastT = setTimeout(() => t.hidden = true, 4000); }
+setInterval(() => { if (running) tick(); }, 250);
+
+function setRunning(r){
+  tick(); running = r; last = r ? performance.now() : 0;
+  const b = $("play"); b.textContent = r ? "❚❚ Pause" : "▶ Start"; b.classList.toggle("running", r); b.setAttribute("aria-label", r ? "Pause timer" : "Start timer");
+  if (r && navigator.wakeLock && !wake) navigator.wakeLock.request("screen").then(w => { wake = w; w.addEventListener("release", () => wake = null); }).catch(() => {});
+}
+function go(i){ if (i < 0 || i >= lesson().stages.length || i === idx) return; tick(); const d = i > idx ? 1 : -1; idx = i; renderSlide(d); }
+function setLesson(k){
+  if (running) setRunning(false);
+  key = k; idx = 0;
+  const [w,p] = k.split("-");
+  $("wk").value = w;
+  ["1","2"].forEach(n => { const b = $("pP"+n); b.setAttribute("aria-pressed", n === p); b.textContent = `P${n} · ${L[w+"-"+n].short}`; });
+  try{ history.replaceState(null, "", "#w"+w+"p"+p); }catch(e){}
+  renderStrip(); renderSlide(0); renderTeams();
+}
+
+/* ---- class tools ---- */
+function showMe(){
+  const o = $("countdown"); let n = 3; o.hidden = false; o.textContent = n;
+  const t = setInterval(() => { n--; if (n > 0) o.textContent = n; else if (n === 0){ o.textContent = "Show!"; chime(); } else { clearInterval(t); o.hidden = true; } }, 900);
+}
+let pool = [];
+function resetPool(){ const n = Math.max(2, Math.min(40, +$("pickN").value || 28)); pool = Array.from({length:n}, (_,i) => i+1); $("pickLeft").textContent = `${pool.length} left`; $("picked").textContent = "?"; }
+$("pickGo").onclick = () => {
+  if (!pool.length) resetPool();
+  let spins = 0; const t = setInterval(() => { $("picked").textContent = pool[Math.floor(Math.random()*pool.length)]; if (++spins > 10){ clearInterval(t);
+    const i = Math.floor(Math.random()*pool.length), v = pool.splice(i,1)[0]; $("picked").textContent = v; $("pickLeft").textContent = `${pool.length} left`; } }, 60);
+};
+$("pickReset").onclick = resetPool; $("pickN").onchange = resetPool; resetPool();
+function renderTeams(){
+  const s = (teamScores[key] ||= {A:0,B:0,C:0,D:0});
+  $("teamsBox").innerHTML = Object.keys(s).map(t => `<div class="team"><b>Team ${t}</b><button type="button" data-t="${t}" data-d="-1" aria-label="Team ${t} minus one">−</button><span class="n">${s[t]}</span><button type="button" data-t="${t}" data-d="1" aria-label="Team ${t} plus one">+</button></div>`).join("");
+}
+$("teamsBox").onclick = e => { const b = e.target.closest("[data-t]"); if (!b) return; const s = teamScores[key]; s[b.dataset.t] = Math.max(0, s[b.dataset.t] + +b.dataset.d); renderTeams(); };
+$("teamsReset").onclick = () => { teamScores[key] = {A:0,B:0,C:0,D:0}; renderTeams(); };
+const togglePop = id => { const p = $(id); const open = p.hidden; document.querySelectorAll(".pop").forEach(x => x.hidden = true); p.hidden = !open; };
+$("pickBtn").onclick = () => togglePop("pickPop");
+$("teamsBtn").onclick = () => togglePop("teamsPop");
+$("showBtn").onclick = showMe;
+document.querySelectorAll("[data-close]").forEach(b => b.onclick = () => $(b.dataset.close).hidden = true);
+
+/* ---- controls ---- */
+$("play").onclick = () => setRunning(!running);
+$("next").onclick = () => go(idx+1);
+$("prev").onclick = () => go(idx-1);
+$("strip").onclick = e => { const b = e.target.closest("[data-go]"); if (b) go(+b.dataset.go); };
+$("wk").onchange = () => setLesson($("wk").value + "-1");
+document.querySelectorAll("[data-period]").forEach(b => b.onclick = () => setLesson($("wk").value + "-" + b.dataset.period));
+$("plus").onclick = () => { tick(); el()[idx] = (el()[idx] || 0) - 60; al()[idx] = false; tick(); toast("+1 minute for " + lesson().stages[idx].label); };
+$("resetStage").onclick = () => { el()[idx] = 0; al()[idx] = false; last = running ? performance.now() : 0; tick(); };
+let armed = false, armT;
+$("resetAll").onclick = () => {
+  const b = $("resetAll");
+  if (!armed){ armed = true; b.textContent = "Tap again to reset"; armT = setTimeout(() => { armed = false; b.textContent = "New class"; }, 3000); return; }
+  clearTimeout(armT); armed = false; b.textContent = "New class";
+  setRunning(false); elapsed[key] = []; alerted[key] = []; teamScores[key] = {A:0,B:0,C:0,D:0}; renderTeams(); idx = 0; renderSlide(-1); toast("Timer and scores reset for a new class");
+};
+cls.onchange = () => { store.set("br.class", cls.value); renderSlide(0); };
+function toggleNotes(){ const n = $("notes"); n.hidden = !n.hidden; $("notesBtn").setAttribute("aria-pressed", !n.hidden); }
+$("notesBtn").onclick = toggleNotes;
+$("notes").onclick = e => { if (e.target.closest("[data-closenotes]")) toggleNotes(); };
+$("soundBtn").onclick = () => {
+  soundOn = !soundOn; $("soundBtn").setAttribute("aria-pressed", soundOn); $("soundBtn").textContent = soundOn ? "Chime on" : "Chime off";
+  if (soundOn && !audio){ try{ audio = new (window.AudioContext || window.webkitAudioContext)(); }catch(e){ soundOn = false; } }
+  audio?.resume?.();
+};
+function fullscreen(){ const d = document; if (d.fullscreenElement) d.exitFullscreen?.().catch(() => {}); else d.documentElement.requestFullscreen?.().catch(() => toast("Full screen is not available here. Try your browser's F11.")); }
+$("fsBtn").onclick = fullscreen;
+document.addEventListener("keydown", e => {
+  if (e.target.matches("select,input,textarea")) return;
+  if (e.key === "ArrowRight" || e.key === "PageDown"){ e.preventDefault(); go(idx+1); }
+  else if (e.key === "ArrowLeft" || e.key === "PageUp"){ e.preventDefault(); go(idx-1); }
+  else if (e.key === " " && !e.target.closest("button")){ e.preventDefault(); setRunning(!running); }
+  else if (e.key === "n" || e.key === "N") toggleNotes();
+  else if (e.key === "f" || e.key === "F") fullscreen();
+  else if (e.key === "s" || e.key === "S") showMe();
+  else if (e.key === "Escape"){ document.querySelectorAll(".pop").forEach(x => x.hidden = true); if (!$("notes").hidden) toggleNotes(); }
+});
+
+const m = /^#w(\d+)p([12])$/.exec(location.hash);
+setLesson(m && L[m[1]+"-"+m[2]] ? m[1]+"-"+m[2] : weekFromDate()+"-1");
+</script>
+</body>
+</html>
