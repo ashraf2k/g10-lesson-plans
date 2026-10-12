@@ -9,4 +9,4 @@ Open the site and choose a group from the main menu:
 
 Week 7 starts 4 Oct 2026. Week 14 (22–26 Nov) is the MOE autumn break, so no lessons are planned that week.
 
-Each lesson has class checkboxes (saved in your browser), print / save one or both periods, and filled, editable PDF forms.
+Each lesson has class checkboxes (saved in your browser). Print / Save opens the filled MRISB lesson plan form. PDFs are named Group_W
